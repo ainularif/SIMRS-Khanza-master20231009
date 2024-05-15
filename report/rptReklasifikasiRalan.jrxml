@@ -1,0 +1,1798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="3200" pageHeight="820" orientation="Landscape" columnWidth="3178" leftMargin="11" rightMargin="11" topMargin="11" bottomMargin="11" uuid="497a83dd-1965-49b9-bf20-86374e96849a">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="1994"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="namars" class="java.lang.String"/>
+	<parameter name="alamatrs" class="java.lang.String"/>
+	<parameter name="kotars" class="java.lang.String"/>
+	<parameter name="propinsirs" class="java.lang.String"/>
+	<parameter name="kontakrs" class="java.lang.String"/>
+	<parameter name="emailrs" class="java.lang.String"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select * from temporary2 order by no asc]]>
+	</queryString>
+	<field name="no" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp5" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp6" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp7" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp8" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp9" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp10" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp11" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp12" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp13" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp14" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp15" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp16" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp17" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp18" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp19" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp20" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp21" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp22" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp23" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp24" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp25" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp26" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp27" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp28" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp29" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp30" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp31" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp32" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp33" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp34" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp35" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp36" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp37" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp38" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp39" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp40" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp41" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp42" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp43" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp44" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp45" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp46" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp47" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp48" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp49" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp50" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp51" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp52" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp53" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp54" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp55" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp56" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp57" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp58" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp59" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp60" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp61" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp62" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp63" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp64" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp65" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp66" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp67" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp68" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp69" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp70" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp71" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp72" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp73" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp74" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp75" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp76" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp77" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp78" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp79" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp80" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp81" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp82" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp83" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp84" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp85" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp86" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp87" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp88" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp89" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp90" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp91" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp92" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp93" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp94" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp95" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp96" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp97" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp98" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp99" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="temp100" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="460" y="0" width="22" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="81a825f2-b080-4b90-a762-904ec1dfe141"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tipe Rawat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="316" y="0" width="70" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="f9cf215f-30f9-4be9-bd7c-fb82da8fab48"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Waktu Keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="684" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="3dbf408e-14d9-423c-8e3c-b4ad3ea34a88"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="659" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="e1516e35-4fbf-4584-a1e6-db83ab0ef594"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="532" y="0" width="28" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="54ac7691-457a-46e8-956f-0abd03f6f925"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Stts Keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="67" y="0" width="43" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="20d92e30-5ce6-4808-9b6a-7a6946c20f12"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[No.RM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="190" y="0" width="56" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="c656d911-c650-4f15-929b-2b73dfc7acf7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cara Bayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="386" y="0" width="20" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="d1a7566b-6291-49b6-871c-bf15034edd87"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[LOS (hari)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="406" y="0" width="14" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="f87f4d71-d4b2-426f-b8ea-20d439f572c9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[J.K.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="420" y="0" width="40" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="5736ca0d-0ba7-4517-8aa4-cb22326f5c17"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tgl.Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="482" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="a4eaa4dc-e1fd-4cbe-aca9-144063512c97"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Kelas Rawat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="634" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="364843aa-4d8a-4a3c-a21b-a7310920ca47"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.U]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="709" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="83c4c59b-b927-497d-b5df-e36fa143cdd2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="734" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="b5809ba6-16af-4817-8bb2-393e3460745b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="67" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="2721f0a2-21ed-4b80-b88c-edd7eb3d5883"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[No.Rawat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="246" y="0" width="70" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="2fd25156-5b45-4b50-95d1-6def25dd065f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Waktu Masuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="759" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="3fffe797-8deb-49f2-862a-d40b5a12db80"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="784" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="080c38cf-1f98-4af5-a1f8-6833d44276d4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="809" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="b25c80bd-70e0-4840-9ead-7cd804473565"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="834" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="a4a6564a-1943-48e4-b39a-c94595da0b00"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="859" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="4ab421db-e608-49dc-b37e-073a3976de5e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="884" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="1d9adbe8-48c6-4bfe-be71-eac47df43788"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="909" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="cbacb091-2873-4a77-8126-17561b035223"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 11]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="934" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="d7bea3a1-fcc6-47b7-97b0-002b651727c5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 12]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="959" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="8ad2d15a-c75d-4427-afff-bee94ce6409c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 13]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="984" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="1c27807b-9665-4393-89a1-9c44ec5c1fb7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 14]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1134" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="e0b1d975-bd1b-4625-aa2f-628271f59a77"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 20]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1034" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="f7722263-631a-4a23-bb20-8a24472cefef"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 16]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1084" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="ceaaebc2-725a-4ccc-8ff6-4fe43ee9982e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 18]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1009" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="0f16e53c-c058-400d-ae7f-7b864c224a4b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 15]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1109" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="0acafb22-b495-498d-a2b2-06056fe601c4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 19]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1059" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="ad8706a9-8306-4ae1-8cb7-4fe9bdf24876"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 17]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1159" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="e1428275-b35f-4644-99e2-e85e5fe1bbac"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 21]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1309" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="20a00f68-047a-4d12-8027-fc65cd82be85"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 27]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1259" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="0bff1dde-dfdc-4ec8-9dd3-93b7e4d1b257"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1284" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="52a342e4-4ff8-43eb-9945-e6c56c985def"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 26]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1359" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="8cb16484-f069-4e84-983e-e47a5459c1d2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 29]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1234" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="b3bc6d12-90ef-4bf9-ab78-bd1b027d70b1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 24]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1209" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="ad69a712-0eaa-43ac-aca9-84806a8c6c69"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 23]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1334" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="9a7531f4-5b15-472c-ae5c-ec8905babd14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 28]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1184" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="a47ac2ff-e16a-44fa-96c9-2bdd92774248"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[D.S 22]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1384" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="cdb2b61c-3e89-4c11-bb86-ddf2ff961457"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1409" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="ca6666df-b687-43eb-baf2-9142fc158517"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1434" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="7660a329-37ec-4f14-93fc-52a22923d8ba"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1484" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="e68688e9-fc9e-4780-a6fa-ce6972b118f3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1509" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="5660e3d7-6fce-4661-a809-45bec905e279"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1459" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="73e01c1b-e180-41f0-9cb8-505d09535103"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1659" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="71b8a49e-e92c-45bc-83f3-2bccf1d83987"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 12]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1559" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="9b9e9931-f7f4-42fc-97e3-1846caadf686"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1609" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="bdc7e6e0-b155-4392-84d5-e72d617e3583"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1634" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="63feedb3-2f08-4d5d-a074-cd468d28296e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 11]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1584" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="12f353e8-27b3-4418-8231-41cda23883cd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1534" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="70fae4db-92be-4042-8032-27a4175aa63b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1759" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="df23598d-fbf4-4593-afee-5772a2182d95"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 16]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1709" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="902ae087-eb3e-4409-8799-807ba24bfd95"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 14]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1784" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="b93fd021-3fa4-43df-809f-c6309d983788"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 17]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1684" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="99c15c7c-ebc3-4afc-93f1-b0abd50ebf44"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 13]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1734" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="09b50edc-0c39-46f1-a9e4-7e266fe5e1c1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 15]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1909" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="03fddd76-514f-4179-9f48-7f2030754432"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 22]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1809" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="db4254a2-cd33-4aeb-b1ce-c126d3135752"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 18]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1934" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="c72c81cb-7a96-493d-ae0b-8c5596349871"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 23]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1834" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="ad239be3-277b-4276-b29d-50afa6181771"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 19]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1884" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="86cb5bad-9ec8-4991-8e0d-a9f79ef267b5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 21]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1859" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="c6cf839a-27cc-42c5-a2a6-47a56d943ca1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 20]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2034" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="f0d6bc70-e37e-459c-9ab0-a87bd18b6fe3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 27]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1984" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="b5aae10a-2676-45e3-a749-721dc127adc4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1959" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="1d0196e4-6154-4f94-a7fa-4b41ad12634f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 24]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2009" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="b16ccf2d-6e9f-4946-9eb4-05b68a3b87c1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 26]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2059" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="fbb32757-4c08-4e1a-addd-3194d2dd9133"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 28]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2084" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="a3ea5acc-1784-4a67-a30c-93a6d668119b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 29]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2109" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="783af2e2-153c-42fb-add9-adbbd03447da"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P 30]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2134" y="0" width="25" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="e4f35d11-83e0-4490-b905-66f0149e09e2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[INA-CBG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2159" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="189fc1c4-0887-4de4-9145-57877616b210"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Total Trf RS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2209" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="3d231e12-1bf4-46c8-8f78-f46c920ae136"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf P. Non-Bedah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2258" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="b240ced5-68e7-4f2a-99fa-4a94d279a98f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf P. Bedah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2308" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="6683f6c5-936a-40c1-acfa-95f5b6125d53"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf Ksl/Vst Dokter]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2358" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="c465a7f6-41da-46b5-bdb2-45f7fd2dd012"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf Ksl/Vst Tng. Ahli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2408" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="c39d7abe-0ff3-4f5e-84dd-bf05c543da53"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf Tnd Keperawatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2458" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="65cef7ed-ac49-48e8-9163-2cf7db103583"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tarif  Penunjang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2508" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="837d6f63-8d6f-4876-bb05-8367fe31c7fa"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf Radioterapi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2608" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="ea5d01b1-4164-4e81-a818-c70f1c528895"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf UTD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2558" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="718e0dd5-052c-4738-bb1f-85d2e154e629"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf Lab]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2658" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="657ac5a8-54fc-4ba3-b33f-3d1dbfc14ec8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf Radiologi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2708" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="955e928a-a23c-4bf8-95d7-7d6c917e9cc2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tarif Rehabilitasi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2758" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="972be68c-c326-46d8-a610-aab0e74cc718"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf Akomodasi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2807" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="9e43b67f-693f-4dfa-9ed7-235231ef4dbf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf Ruang Intensif]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2857" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="af699769-40d6-4464-987b-aeb1e962b037"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2907" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="7cac8e6f-98f7-44fa-b7a1-f21536e134d3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf Alkes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2957" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="a9e11f7b-a145-4b19-96f7-74fee4d1d6ce"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf BMHP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3007" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="eccac9dd-2dd2-4c2f-906e-934852ca8b2e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Trf Sewa Alat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3057" y="0" width="50" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="6025f0fc-7202-4115-b457-c9af1f4efb3e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Potongan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="560" y="0" width="74" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="a440778a-05d0-46ec-9e6e-65f6790a67c9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Bangsal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="109" y="0" width="81" height="25" forecolor="#000000" backcolor="#F0F0DC" uuid="e5ff8be1-0338-4855-98cf-dbde89c1d666"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Pasien]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="67" y="0" width="42" height="10" uuid="4b4ff86e-4010-43fc-9827-e32e79068841"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="80" height="10" uuid="2e40d520-a1f1-4000-b355-b09079542cbb"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="460" y="0" width="22" height="10" uuid="d11159f8-f300-48a1-af69-c73b1ae9454b"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp10}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="659" y="0" width="25" height="10" uuid="e38a046c-0f7f-4987-a349-9e240bc84651"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp15}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="684" y="0" width="25" height="10" uuid="4eb9233c-ab8f-4284-8f35-c7cb214c9c2d"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp16}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="406" y="0" width="14" height="10" uuid="5c6c0286-ab6e-4dfa-b892-0090c9b0d256"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp8}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="386" y="0" width="20" height="10" uuid="0c73ccdf-708e-40ef-9772-207d98370d88"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp7}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="316" y="0" width="70" height="10" uuid="ffb8eda6-c1c8-4d97-b3c0-a8ea90d71569"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp6}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="0" width="65" height="10" uuid="536d5f80-7bdf-44e3-b1ba-249f5cecedab"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="190" y="0" width="56" height="10" uuid="6d66250f-1abd-4670-bb45-7356431b28b0"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="482" y="0" width="48" height="10" uuid="8f9c48ec-d982-4efe-9541-e79a14bc66e2"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp11}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="560" y="0" width="74" height="10" uuid="69f1158c-444d-4d0c-990d-6105157cf487"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp13}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="634" y="0" width="25" height="10" uuid="a8a2c234-211a-4a41-96b7-2f2073b78e02"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp14}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="246" y="0" width="70" height="10" uuid="854798c7-ad69-4db9-8d45-6c5bc5ab8324"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp5}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="420" y="0" width="40" height="10" uuid="183a8c3e-bc25-4273-a718-e76187d589cd"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp9}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="709" y="0" width="25" height="10" uuid="08dde486-5b42-4ebf-857d-3adeca5d236a"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp17}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="734" y="0" width="25" height="10" uuid="9f8c1358-468a-448a-8e38-3d47f97aad93"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp18}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="759" y="0" width="25" height="10" uuid="ab748b77-8d49-428f-94f8-a14dab6ff990"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp19}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="784" y="0" width="25" height="10" uuid="3b9c141b-b6d5-4a29-b708-1d10e83cd0bb"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp20}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="809" y="0" width="25" height="10" uuid="157a0a95-3a81-45a4-a3a5-1ca84e8dccd1"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp21}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="834" y="0" width="25" height="10" uuid="a069fda2-1c4c-4ddb-b066-269ddae7956d"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp22}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="859" y="0" width="25" height="10" uuid="ac63e4f4-1b3c-4f8f-b9bc-fcf72a2f53a7"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp23}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="884" y="0" width="25" height="10" uuid="1f5f8df2-d0ff-4903-b2f0-92d58bebca12"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp24}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="909" y="0" width="25" height="10" uuid="491a471a-4cf3-41e8-92c1-11186b6a2739"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp25}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="934" y="0" width="25" height="10" uuid="c95ebe80-6943-4705-a6ae-bfa2d4049197"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp26}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="959" y="0" width="25" height="10" uuid="aaa2d0a4-f3d8-4bdd-a4d7-896c04679a40"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp27}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="984" y="0" width="25" height="10" uuid="5bab7157-94fc-4614-b441-d14037df7aed"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp28}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1009" y="0" width="25" height="10" uuid="f92ab036-41a0-4b1d-9d86-81cbc3c6afd5"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp29}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1034" y="0" width="25" height="10" uuid="fd1cb894-8167-4ca6-abc7-6ada26e2135f"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp30}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1059" y="0" width="25" height="10" uuid="c2bdb3f4-35a0-46ff-8f89-2967080c2735"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp31}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1084" y="0" width="25" height="10" uuid="bde350d1-4175-4890-ad77-dbf551385248"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp32}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1109" y="0" width="25" height="10" uuid="3c27f113-1d92-42d1-8ea1-c460ea8ba86c"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp33}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1134" y="0" width="25" height="10" uuid="59b97409-aa43-47b2-95c9-e3f5e6ec723d"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp34}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1159" y="0" width="25" height="10" uuid="b54a6263-942a-413c-8096-f56ccf6ee333"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp35}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1184" y="0" width="25" height="10" uuid="d3027bdf-e17b-4a39-96d3-78de0e55fa37"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp36}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1209" y="0" width="25" height="10" uuid="68d2a223-37f5-4133-936f-ca1a53b96572"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp37}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1234" y="0" width="25" height="10" uuid="ec56a1dd-0cfc-428f-826c-7e7274529d01"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp38}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1259" y="0" width="25" height="10" uuid="d9860725-3472-4a15-9689-3c6f80afadc8"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp39}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1284" y="0" width="25" height="10" uuid="0954f481-1ef7-4176-9b05-9ccfe1268909"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp40}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1309" y="0" width="25" height="10" uuid="f389cebb-d67b-4644-8cc1-c0cfd146943d"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp41}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1334" y="0" width="25" height="10" uuid="feefcd96-8ee5-4471-94b3-fc8c8f255d28"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp42}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1359" y="0" width="25" height="10" uuid="cf5f9885-4ee4-4a83-b737-c8b853015ad2"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp43}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1384" y="0" width="25" height="10" uuid="b970336d-5bbf-474a-b1b5-259b2f8d008d"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp44}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1409" y="0" width="25" height="10" uuid="98bdcfeb-4c19-44c4-b4b8-004c60eb976c"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp45}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1434" y="0" width="25" height="10" uuid="82db056a-c211-487b-9dcb-1e60041ab177"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp46}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1459" y="0" width="25" height="10" uuid="247109b6-347b-4f3d-a66c-cfdd4399d535"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp47}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1484" y="0" width="25" height="10" uuid="b38fa422-36c6-4b88-9a2c-624f6d3f88ab"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp48}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1509" y="0" width="25" height="10" uuid="6a87cdc6-b2f7-4df8-b252-ac154df50802"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp49}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1534" y="0" width="25" height="10" uuid="80053c3e-3773-4116-a1f9-dc9dbf61ec8f"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp50}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1559" y="0" width="25" height="10" uuid="4fd96e48-ee54-4876-a84a-9dbc402f324f"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp51}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1584" y="0" width="25" height="10" uuid="724e9b10-720c-4ec1-855c-35ad895b2329"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp52}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1609" y="0" width="25" height="10" uuid="b283c023-ce1f-47ac-9aab-075e57b5cd86"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp53}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1634" y="0" width="25" height="10" uuid="f785979b-d07d-48f1-81c0-f511e3d49005"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp54}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1659" y="0" width="25" height="10" uuid="8853160d-d928-47e0-917e-a9f65ae4acf2"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp55}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1684" y="0" width="25" height="10" uuid="17dbe78f-f4a0-4ccb-bd35-70a90dbd9d6d"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp56}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1709" y="0" width="25" height="10" uuid="7b2c8cf0-d7fd-41db-b346-b90c3805f7c4"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp57}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1734" y="0" width="25" height="10" uuid="64cbcf00-3d6f-4ee0-80b4-4ae3e8cc9d82"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp58}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1759" y="0" width="25" height="10" uuid="e790bd4d-4cf0-42ca-8d86-7c8ba2a746d0"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp59}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1784" y="0" width="25" height="10" uuid="a62731f2-ac86-452f-af13-1df44ea82a17"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp60}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1809" y="0" width="25" height="10" uuid="e8374f7d-8063-4aad-b704-7798d3730f36"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp61}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1834" y="0" width="25" height="10" uuid="a660a91d-b740-4479-b42c-6253487fefc7"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp62}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1859" y="0" width="25" height="10" uuid="6922306a-0757-4d0f-9503-6ac9ff8e3061"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp63}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1884" y="0" width="25" height="10" uuid="cdc3ebaf-b641-4742-b5a0-811a4f112d2d"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp64}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1909" y="0" width="25" height="10" uuid="856be190-7c80-4517-b1f1-7b05d7c2bb2b"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp65}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1934" y="0" width="25" height="10" uuid="872b1e50-820c-42e2-84d7-45408cbead1a"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp66}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1959" y="0" width="25" height="10" uuid="f3a00f2d-8c7d-48d1-b10c-a6b9a7578652"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp67}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1984" y="0" width="25" height="10" uuid="8896cf40-fdc9-4a90-8ad9-18bd088e55e2"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp68}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2009" y="0" width="25" height="10" uuid="d951a3c5-6b4a-4f62-af9b-68780d2025bb"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp69}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2034" y="0" width="25" height="10" uuid="54d22842-e47d-4be6-9050-a3d5ec736d87"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp70}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2134" y="0" width="25" height="10" uuid="d1bd2129-718e-4522-878f-3cc7371b94d1"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp71}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2159" y="0" width="50" height="10" uuid="753ccac9-883b-45c9-b87c-5ca1705cf9ec"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp72}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2209" y="0" width="50" height="10" uuid="3dd5ff38-ebba-4612-87f0-c52a427ff457"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp73}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2259" y="0" width="50" height="10" uuid="0d44bf6f-fce8-4baa-8f19-298db26856dc"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp74}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2309" y="0" width="50" height="10" uuid="f9e66fd4-32bb-469c-b780-94626799995e"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp75}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2359" y="0" width="50" height="10" uuid="c8ab558f-231c-4911-a859-eecb98690990"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp76}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2409" y="0" width="50" height="10" uuid="5e047e96-7f75-49a1-8c3a-9ad6552603bc"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp77}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2459" y="0" width="50" height="10" uuid="c5d1d3b4-3de3-43ca-b9cc-416219908929"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp78}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2509" y="0" width="50" height="10" uuid="fd322a83-f5d6-4b7f-8b2a-787bdb6d6c86"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp79}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2559" y="0" width="50" height="10" uuid="7913396b-4023-46f4-b048-4fc15b3cbd36"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp80}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2609" y="0" width="50" height="10" uuid="4aeb2c8d-ea03-46f3-97a9-05c1a980d2a2"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp81}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2659" y="0" width="50" height="10" uuid="b23c503c-dc81-416b-b244-b0b6160a9c64"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp82}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2707" y="0" width="50" height="10" uuid="87d4a778-ed0d-4440-84f1-a0c888471edb"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp83}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2757" y="0" width="50" height="10" uuid="d029220b-b50e-491a-a1c9-2448a9e87a14"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp84}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2807" y="0" width="50" height="10" uuid="f6e9b026-a954-4f88-b6c0-633723439dd8"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp85}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2857" y="0" width="50" height="10" uuid="9dfec079-eb96-49da-9043-5047c7122a05"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp86}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2907" y="0" width="50" height="10" uuid="862c8958-6994-415e-ba2b-e2111f5aabb1"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp87}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="3057" y="0" width="50" height="10" uuid="25a6190e-d4ec-4a8a-9c3a-1cf3c86c33cc"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp90}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="3007" y="0" width="50" height="10" uuid="15e66745-281d-4122-8239-b1202008ead6"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp89}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2957" y="0" width="50" height="10" uuid="e6cdbcf8-d5dd-49b3-bf99-6440a37772ef"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp88}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="532" y="0" width="28" height="10" uuid="eaf99dee-0e92-4755-b9e2-0c9ca5e0c473"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp12}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>
