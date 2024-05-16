@@ -29,6 +29,7 @@
 	<parameter name="noresep" class="java.lang.String"/>
 	<parameter name="poli" class="java.lang.String"/>
 	<parameter name="bangsal" class="java.lang.String"/>
+	<parameter name="bayar" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select * from temporary_resep]]>
 	</queryString>
@@ -191,7 +192,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="95" splitType="Stretch">
+		<band height="103" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="157" height="16" uuid="d8be6aea-f634-4f94-9b05-67ac12748fa0">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -381,7 +382,7 @@
 				<textFieldExpression><![CDATA[$P{poli}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Transparent" x="0" y="85" width="12" height="10" uuid="5ad2c197-4178-473e-87a7-2d9b251c6906"/>
+				<reportElement mode="Transparent" x="0" y="93" width="12" height="10" uuid="5ad2c197-4178-473e-87a7-2d9b251c6906"/>
 				<textElement markup="none">
 					<font fontName="Tahoma" size="6"/>
 					<paragraph lineSpacing="Single"/>
@@ -389,7 +390,7 @@
 				<text><![CDATA[No.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="12" y="85" width="82" height="10" uuid="99bb4ac1-1017-4a5b-81d7-445f5e7989d6"/>
+				<reportElement mode="Transparent" x="12" y="93" width="82" height="10" uuid="99bb4ac1-1017-4a5b-81d7-445f5e7989d6"/>
 				<textElement markup="none">
 					<font fontName="Tahoma" size="6"/>
 					<paragraph lineSpacing="Single"/>
@@ -397,7 +398,7 @@
 				<text><![CDATA[Nama Obat]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="94" y="85" width="46" height="10" uuid="d55b112b-51d0-46c1-b5b8-5adde5665e40"/>
+				<reportElement mode="Transparent" x="94" y="93" width="46" height="10" uuid="d55b112b-51d0-46c1-b5b8-5adde5665e40"/>
 				<textElement textAlignment="Center" markup="none">
 					<font fontName="Tahoma" size="6"/>
 					<paragraph lineSpacing="Single"/>
@@ -405,7 +406,7 @@
 				<text><![CDATA[Signa]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="140" y="85" width="17" height="10" uuid="90318fc0-74b5-4868-bb82-42849651a0c2">
+				<reportElement mode="Transparent" x="140" y="93" width="17" height="10" uuid="90318fc0-74b5-4868-bb82-42849651a0c2">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" markup="none">
@@ -444,6 +445,36 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{bangsal}]]></textFieldExpression>
 			</textField>
+			<textField>
+				<reportElement x="51" y="84" width="106" height="9" uuid="ce3caa68-f19d-444f-ac28-72a564950bed">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Tahoma" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bayar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="84" width="45" height="9" uuid="8fd41020-204d-4291-86f6-a346bd095b2a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement markup="none">
+					<font fontName="Tahoma" size="6"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Jenis Bayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="46" y="84" width="5" height="9" uuid="f5cbca30-5c43-4b1b-b41e-50274de14f7b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement markup="none">
+					<font fontName="Tahoma" size="6"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
