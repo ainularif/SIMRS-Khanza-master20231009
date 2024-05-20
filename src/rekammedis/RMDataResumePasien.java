@@ -2373,9 +2373,9 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         if(akses.getjml2()>=1){
             KodeDokter.setEditable(false);
             //Kode Asli
-            //BtnDokter.setEnabled(false);
+            BtnDokter.setEnabled(false);
             //Kode Custom
-            BtnDokter.setEnabled(true);
+            //BtnDokter.setEnabled(true);
             KodeDokter.setText(akses.getkode());
             NamaDokter.setText(dokter.tampil3(KodeDokter.getText()));
             if(NamaDokter.getText().equals("")){
