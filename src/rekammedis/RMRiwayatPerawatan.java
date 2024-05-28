@@ -5209,7 +5209,6 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     "<tr class='isi'>"+
                         "<td valign='middle' bgcolor='#FFFAF8' align='center' width='5%'>Tgl.Reg</td>"+
                         "<td valign='middle' bgcolor='#FFFAF8' align='center' width='8%'>No.Rawat</td>"+
-                        "<td valign='middle' bgcolor='#FFFAF8' align='center' width='3%'>Status</td>"+
                         "<td valign='middle' bgcolor='#FFFAF8' align='center' width='84%'>Diagnosa</td>"+
                     "</tr>"
 
@@ -5217,21 +5216,21 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         
             if(R1.isSelected()==true){
                     ps=koneksi.prepareStatement(
-                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.status_lanjut, diagnosa_pasien.kd_penyakit, penyakit.nm_penyakit "+
-                        "from reg_periksa INNER JOIN diagnosa_pasien ON diagnosa_pasien.no_rawat = reg_periksa.no_rawat INNER JOIN penyakit ON penyakit.kd_penyakit = diagnosa_pasien.kd_penyakit where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? order by reg_periksa.tgl_registrasi desc limit 5");
+                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi "+
+                        "from reg_periksa where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? GROUP BY tgl_registrasi order by reg_periksa.tgl_registrasi desc limit 5");
                 }else if(R2.isSelected()==true){
                     ps=koneksi.prepareStatement(
-                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.status_lanjut, diagnosa_pasien.kd_penyakit, penyakit.nm_penyakit "+
-                        "from reg_periksa INNER JOIN diagnosa_pasien ON diagnosa_pasien.no_rawat = reg_periksa.no_rawat INNER JOIN penyakit ON penyakit.kd_penyakit = diagnosa_pasien.kd_penyakit where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? order by reg_periksa.tgl_registrasi");
+                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi "+
+                        "from reg_periksa where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? GROUP BY tgl_registrasi order by reg_periksa.tgl_registrasi desc");
                 }else if(R3.isSelected()==true){
                     ps=koneksi.prepareStatement(
-                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.status_lanjut, diagnosa_pasien.kd_penyakit, penyakit.nm_penyakit "+
-                        "from reg_periksa INNER JOIN diagnosa_pasien ON diagnosa_pasien.no_rawat = reg_periksa.no_rawat INNER JOIN penyakit ON penyakit.kd_penyakit = diagnosa_pasien.kd_penyakit where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? and "+
-                        "reg_periksa.tgl_registrasi between ? and ? order by reg_periksa.tgl_registrasi");
+                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi "+
+                        "from reg_periksa where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? and "+
+                        "reg_periksa.tgl_registrasi between ? and ?  GROUP BY tgl_registrasi order by reg_periksa.tgl_registrasi");
                 }else if(R4.isSelected()==true){
                     ps=koneksi.prepareStatement(
-                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.status_lanjut, diagnosa_pasien.kd_penyakit, penyakit.nm_penyakit "+
-                        "from reg_periksa INNER JOIN diagnosa_pasien ON diagnosa_pasien.no_rawat = reg_periksa.no_rawat INNER JOIN penyakit ON penyakit.kd_penyakit = diagnosa_pasien.kd_penyakit where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? and reg_periksa.no_rawat=?");
+                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi "+
+                        "from reg_periksa where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? and reg_periksa.no_rawat=? GROUP BY tgl_registrasi");
                 }
         
             try {
@@ -5249,23 +5248,29 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     } 
                 
                 rs=ps.executeQuery();
+   
                 while(rs.next()){
+                    rs2=koneksi.prepareStatement(
+                            "select diagnosa_pasien.kd_penyakit,penyakit.nm_penyakit, diagnosa_pasien.status "+
+                            "from diagnosa_pasien inner join penyakit on diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
+                            "where diagnosa_pasien.no_rawat='"+rs.getString("no_rawat")+"'").executeQuery();
                     htmlContent.append(
                         "<tr class='isi'>"+
                             "<td valign='top' align='center'>"+rs.getString("tgl_registrasi")+"</td>"+
                             "<td valign='top' align='center'>"+rs.getString("no_rawat")+"</td>"+
-                            "<td valign='top' align='center'>"+rs.getString("status_lanjut")+"</td>"+
                             "<td valign='top' align='left'>"+
-                                 "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
-                                 "<tr align='center'><td valign='top' width='24%' bgcolor='#FFFAF8'>Kode</td><td valign='top' width='51%' bgcolor='#FFFAF8'>Nama Penyakit</td><td valign='top' width='23%' bgcolor='#FFFAF8'>Status</td></tr>"+
-                                    "<tr></td><td valign='top'>"+rs.getString("kd_penyakit")+"</td><td valign='top'>"+rs.getString("nm_penyakit")+"</td><td valign='top'>"+"</td></tr>"+
-                                 "</table>"+
-                            "</td>"+
-                           "</tr>"         
-                        
+                                "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
+                                 "<tr align='center'><td valign='top' width='24%' bgcolor='#FFFAF8'>Kode</td><td valign='top' width='51%' bgcolor='#FFFAF8'>Nama Penyakit</td><td valign='top' width='51%' bgcolor='#FFFAF8'>Status</td></tr>"
+                    );
+                    while(rs2.next()){
+                    htmlContent.append("<tr><td valign='top'>"+rs2.getString("kd_penyakit")+"</td><td valign='top'>"+rs2.getString("nm_penyakit")+"</td><td valign='top'>"+rs2.getString("status")+"</td></tr>");
+                    }
+                    htmlContent.append(
+                        "</table>"+ 
+                       "</td>"+
+                    "</tr>" 
                     );
                 }
-                
                 htmlContent.append(
                        
                     "</table>"       
