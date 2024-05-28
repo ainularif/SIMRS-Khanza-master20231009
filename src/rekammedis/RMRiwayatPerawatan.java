@@ -162,6 +162,8 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         LoadHTMLPembelian.setEditorKit(kit);
         LoadHTMLPiutang.setEditorKit(kit);
         LoadHTMLRetensi.setEditorKit(kit);
+        //tambah LoadHTMLDiagnosa
+        LoadHTMLDiagnosa.setEditorKit(kit);
         StyleSheet styleSheet = kit.getStyleSheet();
         styleSheet.addRule(".isi td{border-right: 1px solid #e2e7dd;font: 8.5px tahoma;height:12px;border-bottom: 1px solid #e2e7dd;background: #ffffff;color:#323232;}.isi a{text-decoration:none;color:#8b9b95;padding:0 0 0 0px;font-family: Tahoma;font-size: 8.5px;border: white;}");
         Document doc = kit.createDefaultDocument();
@@ -216,6 +218,19 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         LoadHTMLRetensi.setDocument(doc);
         LoadHTMLRetensi.setEditable(false);
         LoadHTMLRetensi.addHyperlinkListener(e -> {
+            if (HyperlinkEvent.EventType.ACTIVATED.equals(e.getEventType())) {
+                Desktop desktop = Desktop.getDesktop();
+                try {
+                   desktop.browse(e.getURL().toURI());
+                } catch (Exception ex) {
+                  ex.printStackTrace();
+                }
+            }
+        });
+        //tamabah LoadHTMLDiagnosa
+        LoadHTMLDiagnosa.setDocument(doc);
+        LoadHTMLDiagnosa.setEditable(false);
+        LoadHTMLDiagnosa.addHyperlinkListener(e -> {
             if (HyperlinkEvent.EventType.ACTIVATED.equals(e.getEventType())) {
                 Desktop desktop = Desktop.getDesktop();
                 try {
@@ -388,6 +403,8 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         LoadHTMLPiutang = new widget.editorpane();
         Scroll3 = new widget.ScrollPane();
         LoadHTMLRetensi = new widget.editorpane();
+        Scroll6 = new widget.ScrollPane();
+        LoadHTMLDiagnosa = new widget.editorpane();
         PanelInput = new javax.swing.JPanel();
         ChkInput = new widget.CekBox();
         FormInput = new widget.panelisi();
@@ -572,11 +589,12 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
 
         TabRawat.addTab("Riwayat Kunjungan", Scroll1);
 
-        Scroll2.setBorder(null);
+        Scroll2.setAutoscrolls(true);
+        Scroll2.setFocusable(false);
         Scroll2.setName("Scroll2"); // NOI18N
         Scroll2.setOpaque(true);
 
-        LoadHTMLSOAPI.setBorder(null);
+        LoadHTMLSOAPI.setAutoscrolls(false);
         LoadHTMLSOAPI.setName("LoadHTMLSOAPI"); // NOI18N
         Scroll2.setViewportView(LoadHTMLSOAPI);
 
@@ -591,7 +609,6 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         Scroll.setName("Scroll"); // NOI18N
         Scroll.setOpaque(true);
 
-        LoadHTMLRiwayatPerawatan.setBorder(null);
         LoadHTMLRiwayatPerawatan.setName("LoadHTMLRiwayatPerawatan"); // NOI18N
         Scroll.setViewportView(LoadHTMLRiwayatPerawatan);
 
@@ -620,7 +637,6 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         });
         PanelAccor.add(ChkAccor, java.awt.BorderLayout.EAST);
 
-        ScrollMenu.setBorder(null);
         ScrollMenu.setName("ScrollMenu"); // NOI18N
         ScrollMenu.setOpaque(true);
         ScrollMenu.setPreferredSize(new java.awt.Dimension(255, 1220));
@@ -1577,35 +1593,37 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
 
         TabRawat.addTab("Riwayat Perawatan", internalFrame2);
 
-        Scroll4.setBorder(null);
         Scroll4.setName("Scroll4"); // NOI18N
         Scroll4.setOpaque(true);
 
-        LoadHTMLPembelian.setBorder(null);
         LoadHTMLPembelian.setName("LoadHTMLPembelian"); // NOI18N
         Scroll4.setViewportView(LoadHTMLPembelian);
 
         TabRawat.addTab("Pembelian Obat", Scroll4);
 
-        Scroll5.setBorder(null);
         Scroll5.setName("Scroll5"); // NOI18N
         Scroll5.setOpaque(true);
 
-        LoadHTMLPiutang.setBorder(null);
         LoadHTMLPiutang.setName("LoadHTMLPiutang"); // NOI18N
         Scroll5.setViewportView(LoadHTMLPiutang);
 
         TabRawat.addTab("Piutang Obat", Scroll5);
 
-        Scroll3.setBorder(null);
         Scroll3.setName("Scroll3"); // NOI18N
         Scroll3.setOpaque(true);
 
-        LoadHTMLRetensi.setBorder(null);
         LoadHTMLRetensi.setName("LoadHTMLRetensi"); // NOI18N
         Scroll3.setViewportView(LoadHTMLRetensi);
 
         TabRawat.addTab("Retensi Berkas", Scroll3);
+
+        Scroll6.setName("Scroll6"); // NOI18N
+        Scroll6.setOpaque(true);
+
+        LoadHTMLDiagnosa.setName("LoadHTMLDiagnosa"); // NOI18N
+        Scroll6.setViewportView(LoadHTMLDiagnosa);
+
+        TabRawat.addTab("Riwayat Diagnosa", Scroll6);
 
         internalFrame1.add(TabRawat, java.awt.BorderLayout.CENTER);
 
@@ -1901,6 +1919,9 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                 case 5:
                     panggilLaporan(LoadHTMLRetensi.getText()); 
                     break;
+                case 6:
+                    panggilLaporan(LoadHTMLDiagnosa.getText()); 
+                    break;
                 default:
                     break;
             }
@@ -1940,6 +1961,10 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                 case 5:
                     tampilRetensi();
                     break;
+                //tambah tampil diagnosa
+                case 6:
+                    tampilDiagnosa();
+                    break;
                 default:
                     break;
             }
@@ -1959,6 +1984,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
 
     private void TabRawatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabRawatMouseClicked
         BtnCari1ActionPerformed(null);
+        
     }//GEN-LAST:event_TabRawatMouseClicked
 
     private void chkAsuhanKeperawatanRalanKandunganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAsuhanKeperawatanRalanKandunganActionPerformed
@@ -2237,6 +2263,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.TextBox GD;
     private widget.TextBox IbuKandung;
     private widget.TextBox Jk;
+    private widget.editorpane LoadHTMLDiagnosa;
     private widget.editorpane LoadHTMLPembelian;
     private widget.editorpane LoadHTMLPiutang;
     private widget.editorpane LoadHTMLRetensi;
@@ -2259,6 +2286,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.ScrollPane Scroll3;
     private widget.ScrollPane Scroll4;
     private widget.ScrollPane Scroll5;
+    private widget.ScrollPane Scroll6;
     private widget.ScrollPane ScrollMenu;
     private widget.TextBox StatusNikah;
     private javax.swing.JTabbedPane TabRawat;
@@ -4604,7 +4632,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                 "select pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat,pemeriksaan_ralan.suhu_tubuh,pemeriksaan_ralan.tensi,pemeriksaan_ralan.nadi,pemeriksaan_ralan.respirasi,"+
                                 "pemeriksaan_ralan.tinggi,pemeriksaan_ralan.berat,pemeriksaan_ralan.gcs,pemeriksaan_ralan.spo2,pemeriksaan_ralan.kesadaran,pemeriksaan_ralan.keluhan, "+
                                 "pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.alergi,pemeriksaan_ralan.lingkar_perut,pemeriksaan_ralan.rtl,pemeriksaan_ralan.penilaian,"+
-                                "pemeriksaan_ralan.instruksi,pemeriksaan_ralan.evaluasi,pemeriksaan_ralan.nip,pegawai.nama,pegawai.jbtn from pemeriksaan_ralan inner join pegawai on pemeriksaan_ralan.nip=pegawai.nik where "+
+                                "pemeriksaan_ralan.instruksi,pemeriksaan_ralan.evaluasi,pemeriksaan_ralan.nip,pegawai.nama,pegawai.jbtn, penyakit.`nm_penyakit` from pemeriksaan_ralan inner join pegawai on pemeriksaan_ralan.nip=pegawai.nik INNER JOIN diagnosa_pasien ON diagnosa_pasien.`no_rawat` = pemeriksaan_ralan.`no_rawat`INNER JOIN penyakit ON penyakit.`kd_penyakit` = diagnosa_pasien.`kd_penyakit` where "+
                                 "pemeriksaan_ralan.no_rawat='"+rs.getString("no_rawat")+"' "+
                                 "order by pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat").executeQuery();
                         if(rs2.next()){
@@ -5172,6 +5200,84 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             System.out.println("Notifikasi : "+e);
         }
     }
+    //tambah tampil diagnosa
+    private void tampilDiagnosa(){
+        try{
+            htmlContent = new StringBuilder();
+            htmlContent.append(
+                   "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
+                    "<tr class='isi'>"+
+                        "<td valign='middle' bgcolor='#FFFAF8' align='center' width='5%'>Tgl.Reg</td>"+
+                        "<td valign='middle' bgcolor='#FFFAF8' align='center' width='8%'>No.Rawat</td>"+
+                        "<td valign='middle' bgcolor='#FFFAF8' align='center' width='3%'>Status</td>"+
+                        "<td valign='middle' bgcolor='#FFFAF8' align='center' width='84%'>Diagnosa</td>"+
+                    "</tr>"
+
+                );
+        
+            if(R1.isSelected()==true){
+                    ps=koneksi.prepareStatement(
+                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.status_lanjut, diagnosa_pasien.kd_penyakit, penyakit.nm_penyakit "+
+                        "from reg_periksa INNER JOIN diagnosa_pasien ON diagnosa_pasien.no_rawat = reg_periksa.no_rawat INNER JOIN penyakit ON penyakit.kd_penyakit = diagnosa_pasien.kd_penyakit where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? order by reg_periksa.tgl_registrasi desc limit 5");
+                }else if(R2.isSelected()==true){
+                    ps=koneksi.prepareStatement(
+                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.status_lanjut, diagnosa_pasien.kd_penyakit, penyakit.nm_penyakit "+
+                        "from reg_periksa INNER JOIN diagnosa_pasien ON diagnosa_pasien.no_rawat = reg_periksa.no_rawat INNER JOIN penyakit ON penyakit.kd_penyakit = diagnosa_pasien.kd_penyakit where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? order by reg_periksa.tgl_registrasi");
+                }else if(R3.isSelected()==true){
+                    ps=koneksi.prepareStatement(
+                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.status_lanjut, diagnosa_pasien.kd_penyakit, penyakit.nm_penyakit "+
+                        "from reg_periksa INNER JOIN diagnosa_pasien ON diagnosa_pasien.no_rawat = reg_periksa.no_rawat INNER JOIN penyakit ON penyakit.kd_penyakit = diagnosa_pasien.kd_penyakit where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? and "+
+                        "reg_periksa.tgl_registrasi between ? and ? order by reg_periksa.tgl_registrasi");
+                }else if(R4.isSelected()==true){
+                    ps=koneksi.prepareStatement(
+                        "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.status_lanjut, diagnosa_pasien.kd_penyakit, penyakit.nm_penyakit "+
+                        "from reg_periksa INNER JOIN diagnosa_pasien ON diagnosa_pasien.no_rawat = reg_periksa.no_rawat INNER JOIN penyakit ON penyakit.kd_penyakit = diagnosa_pasien.kd_penyakit where reg_periksa.stts<>'Batal' and reg_periksa.no_rkm_medis=? and reg_periksa.no_rawat=?");
+                }
+        
+            try {
+                    if(R1.isSelected()==true){
+                        ps.setString(1,NoRM.getText().trim());
+                    }else if(R2.isSelected()==true){
+                        ps.setString(1,NoRM.getText().trim());
+                    }else if(R3.isSelected()==true){
+                        ps.setString(1,NoRM.getText().trim());
+                        ps.setString(2,Valid.SetTgl(Tgl1.getSelectedItem()+""));
+                        ps.setString(3,Valid.SetTgl(Tgl2.getSelectedItem()+""));
+                    }else if(R4.isSelected()==true){
+                        ps.setString(1,NoRM.getText().trim());
+                        ps.setString(2,NoRawat.getText().trim());
+                    } 
+                
+                rs=ps.executeQuery();
+                while(rs.next()){
+                    htmlContent.append(
+                        "<tr class='isi'>"+
+                            "<td valign='top' align='center'>"+rs.getString("tgl_registrasi")+"</td>"+
+                            "<td valign='top' align='center'>"+rs.getString("no_rawat")+"</td>"+
+                            "<td valign='top' align='center'>"+rs.getString("status_lanjut")+"</td>"+
+                            "<td valign='top' align='left'>"+
+                                 "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
+                                 "<tr align='center'><td valign='top' width='24%' bgcolor='#FFFAF8'>Kode</td><td valign='top' width='51%' bgcolor='#FFFAF8'>Nama Penyakit</td><td valign='top' width='23%' bgcolor='#FFFAF8'>Status</td></tr>"+
+                                    "<tr></td><td valign='top'>"+rs.getString("kd_penyakit")+"</td><td valign='top'>"+rs.getString("nm_penyakit")+"</td><td valign='top'>"+"</td></tr>"+
+                                 "</table>"+
+                            "</td>"+
+                           "</tr>"         
+                        
+                    );
+                }
+                
+                htmlContent.append(
+                       
+                    "</table>"       
+                );
+            }catch(Exception e){
+            System.out.println("Notifikasi : "+e);
+            }
+        }catch(Exception e){
+            System.out.println("Notifikasi : "+e);
+        }
+        LoadHTMLDiagnosa.setText("<html>"+htmlContent.toString()+"</html>");
+    }
     
     private void panggilLaporan(String teks) {
         try{
@@ -5383,7 +5489,6 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                 rs3.close();
                             }
                         }
-
                         try {
                             rs3=koneksi.prepareStatement(
                                 "select master_triase_pemeriksaan.kode_pemeriksaan,master_triase_pemeriksaan.nama_pemeriksaan "+
