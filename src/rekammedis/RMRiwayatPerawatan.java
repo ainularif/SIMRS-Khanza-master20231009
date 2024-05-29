@@ -5250,38 +5250,67 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                 rs=ps.executeQuery();
    
                 while(rs.next()){
-                    rs2=koneksi.prepareStatement(
-                            "select diagnosa_pasien.kd_penyakit,penyakit.nm_penyakit, diagnosa_pasien.status "+
-                            "from diagnosa_pasien inner join penyakit on diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
-                            "where diagnosa_pasien.no_rawat='"+rs.getString("no_rawat")+"'").executeQuery();
                     htmlContent.append(
                         "<tr class='isi'>"+
                             "<td valign='top' align='center'>"+rs.getString("tgl_registrasi")+"</td>"+
                             "<td valign='top' align='center'>"+rs.getString("no_rawat")+"</td>"+
-                            "<td valign='top' align='left'>"+
-                                "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
-                                 "<tr align='center'><td valign='top' width='24%' bgcolor='#FFFAF8'>Kode</td><td valign='top' width='51%' bgcolor='#FFFAF8'>Nama Penyakit</td><td valign='top' width='51%' bgcolor='#FFFAF8'>Status</td></tr>"
+                            "<td valign='top' align='center'>"
+                            
                     );
-                    while(rs2.next()){
-                    htmlContent.append("<tr><td valign='top'>"+rs2.getString("kd_penyakit")+"</td><td valign='top'>"+rs2.getString("nm_penyakit")+"</td><td valign='top'>"+rs2.getString("status")+"</td></tr>");
+                    try {
+                        rs2=koneksi.prepareStatement(
+                                "select diagnosa_pasien.kd_penyakit,penyakit.nm_penyakit, diagnosa_pasien.status "+
+                                "from diagnosa_pasien inner join penyakit on diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
+                                "where diagnosa_pasien.no_rawat='"+rs.getString("no_rawat")+"'").executeQuery();
+                            if(rs2.next()){
+                                htmlContent.append(
+                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"+
+                                             "<tr align='center'>"
+                                                + "<td valign='top' width='15%' bgcolor='#FFFAF8'>Kode</td>"
+                                                + "<td valign='top' width='51%' bgcolor='#FFFAF8'>Nama Penyakit</td>"
+                                                + "<td valign='top' width='5%' bgcolor='#FFFAF8'>Status</td>"+
+                                             "</tr>"
+                                );
+                                rs2.beforeFirst();
+                                while(rs2.next()){
+                                htmlContent.append(
+                                        "<tr>"
+                                                + "<td valign='top'>"+rs2.getString("kd_penyakit")+"</td>"
+                                                + "<td valign='top'>"+rs2.getString("nm_penyakit")+"</td>"
+                                                + "<td valign='top'>"+rs2.getString("status")+"</td>"+
+                                        "</tr>"
+                                );
+                                }
+                                htmlContent.append(
+                                    "</table>"+ 
+                                   "</td>"+
+                                "</tr>" 
+                                );
+                            }
+                    }catch(Exception e){
+                        System.out.println("Notifikasi : "+e);
+                    } if(rs2!=null){
+                      rs2.close();
                     }
-                    htmlContent.append(
-                        "</table>"+ 
-                       "</td>"+
-                    "</tr>" 
-                    );
-                }
+                }    
                 htmlContent.append(
-                       
                     "</table>"       
                 );
             }catch(Exception e){
             System.out.println("Notifikasi : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
             }
+            LoadHTMLDiagnosa.setText("<html>"+htmlContent.toString()+"</html>");
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
         }
-        LoadHTMLDiagnosa.setText("<html>"+htmlContent.toString()+"</html>");
+        
     }
     
     private void panggilLaporan(String teks) {
