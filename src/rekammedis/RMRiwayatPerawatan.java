@@ -444,6 +444,8 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
 
         internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Riwayat/Rincian Tindakan/Terapi Pasien ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
+        internalFrame1.setRequestFocusEnabled(false);
+        internalFrame1.setVerifyInputWhenFocusTarget(false);
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
 
         panelGlass5.setName("panelGlass5"); // NOI18N
@@ -497,6 +499,11 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         Tgl2.setDisplayFormat("dd-MM-yyyy");
         Tgl2.setName("Tgl2"); // NOI18N
         Tgl2.setPreferredSize(new java.awt.Dimension(90, 23));
+        Tgl2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tgl2ActionPerformed(evt);
+            }
+        });
         Tgl2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Tgl2KeyPressed(evt);
@@ -573,8 +580,11 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         TabRawat.setBackground(new java.awt.Color(255, 255, 254));
         TabRawat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(241, 246, 236)));
         TabRawat.setForeground(new java.awt.Color(50, 50, 50));
+        TabRawat.setAutoscrolls(true);
+        TabRawat.setFocusable(false);
         TabRawat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabRawat.setName("TabRawat"); // NOI18N
+        TabRawat.setOpaque(true);
         TabRawat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TabRawatMouseClicked(evt);
@@ -595,6 +605,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         Scroll2.setOpaque(true);
 
         LoadHTMLSOAPI.setAutoscrolls(false);
+        LoadHTMLSOAPI.setDragEnabled(true);
         LoadHTMLSOAPI.setName("LoadHTMLSOAPI"); // NOI18N
         Scroll2.setViewportView(LoadHTMLSOAPI);
 
@@ -1625,7 +1636,8 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
 
         TabRawat.addTab("Riwayat Diagnosa", Scroll6);
 
-        internalFrame1.add(TabRawat, java.awt.BorderLayout.CENTER);
+        internalFrame1.add(TabRawat, java.awt.BorderLayout.PAGE_START);
+        TabRawat.getAccessibleContext().setAccessibleDescription("");
 
         PanelInput.setBackground(new java.awt.Color(255, 255, 255));
         PanelInput.setName("PanelInput"); // NOI18N
@@ -1828,6 +1840,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         internalFrame1.add(PanelInput, java.awt.BorderLayout.PAGE_START);
 
         getContentPane().add(internalFrame1, java.awt.BorderLayout.CENTER);
+        internalFrame1.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -2230,6 +2243,10 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private void ChkAccorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkAccorActionPerformed
         isMenu();
     }//GEN-LAST:event_ChkAccorActionPerformed
+
+    private void Tgl2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tgl2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tgl2ActionPerformed
 
     /**
     * @param args the command line arguments
