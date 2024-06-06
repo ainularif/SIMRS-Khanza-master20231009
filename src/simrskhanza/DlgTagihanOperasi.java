@@ -673,6 +673,8 @@ public class DlgTagihanOperasi extends javax.swing.JDialog {
         jLabel14 = new widget.Label();
         JumlahPendarahan = new widget.TextBox();
         jLabel17 = new widget.Label();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         Kd2.setName("Kd2"); // NOI18N
         Kd2.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -2132,6 +2134,22 @@ public class DlgTagihanOperasi extends javax.swing.JDialog {
         FormInput.add(jLabel17);
         jLabel17.setBounds(0, 700, 130, 23);
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel1.setText("*WAJIB DI ISI");
+        jLabel1.setName("jLabel1"); // NOI18N
+        FormInput.add(jLabel1);
+        jLabel1.setBounds(670, 400, 110, 16);
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 10)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel2.setText("*WAJIB DI ISI");
+        jLabel2.setName("jLabel2"); // NOI18N
+        FormInput.add(jLabel2);
+        jLabel2.setBounds(670, 40, 110, 16);
+
         scrollPane1.setViewportView(FormInput);
 
         PanelInput.add(scrollPane1, java.awt.BorderLayout.CENTER);
@@ -3258,6 +3276,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Button btndrpjanak;
     private widget.Button btndrumum;
     private widget.InternalFrame internalFrame1;
+    private javax.swing.JLabel jLabel1;
     private widget.Label jLabel10;
     private widget.Label jLabel11;
     private widget.Label jLabel12;
@@ -3266,6 +3285,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Label jLabel15;
     private widget.Label jLabel16;
     private widget.Label jLabel17;
+    private javax.swing.JLabel jLabel2;
     private widget.Label jLabel3;
     private widget.Label jLabel4;
     private widget.Label jLabel5;

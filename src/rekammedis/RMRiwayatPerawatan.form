@@ -314,7 +314,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-              <BorderConstraints direction="First"/>
+              <BorderConstraints direction="Center"/>
             </Constraint>
           </Constraints>
 
@@ -364,6 +364,50 @@
                     <Property name="autoscrolls" type="boolean" value="false"/>
                     <Property name="dragEnabled" type="boolean" value="true"/>
                     <Property name="name" type="java.lang.String" value="LoadHTMLSOAPI" noResource="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="widget.ScrollPane" name="Scroll7">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="Scroll7" noResource="true"/>
+                <Property name="opaque" type="boolean" value="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Riwayat S.B.A.R">
+                    <Property name="tabTitle" type="java.lang.String" value="Riwayat S.B.A.R"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="widget.editorpane" name="LoadHTMLSbar">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="LoadHTMLSbar" noResource="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="widget.ScrollPane" name="Scroll6">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="Scroll6" noResource="true"/>
+                <Property name="opaque" type="boolean" value="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Riwayat Diagnosa">
+                    <Property name="tabTitle" type="java.lang.String" value="Riwayat Diagnosa"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="widget.editorpane" name="LoadHTMLDiagnosa">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="LoadHTMLDiagnosa" noResource="true"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1980,28 +2024,6 @@
                 <Component class="widget.editorpane" name="LoadHTMLRetensi">
                   <Properties>
                     <Property name="name" type="java.lang.String" value="LoadHTMLRetensi" noResource="true"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="widget.ScrollPane" name="Scroll6">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="Scroll6" noResource="true"/>
-                <Property name="opaque" type="boolean" value="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Riwayat Diagnosa">
-                    <Property name="tabTitle" type="java.lang.String" value="Riwayat Diagnosa"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="widget.editorpane" name="LoadHTMLDiagnosa">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="LoadHTMLDiagnosa" noResource="true"/>
                   </Properties>
                 </Component>
               </SubComponents>
