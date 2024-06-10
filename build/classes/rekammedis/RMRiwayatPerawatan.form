@@ -2028,6 +2028,28 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Container class="widget.ScrollPane" name="Scroll8">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="Scroll8" noResource="true"/>
+                <Property name="opaque" type="boolean" value="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Riwayat Laborat">
+                    <Property name="tabTitle" type="java.lang.String" value="Riwayat Laborat"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="widget.editorpane" name="LoadHTMLLaborat">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="LoadHTMLLaborat" noResource="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="PanelInput">

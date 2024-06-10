@@ -224,7 +224,8 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         MnCetakSuratSakit2.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnCetakSuratSakit2.setForeground(new java.awt.Color(50, 50, 50));
         MnCetakSuratSakit2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratSakit2.setText("Cetak Surat Keterangan Sakit Pihak Ke 2");
+        MnCetakSuratSakit2.setText("Cetak Surat Sakit Pihak Ke 2");
+        MnCetakSuratSakit2.setActionCommand("Cetak Surat Sakit Pihak Ke 2");
         MnCetakSuratSakit2.setName("MnCetakSuratSakit2"); // NOI18N
         MnCetakSuratSakit2.setPreferredSize(new java.awt.Dimension(245, 26));
         MnCetakSuratSakit2.addActionListener(new java.awt.event.ActionListener() {
@@ -238,7 +239,8 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         MnCetakSuratSakit3.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnCetakSuratSakit3.setForeground(new java.awt.Color(50, 50, 50));
         MnCetakSuratSakit3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratSakit3.setText("Cetak Surat Keterangan Sakit Pihak Ke 2 (Ranap)");
+        MnCetakSuratSakit3.setText("Cetak Surat Sakit Pihak Ke 2 (Ranap)");
+        MnCetakSuratSakit3.setActionCommand("Cetak Surat Sakit Pihak Ke 2 (Ranap)");
         MnCetakSuratSakit3.setName("MnCetakSuratSakit3"); // NOI18N
         MnCetakSuratSakit3.setPreferredSize(new java.awt.Dimension(245, 26));
         MnCetakSuratSakit3.addActionListener(new java.awt.event.ActionListener() {
@@ -426,7 +428,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-06-2024" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-06-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -440,7 +442,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-06-2024" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-06-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -539,7 +541,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         TPasien.setBounds(355, 10, 365, 23);
 
         TanggalAkhir.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-06-2024" }));
+        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-06-2024" }));
         TanggalAkhir.setDisplayFormat("dd-MM-yyyy");
         TanggalAkhir.setName("TanggalAkhir"); // NOI18N
         TanggalAkhir.setOpaque(false);
@@ -585,7 +587,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         jLabel18.setBounds(556, 40, 70, 23);
 
         TglLahir.setForeground(new java.awt.Color(50, 70, 50));
-        TglLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-06-2024" }));
+        TglLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-06-2024" }));
         TglLahir.setDisplayFormat("dd-MM-yyyy");
         TglLahir.setName("TglLahir"); // NOI18N
         TglLahir.setOpaque(false);
@@ -695,7 +697,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         jLabel15.setBounds(250, 40, 80, 23);
 
         TanggalAwal.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-06-2024" }));
+        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-06-2024" }));
         TanggalAwal.setDisplayFormat("dd-MM-yyyy");
         TanggalAwal.setName("TanggalAwal"); // NOI18N
         TanggalAwal.setOpaque(false);
