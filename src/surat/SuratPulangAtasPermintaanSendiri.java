@@ -617,7 +617,7 @@ public final class SuratPulangAtasPermintaanSendiri extends javax.swing.JDialog 
         FormInput.add(jLabel11);
         jLabel11.setBounds(394, 150, 50, 23);
 
-        Hubungan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Suami", "Istri", "Anak", "Ayah", "Saudara", "Keponakan" }));
+        Hubungan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Suami", "Istri", "Anak", "Ayah", "Saudara", "Keponakan", "Ibu" }));
         Hubungan.setName("Hubungan"); // NOI18N
         Hubungan.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {

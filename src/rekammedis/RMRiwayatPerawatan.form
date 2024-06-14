@@ -33,7 +33,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-71,0,0,3,-107"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-71,0,0,4,49"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
@@ -386,6 +386,28 @@
                 <Component class="widget.editorpane" name="LoadHTMLSbar">
                   <Properties>
                     <Property name="name" type="java.lang.String" value="LoadHTMLSbar" noResource="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="widget.ScrollPane" name="Scroll8">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="Scroll8" noResource="true"/>
+                <Property name="opaque" type="boolean" value="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Riwayat Laborat">
+                    <Property name="tabTitle" type="java.lang.String" value="Riwayat Laborat"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="widget.editorpane" name="LoadHTMLLaborat">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="LoadHTMLLaborat" noResource="true"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -2024,28 +2046,6 @@
                 <Component class="widget.editorpane" name="LoadHTMLRetensi">
                   <Properties>
                     <Property name="name" type="java.lang.String" value="LoadHTMLRetensi" noResource="true"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="widget.ScrollPane" name="Scroll8">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="Scroll8" noResource="true"/>
-                <Property name="opaque" type="boolean" value="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Riwayat Laborat">
-                    <Property name="tabTitle" type="java.lang.String" value="Riwayat Laborat"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="widget.editorpane" name="LoadHTMLLaborat">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="LoadHTMLLaborat" noResource="true"/>
                   </Properties>
                 </Component>
               </SubComponents>

@@ -324,6 +324,8 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         LoadHTMLSOAPI = new widget.editorpane();
         Scroll7 = new widget.ScrollPane();
         LoadHTMLSbar = new widget.editorpane();
+        Scroll8 = new widget.ScrollPane();
+        LoadHTMLLaborat = new widget.editorpane();
         Scroll6 = new widget.ScrollPane();
         LoadHTMLDiagnosa = new widget.editorpane();
         internalFrame2 = new widget.InternalFrame();
@@ -455,8 +457,6 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         LoadHTMLPiutang = new widget.editorpane();
         Scroll3 = new widget.ScrollPane();
         LoadHTMLRetensi = new widget.editorpane();
-        Scroll8 = new widget.ScrollPane();
-        LoadHTMLLaborat = new widget.editorpane();
         PanelInput = new javax.swing.JPanel();
         ChkInput = new widget.CekBox();
         FormInput = new widget.panelisi();
@@ -670,6 +670,14 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         Scroll7.setViewportView(LoadHTMLSbar);
 
         TabRawat.addTab("Riwayat S.B.A.R", Scroll7);
+
+        Scroll8.setName("Scroll8"); // NOI18N
+        Scroll8.setOpaque(true);
+
+        LoadHTMLLaborat.setName("LoadHTMLLaborat"); // NOI18N
+        Scroll8.setViewportView(LoadHTMLLaborat);
+
+        TabRawat.addTab("Riwayat Laborat", Scroll8);
 
         Scroll6.setName("Scroll6"); // NOI18N
         Scroll6.setOpaque(true);
@@ -1696,14 +1704,6 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
 
         TabRawat.addTab("Retensi Berkas", Scroll3);
 
-        Scroll8.setName("Scroll8"); // NOI18N
-        Scroll8.setOpaque(true);
-
-        LoadHTMLLaborat.setName("LoadHTMLLaborat"); // NOI18N
-        Scroll8.setViewportView(LoadHTMLLaborat);
-
-        TabRawat.addTab("Riwayat Laborat", Scroll8);
-
         internalFrame1.add(TabRawat, java.awt.BorderLayout.CENTER);
         TabRawat.getAccessibleContext().setAccessibleDescription("");
 
@@ -1995,23 +1995,24 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     panggilLaporan(LoadHTMLSbar.getText());
                     break;
                 case 3:
+                    // TAMBAH panggilLaporan(LoadHTMLLaborat.getText());
+                    panggilLaporan(LoadHTMLLaborat.getText());
+                    break;
+                case 4:
                     // TAMBAH panggilLaporan(LoadHTMLDiagnosa.getText());
                     panggilLaporan(LoadHTMLDiagnosa.getText());
                     break;
-                case 4:
+                case 5:
                     panggilLaporan(LoadHTMLRiwayatPerawatan.getText());
                     break;
-                case 5:
+                case 6:
                     panggilLaporan(LoadHTMLPembelian.getText());
                     break;
-                case 6:
+                case 7:
                     panggilLaporan(LoadHTMLPiutang.getText());
                     break;
-                case 7:
-                    panggilLaporan(LoadHTMLRetensi.getText());
-                    break;
                 case 8:
-                    panggilLaporan(LoadHTMLLaborat.getText());
+                    panggilLaporan(LoadHTMLRetensi.getText());
                     break;
                 default:
                     break;
@@ -2044,24 +2045,25 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     //tambah tampil SBAR
                     tampilSbar();
                     break;
+                    //tambah Laporat
                 case 3:
+                    tampilLaborat();
+                    break;
+                case 4:
                     //tambah tampil diagnosa
                     tampilDiagnosa();
                     break;
-                case 4:
+                case 5:
                     tampilPerawatan();
                     break;
-                case 5:
+                case 6:
                     tampilPembelian();
                     break;
-                case 6:
+                case 7:
                     tampilPiutang();
                     break;
-                case 7:
-                    tampilRetensi();
-                    break;
                 case 8:
-                    tampilLaborat();
+                    tampilRetensi();
                     break;
                 default:
                     break;
@@ -4739,7 +4741,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                 "pemeriksaan_ralan.tinggi,pemeriksaan_ralan.berat,pemeriksaan_ralan.gcs,pemeriksaan_ralan.spo2,pemeriksaan_ralan.kesadaran,pemeriksaan_ralan.keluhan, "+
                                 "pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.alergi,pemeriksaan_ralan.lingkar_perut,pemeriksaan_ralan.rtl,pemeriksaan_ralan.penilaian,"+
                                 "pemeriksaan_ralan.instruksi,pemeriksaan_ralan.evaluasi,pemeriksaan_ralan.nip,pegawai.nama,pegawai.jbtn from pemeriksaan_ralan inner join pegawai on pemeriksaan_ralan.nip=pegawai.nik where "+
-                                "pemeriksaan_ralan.no_rawat='"+rs.getString("no_rawat")+"' "+
+                                "pemeriksaan_ralan.keluhan NOT LIKE '%::%' AND pemeriksaan_ralan.penilaian NOT LIKE '%::%' and pemeriksaan_ralan.pemeriksaan NOT LIKE '%::%' AND pemeriksaan_ralan.rtl NOT LIKE '%::%' and pemeriksaan_ralan.instruksi NOT LIKE '%::%' and pemeriksaan_ralan.no_rawat='"+rs.getString("no_rawat")+"' "+
                                 "order by pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat").executeQuery();
                         if(rs2.next()){
                             htmlContent.append(
@@ -4799,7 +4801,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                 "pemeriksaan_ranap.instruksi,pemeriksaan_ranap.evaluasi,pemeriksaan_ranap.nip,pegawai.nama,pegawai.jbtn "+
                                 "from pasien inner join reg_periksa on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                                 "inner join pemeriksaan_ranap on pemeriksaan_ranap.no_rawat=reg_periksa.no_rawat "+
-                                "inner join pegawai on pemeriksaan_ranap.nip=pegawai.nik where pemeriksaan_ranap.no_rawat='"+rs.getString("no_rawat")+"' "+
+                                "inner join pegawai on pemeriksaan_ranap.nip=pegawai.nik where pemeriksaan_ranap.keluhan NOT LIKE '%::%' AND pemeriksaan_ranap.penilaian NOT LIKE '%::%' and pemeriksaan_ranap.pemeriksaan NOT LIKE '%::%' AND pemeriksaan_ranap.rtl NOT LIKE '%::%' and pemeriksaan_ranap.no_rawat='"+rs.getString("no_rawat")+"' "+
                                 "order by pemeriksaan_ranap.tgl_perawatan,pemeriksaan_ranap.jam_rawat").executeQuery();
                         if(rs2.next()){
                             htmlContent.append(
