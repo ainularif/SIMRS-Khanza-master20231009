@@ -5527,7 +5527,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                 + "from pasien inner join reg_periksa on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "
                                 + "inner join pemeriksaan_ranap on pemeriksaan_ranap.no_rawat=reg_periksa.no_rawat "
                                 + "inner join pegawai on pemeriksaan_ranap.nip=pegawai.nik where pemeriksaan_ranap.keluhan LIKE '%::%' AND pemeriksaan_ranap.penilaian LIKE '%::%' and pemeriksaan_ranap.pemeriksaan LIKE '%::%' AND pemeriksaan_ranap.rtl LIKE '%::%' and pemeriksaan_ranap.instruksi LIKE '%::%' and pemeriksaan_ranap.no_rawat='" + rs.getString("no_rawat") + "' "
-                                + "order by pemeriksaan_ranap.tgl_perawatan,pemeriksaan_ranap.jam_rawat desc").executeQuery();
+                                + "order by pemeriksaan_ranap.tgl_perawatan,pemeriksaan_ranap.jam_rawat").executeQuery();
                         if (rs2.next()) {
                             htmlContent.append(
                                     "<tr class='isi'>"

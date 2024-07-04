@@ -248,7 +248,6 @@ public final class DlgRujuk extends javax.swing.JDialog {
         jLabel13 = new widget.Label();
         jLabel14 = new widget.Label();
         jLabel15 = new widget.Label();
-        ket = new widget.TextBox();
         jLabel11 = new widget.Label();
         CmbJam = new widget.ComboBox();
         CmbMenit = new widget.ComboBox();
@@ -257,6 +256,8 @@ public final class DlgRujuk extends javax.swing.JDialog {
         CmbDetik = new widget.ComboBox();
         ktrujuk = new widget.ComboBox();
         btnDiagnosa = new widget.Button();
+        scrollPane2 = new widget.ScrollPane();
+        ket = new widget.TextArea();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -453,7 +454,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-07-2019" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-03-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -467,7 +468,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-07-2019" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-03-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -600,7 +601,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
         TPasien.setBounds(340, 10, 340, 23);
 
         DTPRujuk.setForeground(new java.awt.Color(50, 70, 50));
-        DTPRujuk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-07-2019" }));
+        DTPRujuk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-03-2023" }));
         DTPRujuk.setDisplayFormat("dd-MM-yyyy");
         DTPRujuk.setName("DTPRujuk"); // NOI18N
         DTPRujuk.setOpaque(false);
@@ -669,27 +670,17 @@ public final class DlgRujuk extends javax.swing.JDialog {
         jLabel13.setText(" Kategori Rujuk :");
         jLabel13.setName("jLabel13"); // NOI18N
         FormInput.add(jLabel13);
-        jLabel13.setBounds(416, 100, 90, 23);
+        jLabel13.setBounds(420, 110, 90, 23);
 
         jLabel14.setText(" Ambulance :");
         jLabel14.setName("jLabel14"); // NOI18N
         FormInput.add(jLabel14);
-        jLabel14.setBounds(416, 130, 90, 23);
+        jLabel14.setBounds(420, 140, 90, 23);
 
         jLabel15.setText(" Keterangan :");
         jLabel15.setName("jLabel15"); // NOI18N
         FormInput.add(jLabel15);
         jLabel15.setBounds(416, 70, 90, 23);
-
-        ket.setHighlighter(null);
-        ket.setName("ket"); // NOI18N
-        ket.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                ketKeyPressed(evt);
-            }
-        });
-        FormInput.add(ket);
-        ket.setBounds(510, 70, 170, 23);
 
         jLabel11.setText("Jam :");
         jLabel11.setName("jLabel11"); // NOI18N
@@ -724,7 +715,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
             }
         });
         FormInput.add(ambulance);
-        ambulance.setBounds(510, 130, 170, 23);
+        ambulance.setBounds(510, 140, 170, 23);
 
         ChkJln.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(195, 215, 195)));
         ChkJln.setSelected(true);
@@ -755,7 +746,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
             }
         });
         FormInput.add(ktrujuk);
-        ktrujuk.setBounds(510, 100, 170, 23);
+        ktrujuk.setBounds(510, 110, 170, 23);
 
         btnDiagnosa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         btnDiagnosa.setMnemonic('3');
@@ -773,6 +764,23 @@ public final class DlgRujuk extends javax.swing.JDialog {
         });
         FormInput.add(btnDiagnosa);
         btnDiagnosa.setBounds(359, 100, 28, 23);
+
+        scrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        scrollPane2.setName("scrollPane2"); // NOI18N
+
+        ket.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        ket.setColumns(20);
+        ket.setRows(5);
+        ket.setName("ket"); // NOI18N
+        ket.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ketKeyPressed(evt);
+            }
+        });
+        scrollPane2.setViewportView(ket);
+
+        FormInput.add(scrollPane2);
+        scrollPane2.setBounds(510, 70, 200, 38);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -1157,10 +1165,6 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
         }
     }//GEN-LAST:event_MnSuratRujukanActionPerformed
 
-    private void ketKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ketKeyPressed
-        Valid.pindah(evt,TTmpRujuk,TDiagnosa);
-    }//GEN-LAST:event_ketKeyPressed
-
     private void CmbJamKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CmbJamKeyPressed
         Valid.pindah(evt,DTPRujuk,CmbMenit);
     }//GEN-LAST:event_CmbJamKeyPressed
@@ -1207,6 +1211,10 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
     private void btnDiagnosaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnDiagnosaKeyPressed
         Valid.pindah(evt,ket,ktrujuk);
     }//GEN-LAST:event_btnDiagnosaKeyPressed
+
+    private void ketKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ketKeyPressed
+        Valid.pindah(evt,TTmpRujuk,TDiagnosa);
+    }//GEN-LAST:event_ketKeyPressed
 
     /**
     * @param args the command line arguments
@@ -1275,10 +1283,11 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
     private widget.Label jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu jPopupMenu1;
-    private widget.TextBox ket;
+    private widget.TextArea ket;
     private widget.ComboBox ktrujuk;
     private widget.panelisi panelGlass8;
     private widget.panelisi panelGlass9;
+    private widget.ScrollPane scrollPane2;
     private widget.Table tbObat;
     // End of variables declaration//GEN-END:variables
 
@@ -1398,7 +1407,7 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
     private void isForm(){
         if(ChkInput.isSelected()==true){
             ChkInput.setVisible(false);
-            PanelInput.setPreferredSize(new Dimension(WIDTH,186));
+            PanelInput.setPreferredSize(new Dimension(WIDTH,195));
             FormInput.setVisible(true);      
             ChkInput.setVisible(true);
         }else if(ChkInput.isSelected()==false){           
