@@ -1105,15 +1105,6 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                     TindakLanjut.setText(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),5).toString());
                     TInstruksi.setText(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),6).toString());
                     TEvaluasi.setText(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),7).toString());
-                    TSuhu.setText(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),8).toString());
-                    TNadi.setText(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),9).toString());
-                    TBerat.setText(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),10).toString());
-                    TRespirasi.setText(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),11).toString());
-                    SpO2.setText(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),12).toString());
-                    cmbKesadaran.setSelectedItem(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),13).toString());
-                    TTensi.setText(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),15).toString());
-                    TTinggi.setText(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),16).toString());
-                    TGCS.setText(soapterakhir.getTable().getValueAt(soapterakhir.getTable().getSelectedRow(),14).toString());
                     TEvaluasi.requestFocus();                    
                 }        
             }
