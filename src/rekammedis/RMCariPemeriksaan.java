@@ -329,7 +329,7 @@ public final class RMCariPemeriksaan extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
     public void tampil() {
-        //NAMBAH QUERY
+        //Custom (tambah kode SQL menggabungkan semua ttvnya rawat jalan)
         Valid.tabelKosong(tabMode);
         try{
             ps=koneksi.prepareStatement(
@@ -369,7 +369,7 @@ public final class RMCariPemeriksaan extends javax.swing.JDialog {
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
         }
-        //NAMBAH QUERY
+        //Custom (tambah kode SQL menggabungkan semua ttvnya rawat inap)
         try{
             ps=koneksi.prepareStatement(
                     "select pr.tgl_perawatan,pr.jam_rawat, "+

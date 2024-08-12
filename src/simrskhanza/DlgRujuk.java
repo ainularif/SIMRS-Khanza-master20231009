@@ -5,7 +5,7 @@
 
 /*
  * DlgRujuk.java
- *
+ * Custom report rptSuratRujuk, semua jika updated
  * Created on 31 Mei 10, 20:19:56
  */
 
@@ -1147,11 +1147,19 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
             param.put("emailrs",akses.getemailrs());
             param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
             Valid.MyReportqry("rptSuratRujukan.jasper","report","::[ Surat Rujukan ]::",
-                "select rujuk.rujuk_ke,rujuk.no_rujuk,reg_periksa.no_rawat,pasien.alamat,dokter.nm_dokter, "+
-                "reg_periksa.no_rkm_medis,pasien.jk,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.nm_pasien,"+
-                "reg_periksa.almt_pj,pasien.umur,reg_periksa.tgl_registrasi,rujuk.tgl_rujuk from reg_periksa "+
-                "inner join pasien inner join rujuk inner join dokter  on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                "and reg_periksa.no_rawat=rujuk.no_rawat and rujuk.kd_dokter=dokter.kd_dokter where reg_periksa.no_rawat='"+TNoRw.getText()+"'",param);
+                //Custom tambah select alamat
+                //"select rujuk.rujuk_ke,rujuk.no_rujuk,reg_periksa.no_rawat,pasien.alamat,dokter.nm_dokter, "+
+                "select rujuk.rujuk_ke,rujuk.no_rujuk,reg_periksa.no_rawat,CONCAT(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) AS alamat,dokter.nm_dokter, "+
+                "reg_periksa.no_rkm_medis,pasien.jk,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.nm_pasien, "+
+                //Custom tambah Query rujuk.keterangan
+                //"reg_periksa.almt_pj,pasien.umur,reg_periksa.tgl_registrasi,rujuk.tgl_rujuk,rujuk.keterangan from reg_periksa "+
+                "reg_periksa.almt_pj,pasien.umur,reg_periksa.tgl_registrasi,rujuk.tgl_rujuk,rujuk.keterangan from reg_periksa "+
+                //Custom nambah query inner join kelurahan, kecamatan, kabupaten, propinsi
+                //"inner join pasien inner join rujuk inner join dokter on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                "inner join pasien inner join rujuk inner join dokter INNER JOIN kelurahan INNER JOIN kecamatan INNER JOIN kabupaten INNER JOIN propinsi on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                //Custom tambah pencarian nomer rujuk
+                //"and reg_periksa.no_rawat=rujuk.no_rawat and rujuk.kd_dokter=dokter.kd_dokter where reg_periksa.no_rawat='"+TNoRw.getText()+"'",param);
+                "and reg_periksa.no_rawat=rujuk.no_rawat and rujuk.kd_dokter=dokter.kd_dokter AND pasien.kd_kel = kelurahan.kd_kel AND pasien.kd_kec = kecamatan.kd_kec AND pasien.kd_kab = kabupaten.kd_kab and pasien.kd_prop = propinsi.kd_prop where reg_periksa.no_rawat='"+TNoRw.getText()+"' and rujuk.no_rujuk='"+TNoRj.getText()+"'",param);
             this.setCursor(Cursor.getDefaultCursor());
         }
     }//GEN-LAST:event_MnSuratRujukanActionPerformed

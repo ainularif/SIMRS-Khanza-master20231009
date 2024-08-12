@@ -43,7 +43,7 @@ public class DlgCariTagihanOperasi extends javax.swing.JDialog {
     private int pilihan=0;
     private boolean sukses=true;
     private double ttljmdokter=0,ttljmpetugas=0,ttlpendapatan=0,ttlbhp=0;
-    //nambah_operasi
+    //Custom (Menambahkan nm_operasi
     private String Suspen_Piutang_Operasi_Ranap="",Operasi_Ranap="",Beban_Jasa_Medik_Dokter_Operasi_Ranap="",Utang_Jasa_Medik_Dokter_Operasi_Ranap="",
             Beban_Jasa_Medik_Paramedis_Operasi_Ranap="",Utang_Jasa_Medik_Paramedis_Operasi_Ranap="",HPP_Obat_Operasi_Ranap="",Persediaan_Obat_Kamar_Operasi_Ranap="",
             Suspen_Piutang_Operasi_Ralan="",Operasi_Ralan="",Beban_Jasa_Medik_Dokter_Operasi_Ralan="",Utang_Jasa_Medik_Dokter_Operasi_Ralan="",
@@ -3158,6 +3158,7 @@ private void MnHapusObatOperasiActionPerformed(java.awt.event.ActionEvent evt) {
         }
     }//GEN-LAST:event_MnLaporanOperasiActionPerformed
 
+    //Custom (mengambil data laporan operasi)
     private void MnUbahLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnUbahLaporanActionPerformed
         if(tbDokter.getSelectedRow()>-1){
             if(!tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString().equals("")){
@@ -3197,6 +3198,7 @@ private void MnHapusObatOperasiActionPerformed(java.awt.event.ActionEvent evt) {
         }
     }//GEN-LAST:event_MnUbahLaporanActionPerformed
 
+    //Custom (Menambahkan query laporan operasi)
     private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSimpanActionPerformed
         if(!Laporan.getText().equals("")){
             //nambah_operasi

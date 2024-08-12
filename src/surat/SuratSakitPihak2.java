@@ -1333,6 +1333,8 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
             bln_romawi = "XII";
         }
         Valid.autoNomer2("select ifnull(MAX(CONVERT(LEFT(suratsakitpihak2.no_surat,3),signed)),0) from suratsakitpihak2 where suratsakitpihak2.tanggalawal like '%" + Valid.SetTgl(TanggalAwal.getSelectedItem() + "").substring(0, 7) + "%' ",Valid.SetTgl(TanggalAwal.getSelectedItem() + "").substring(0, 4)+"/SKS-2/" + bln_romawi + "/", 3, NoSurat);
+        //Valid.autoNomer2("select ifnull(MAX(CONVERT(LEFT(suratsakitpihak2.no_surat,3),signed)),0) from suratsakitpihak2 where suratsakitpihak2.tanggalawal like '%" + Valid.SetTgl(TanggalAwal.getSelectedItem()+"").substring(0, 7) + "%' ",Valid.SetTgl(TanggalAwal.getSelectedItem() + "").substring(0, 4)+"/SKS-2/" + bln_romawi + "/", 3, NoSurat);
+        //Valid.autoNomer2("select ifnull(MAX(CONVERT(LEFT(suratsakitpihak2.no_surat,3),signed)),0) from suratsakitpihak2 where suratsakitpihak2.tanggalawal like '%" + Valid.SetTgl(TanggalAwal.getSelectedItem()+"").substring(2, 5) + "%' ",Valid.SetTgl(TanggalAwal.getSelectedItem() + "").substring(0, 4)+"/SKS-2/" + bln_romawi + "/", 3, NoSurat);
         NoSurat.requestFocus();
     }
 

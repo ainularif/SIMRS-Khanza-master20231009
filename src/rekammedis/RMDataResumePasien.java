@@ -2362,7 +2362,7 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         }
     }
     
-    //NAMBAH
+    //Custom (Asli = Non Aktif nama Dokter)
     public void isCek(){
         BtnSimpan.setEnabled(akses.getdata_resume_pasien());
         BtnHapus.setEnabled(akses.getdata_resume_pasien());

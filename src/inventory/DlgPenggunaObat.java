@@ -32,8 +32,10 @@ public class DlgPenggunaObat extends javax.swing.JDialog {
     private PreparedStatement psbarang,pspasien,psresep;
     private ResultSet rsbarang,rspasien,rsresep; 
     private int i=0,a=0;
-    private double jmlobat=0, total=0; //NAMBAH TOTAL
-    private String noresep="",dokter="",sqlsub="",rincianobat="",finger=""; //NAMBAH RINCIAN OBAT dan FINGER
+    //Custom (Tambah total=0)
+    private double jmlobat=0, total=0;
+    //Custom (Tambah Rincian Obat dan Finger)
+    private String noresep="",dokter="",sqlsub="",rincianobat="",finger="";
     private DlgCariCaraBayar penjab=new DlgCariCaraBayar(null,false);
     private DlgCariJenis jenis = new DlgCariJenis(null, false);
     private DlgCariKategori kategori = new DlgCariKategori(null, false);
@@ -846,8 +848,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     }//GEN-LAST:event_nmpenjabActionPerformed
 
     private void MCetakLaporanObatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MCetakLaporanObatActionPerformed
-        //Menambahkan Jpopup ke dalam tabel TbDokter
-        //Nambah Query dan Nambah Source
+        //Custom (Tambah JPopup ke dalam Tabel tbDokter dan menambahkan Query dan nambah Source) Saran copy semua code
         if(tabMode.getRowCount()==0){
              JOptionPane.showMessageDialog(null,"Maaf, data sudah habis...!!!!");
              TCari.requestFocus();
@@ -858,8 +859,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
             Sequel.queryu("delete from temporary_resep where temp37='"+akses.getalamatip()+"'");
             try {
                 i=0;
-                //Menambahkan Kode Satuan dan Jenis Barang
-                // SQL baris 863 : kodesatuan.satuan,databarang.kdjns,databarang.kode_golongan
+                //Custom (Tambah satuan dan jenis barang | kodesatuan.satuan, databarang.kdjns, databarang.kode_golongan)
                 psresep=koneksi.prepareStatement(
                     "select databarang.nama_brng,aturan_pakai.aturan,detail_pemberian_obat.jml,kodesatuan.satuan,databarang.kdjns,databarang.kode_golongan "+
                     "from resep_obat inner join reg_periksa inner join "+
@@ -984,9 +984,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
             param.put("finger","Dikeluarkan di "+akses.getnamars()+", Kabupaten/Kota "+akses.getkabupatenrs()+"\nDitandatangani secara elektronik oleh "+tbDokter.getValueAt(tbDokter.getSelectedRow(),6).toString()+"\nID "+(finger.equals("")?Sequel.cariIsi("SELECT ro.kd_dokter FROM resep_obat ro WHERE ro.no_resep=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),6).toString()):finger)+"\n"+Sequel.cariIsi("SELECT ro.jam FROM resep_obat ro WHERE ro.no_resep=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),6).toString()));  
             param.put("jam",Sequel.cariIsi("SELECT ro.jam FROM resep_obat ro WHERE ro.no_resep=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),6).toString()));
             param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
-            //TAMBAHAN BANGSAL Lembar Obat 3
+            //Custom (Menambahkan nama bangsal/kamar ke LembarObat3)
             param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal INNER JOIN reg_periksa rp ON ki.no_rawat = rp.no_rawat INNER JOIN resep_obat ro ON rp.no_rawat = ro.no_rawat WHERE ro.no_resep='"+tbDokter.getValueAt(tbDokter.getSelectedRow(),6).toString()+"' ORDER BY ki.tgl_keluar ASC LIMIT 1"));     
-            //param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat='"+TNoRw.getText()+"' ORDER BY ki.tgl_keluar ASC LIMIT 1"));
+            //Source sebelum revisi --> //param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat='"+TNoRw.getText()+"' ORDER BY ki.tgl_keluar ASC LIMIT 1"));
             param.put("photo","http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penyerahanresep/"+Sequel.cariIsi("select bukti_penyerahan_resep_obat.photo from bukti_penyerahan_resep_obat where bukti_penyerahan_resep_obat.no_resep=?",tbDokter.getValueAt(tbDokter.getSelectedRow(),6).toString()));
             
             Valid.MyReportqry("rptLembarObat3.jasper","report","::[ Lembar Pemberian Obat ]::","select * from temporary_resep where temporary_resep.temp37='"+akses.getalamatip()+"' order by temporary_resep.no",param);

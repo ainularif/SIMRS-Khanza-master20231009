@@ -3098,10 +3098,16 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
         BtnEdit.setEnabled(akses.getresep_dokter());
         BtnPrint.setEnabled(akses.getresep_dokter());
         BtnRekap.setEnabled(akses.getresep_obat());
+        //Custom (Menambahkan akses tombol tambah, edit, hapus, penyerahan)
+        BtnTambah.setEnabled(akses.getresep_obat());
+        BtnEdit.setEnabled(akses.getresep_obat());
+        BtnHapus.setEnabled(akses.getresep_obat());
+        BtnPenyerahan.setEnabled(akses.getresep_obat());
+        
         BtnPiutangObat.setEnabled(akses.getpiutang_obat());
         BtnKonselingFarmasi.setEnabled(akses.getkonseling_farmasi());
         BtnInformasiObat.setEnabled(akses.getpelayanan_informasi_obat());
-        //NAMBAH
+        //Custom (Tambah tombol Telaat Resep)
         BtnTelaahResep.setEnabled(akses.gettelaah_resep());
         BtnRiwayat.setEnabled(akses.getresume_pasien()); 
         BtnSEPBPJS.setEnabled(akses.getbpjs_sep()); 
@@ -3480,9 +3486,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         " inner join kamar_inap on reg_periksa.no_rawat=kamar_inap.no_rawat "+
                         " inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar "+
                         " inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+
-                        //hapus query kamar_inap.stts_pulang='-'
+                        //Custom (Hapus query kamar_inap.stts_pulang='-')
                         " where resep_obat.tgl_peresepan<>'0000-00-00' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
-//                        " where resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
+                        //" where resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
                         (semua?"":"and dokter.nm_dokter like ? and bangsal.nm_bangsal like ? and "+
                         "(resep_obat.no_resep like ? or resep_obat.no_rawat like ? or "+
                         "pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or dokter.nm_dokter like ? or penjab.png_jawab like ?)")+
@@ -3502,9 +3508,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         " inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar "+
                         " inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+
                         " inner join set_depo_ranap on set_depo_ranap.kd_bangsal=bangsal.kd_bangsal "+
-                        //hapus query kamar_inap.stts_pulang='-'
+                        //Custom (Hapus query kamar_inap.stts_pulang='-')
                         " where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
-//                      " where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
+                        //" where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
                         (semua?"":"and dokter.nm_dokter like ? and bangsal.nm_bangsal like ? and "+
                         "(resep_obat.no_resep like ? or resep_obat.no_rawat like ? or "+
                         "pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or dokter.nm_dokter like ? or penjab.png_jawab like ?)")+
@@ -3575,9 +3581,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         " inner join kamar_inap on ranap_gabung.no_rawat=kamar_inap.no_rawat "+
                         " inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar "+
                         " inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+
-                        //hapus query kamar_inap.stts_pulang='-'
+                        //Custom (Hapus query kamar_inap.stts_pulang='-')
                         " where resep_obat.tgl_peresepan<>'0000-00-00' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
-//                      " where resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
+                        //" where resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
                         (semua?"":"and dokter.nm_dokter like ? and bangsal.nm_bangsal like ? and "+
                         "(resep_obat.no_resep like ? or resep_obat.no_rawat like ? or "+
                         "pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or dokter.nm_dokter like ? or penjab.png_jawab like ?)")+
@@ -3598,9 +3604,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         " inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar "+
                         " inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+
                         " inner join set_depo_ranap on set_depo_ranap.kd_bangsal=bangsal.kd_bangsal "+
-                        //hapus query kamar_inap.stts_pulang='-'
+                        //Custom (Hapus query kamar_inap.stts_pulang='-')
                         " where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
-//                        " where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
+                        //" where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
                         (semua?"":"and dokter.nm_dokter like ? and bangsal.nm_bangsal like ? and "+
                         "(resep_obat.no_resep like ? or resep_obat.no_rawat like ? or "+
                         "pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or dokter.nm_dokter like ? or penjab.png_jawab like ?)")+
@@ -3675,9 +3681,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         " inner join kamar_inap on reg_periksa.no_rawat=kamar_inap.no_rawat "+
                         " inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar "+
                         " inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+
-                        //hapus query kamar_inap.stts_pulang='-'
+                        //Custom (Hapus query kamar_inap.stts_pulang='-')
                         " where resep_obat.tgl_peresepan<>'0000-00-00' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
-//                        " where resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
+                        //" where resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
                         (semua?"":"and dokter.nm_dokter like ? and bangsal.nm_bangsal like ? and "+
                         "(resep_obat.no_resep like ? or resep_obat.no_rawat like ? or "+
                         "pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or dokter.nm_dokter like ? or penjab.png_jawab like ?)")+
@@ -3694,9 +3700,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         " inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar "+
                         " inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+
                         " inner join set_depo_ranap on set_depo_ranap.kd_bangsal=bangsal.kd_bangsal "+
-                        //hapus query kamar_inap.stts_pulang='-'
+                        //Custom (Hapus query kamar_inap.stts_pulang='-')
                         " where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
-//                        " where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
+                        //" where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
                         (semua?"":"and dokter.nm_dokter like ? and bangsal.nm_bangsal like ? and "+
                         "(resep_obat.no_resep like ? or resep_obat.no_rawat like ? or "+
                         "pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or dokter.nm_dokter like ? or penjab.png_jawab like ?)")+
@@ -3904,9 +3910,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         " inner join kamar_inap on ranap_gabung.no_rawat=kamar_inap.no_rawat "+
                         " inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar "+
                         " inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+
-                        //hapus query kamar_inap.stts_pulang='-'
+                        //Custom (Hapus query kamar_inap.stts_pulang='-')
                         " where resep_obat.tgl_peresepan<>'0000-00-00' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
-//                      " where resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
+                        //" where resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
                         (semua?"":"and dokter.nm_dokter like ? and bangsal.nm_bangsal like ? and "+
                         "(resep_obat.no_resep like ? or resep_obat.no_rawat like ? or "+
                         "pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or dokter.nm_dokter like ? or penjab.png_jawab like ?)")+
@@ -3924,8 +3930,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         " inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar "+
                         " inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+
                         " inner join set_depo_ranap on set_depo_ranap.kd_bangsal=bangsal.kd_bangsal "+
+                        //Custom (Hapus query kamar_inap.stts_pulang='-')
                         " where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
-//                      " where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
+                        //" where set_depo_ranap.kd_depo='"+DEPOAKTIFOBAT+"' and resep_obat.tgl_peresepan<>'0000-00-00' and kamar_inap.stts_pulang='-' and resep_obat.status='ranap' and resep_obat.tgl_peresepan between ? and ? "+
                         (semua?"":"and dokter.nm_dokter like ? and bangsal.nm_bangsal like ? and "+
                         "(resep_obat.no_resep like ? or resep_obat.no_rawat like ? or "+
                         "pasien.no_rkm_medis like ? or pasien.nm_pasien like ? or dokter.nm_dokter like ? or penjab.png_jawab like ?)")+
@@ -4140,7 +4147,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         " inner join penjab on reg_periksa.kd_pj=penjab.kd_pj "+
                         " inner join kamar_inap on reg_periksa.no_rawat=kamar_inap.no_rawat "+
                         " inner join kamar on kamar_inap.kd_kamar=kamar.kd_kamar "+
-                        " inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+
+                        " inner join bangsal on kamar.kd_bangsal=bangsal.kd_bangsal "+  
                         " where kamar_inap.stts_pulang='-' and permintaan_stok_obat_pasien.tgl_permintaan between ? and ? "+
                         (semua?"":"and dokter.nm_dokter like ? and bangsal.nm_bangsal like ? and "+
                         "(permintaan_stok_obat_pasien.no_permintaan like ? or permintaan_stok_obat_pasien.no_rawat like ? or "+

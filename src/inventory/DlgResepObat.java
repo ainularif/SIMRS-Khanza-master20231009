@@ -2016,10 +2016,13 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("noresep",NoResep.getText());
             param.put("poli",Sequel.cariIsi("select poliklinik.nm_poli from poliklinik where poliklinik.kd_poli=?",Sequel.cariIsi("select reg_periksa.kd_poli from reg_periksa where reg_periksa.no_rawat=?",TNoRw.getText())));
             param.put("bayar",Sequel.cariIsi("SELECT penjab.png_jawab FROM reg_periksa INNER JOIN penjab ON reg_periksa.kd_pj = penjab.kd_pj WHERE reg_periksa.no_rawat =?",TNoRw.getText()));
-            //Tambahan Bangsal
+            //Custom (Menambahkan nama Kamar pada Label Daftar Obat)
             //param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat=?",TNoRw.getText()));
             //Revisi
-            param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat='"+TNoRw.getText()+"' ORDER BY ki.tgl_keluar ASC LIMIT 1"));   
+            //param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat='"+TNoRw.getText()+"' ORDER BY ki.tgl_keluar ASC LIMIT 1"));   
+            //Revisi 1
+            param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat='"+TNoRw.getText()+"' AND ki.stts_pulang<>'Pindah Kamar'"));   
+            
             param.put("jam",cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem());
             param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
             
@@ -2215,8 +2218,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("finger","Dikeluarkan di "+akses.getnamars()+", Kabupaten/Kota "+akses.getkabupatenrs()+"\nDitandatangani secara elektronik oleh "+NmDokter.getText()+"\nID "+(finger.equals("")?KdDokter.getText():finger)+"\n"+DTPBeri.getSelectedItem());  
             param.put("jam",cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem());
             param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
-            //TAMBAHAN BANGSAL Lembar Obat 3
-            param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat='"+TNoRw.getText()+"' ORDER BY ki.tgl_keluar ASC LIMIT 1"));
+            //Custom (Menambahkan nama kamar param.put(bangsal)
+            param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat='"+TNoRw.getText()+"' and ki.stts_pulang<>'Pindah Kamar'"));
             param.put("photo","http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/penyerahanresep/"+Sequel.cariIsi("select bukti_penyerahan_resep_obat.photo from bukti_penyerahan_resep_obat where bukti_penyerahan_resep_obat.no_resep=?",NoResep.getText()));
             
             Valid.MyReportqry("rptLembarObat3.jasper","report","::[ Lembar Pemberian Obat ]::","select * from temporary_resep where temporary_resep.temp37='"+akses.getalamatip()+"' order by temporary_resep.no",param);

@@ -184,7 +184,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         LoadHTMLPembelian.setEditorKit(kit);
         LoadHTMLPiutang.setEditorKit(kit);
         LoadHTMLRetensi.setEditorKit(kit);
-        //tambah LoadHTMLDiagnosa
+        //Custom (Menambahkan LoadHTMLDiagnosa, Sbar dan Laborat)
         LoadHTMLDiagnosa.setEditorKit(kit);
         LoadHTMLSbar.setEditorKit(kit);
         LoadHTMLLaborat.setEditorKit(kit);
@@ -251,7 +251,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
                 }
             }
         });
-        //tamabah LoadHTMLDiagnosa
+        //Custom (LoadHTMLDiagnosa)
         LoadHTMLDiagnosa.setDocument(doc);
         LoadHTMLDiagnosa.setEditable(false);
         LoadHTMLDiagnosa.addHyperlinkListener(e -> {
@@ -264,6 +264,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
                 }
             }
         });
+        //Custom (LoadHTMLSbar)
         LoadHTMLSbar.setDocument(doc);
         LoadHTMLSbar.setEditable(false);
         LoadHTMLSbar.addHyperlinkListener(e -> {
@@ -276,6 +277,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
                 }
             }
         });
+        //Custom (LoadHTMLLaborat)
         LoadHTMLLaborat.setDocument(doc);
         LoadHTMLLaborat.setEditable(false);
         LoadHTMLLaborat.addHyperlinkListener(e -> {
@@ -677,7 +679,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         LoadHTMLLaborat.setName("LoadHTMLLaborat"); // NOI18N
         Scroll8.setViewportView(LoadHTMLLaborat);
 
-        TabRawat.addTab("Riwayat Laborat", Scroll8);
+        TabRawat.addTab("Riwayat Lab & Rad", Scroll8);
 
         Scroll6.setName("Scroll6"); // NOI18N
         Scroll6.setOpaque(true);
@@ -2042,15 +2044,15 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     tampilSoapi();
                     break;
                 case 2:
-                    //tambah tampil SBAR
+                    //Custom tambah tampil SBAR
                     tampilSbar();
                     break;
-                    //tambah Laporat
+                    //Custom tambah Laborat
                 case 3:
                     tampilLaborat();
                     break;
                 case 4:
-                    //tambah tampil diagnosa
+                    //Custom tambah tampil diagnosa
                     tampilDiagnosa();
                     break;
                 case 5:
@@ -5421,7 +5423,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
 
     }
     //TAMBAH SBAR
-
+    //Custom (menambahkan private void SBAR)
     private void tampilSbar() {
         try {
             htmlContent = new StringBuilder();
@@ -5504,6 +5506,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                         + "</td>"
                                         + "<td align='left'>" + rs2.getString("penilaian").replaceAll("(\r\n|\r|\n|\n\r)", "<br>") + "</td>"
                                         + "<td align='left'>" + rs2.getString("rtl").replaceAll("(\r\n|\r|\n|\n\r)", "<br>") + "</td>"
+                                        + "<td align='left'>" + rs2.getString("instruksi").replaceAll("(\r\n|\r|\n|\n\r)", "<br>") + "</td>"
                                         + "</tr>"
                                 );
                             }
@@ -5590,7 +5593,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
         }
     }
 
-    //TAMBAH RIWAYAT LABORAT
+    //Custom (Tambah Riwayat Lab, Radiologi, Berkas Digital)
     private void tampilLaborat() {
         try {
             htmlContent = new StringBuilder();
@@ -5775,6 +5778,9 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             + "</tr>"
                     );
                     urut++;
+                    //menampilkan berkas digital di tab riwayat lab dan radiologi
+                    menampilkanBerkasDigital(rs.getString("no_rawat"));
+                    
                     if (chkCatatanDokter.isSelected() == true) {
                         try {
                             rs2 = koneksi.prepareStatement(
@@ -5840,6 +5846,136 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             + "</tr>"
                             + "</table>"
                     );
+                    
+                    //menampilkan hasil radiologi
+                    if (chkPemeriksaanRadiologi.isSelected() == true) {
+                        try {
+                            rs2 = koneksi.prepareStatement(
+                                    "select periksa_radiologi.tgl_periksa,periksa_radiologi.jam,periksa_radiologi.kd_jenis_prw, "
+                                    + "jns_perawatan_radiologi.nm_perawatan,petugas.nama,periksa_radiologi.biaya,periksa_radiologi.dokter_perujuk,"
+                                    + "dokter.nm_dokter,concat("
+                                    + "if(periksa_radiologi.proyeksi<>'',concat('Proyeksi : ',periksa_radiologi.proyeksi,', '),''),"
+                                    + "if(periksa_radiologi.kV<>'',concat('kV : ',periksa_radiologi.kV,', '),''),"
+                                    + "if(periksa_radiologi.mAS<>'',concat('mAS : ',periksa_radiologi.mAS,', '),''),"
+                                    + "if(periksa_radiologi.FFD<>'',concat('FFD : ',periksa_radiologi.FFD,', '),''),"
+                                    + "if(periksa_radiologi.BSF<>'',concat('BSF : ',periksa_radiologi.BSF,', '),''),"
+                                    + "if(periksa_radiologi.inak<>'',concat('Inak : ',periksa_radiologi.inak,', '),''),"
+                                    + "if(periksa_radiologi.jml_penyinaran<>'',concat('Jml Penyinaran : ',periksa_radiologi.jml_penyinaran,', '),''),"
+                                    + "if(periksa_radiologi.dosis<>'',concat('Dosis Radiasi : ',periksa_radiologi.dosis),'')) as proyeksi "
+                                    + "from periksa_radiologi inner join jns_perawatan_radiologi on periksa_radiologi.kd_jenis_prw=jns_perawatan_radiologi.kd_jenis_prw "
+                                    + "inner join petugas on periksa_radiologi.nip=petugas.nip inner join dokter on periksa_radiologi.kd_dokter=dokter.kd_dokter "
+                                    + "where periksa_radiologi.no_rawat='" + rs.getString("no_rawat") + "' order by periksa_radiologi.tgl_periksa,periksa_radiologi.jam").executeQuery();
+                            if (rs2.next()) {
+                                htmlContent.append(
+                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"
+                                        + "<tr><td valign='top' colspan='5'><b>Pemeriksaan Radiologi</b></td><td valign='top' colspan='1' align='right'>:</td><td valign='top'></td></tr>"
+                                        + "<tr align='center'>"
+                                        + "<td valign='top' width='4%' bgcolor='#FFFAF8'>No.</td>"
+                                        + "<td valign='top' width='15%' bgcolor='#FFFAF8'>Tanggal</td>"
+                                        + "<td valign='top' width='10%' bgcolor='#FFFAF8'>Kode</td>"
+                                        + "<td valign='top' width='26%' bgcolor='#FFFAF8'>Nama Pemeriksaan</td>"
+                                        + "<td valign='top' width='18%' bgcolor='#FFFAF8'>Dokter PJ</td>"
+                                        + "<td valign='top' width='17%' bgcolor='#FFFAF8'>Petugas</td>"
+                                        + "<td valign='top' width='10%' bgcolor='#FFFAF8'>Biaya</td>"
+                                        + "</tr>");
+                                rs2.beforeFirst();
+                                w = 1;
+                                while (rs2.next()) {
+                                    htmlContent.append(
+                                            "<tr>"
+                                            + "<td valign='top' align='center'>" + w + "</td>"
+                                            + "<td valign='top'>" + rs2.getString("tgl_periksa") + " " + rs2.getString("jam") + "</td>"
+                                            + "<td valign='top'>" + rs2.getString("kd_jenis_prw") + "</td>"
+                                            + "<td valign='top'>" + rs2.getString("nm_perawatan") + "<br>" + rs2.getString("proyeksi") + "</td>"
+                                            + "<td valign='top'>" + rs2.getString("nm_dokter") + "</td>"
+                                            + "<td valign='top'>" + rs2.getString("nama") + "</td>"
+                                            + "<td valign='top' align='right'>" + Valid.SetAngka(rs2.getDouble("biaya")) + "</td>"
+                                            + "</tr>");
+                                    w++;
+                                    biayaperawatan = biayaperawatan + rs2.getDouble("biaya");
+                                }
+                                htmlContent.append(
+                                        "</table>");
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Notifikasi : " + e);
+                        } finally {
+                            if (rs2 != null) {
+                                rs2.close();
+                            }
+                        }
+
+                        //hasil pemeriksaan radiologi
+                        try {
+                            rs2 = koneksi.prepareStatement(
+                                    "select tgl_periksa,jam, hasil from hasil_radiologi where no_rawat='" + rs.getString("no_rawat") + "' order by tgl_periksa,jam").executeQuery();
+                            if (rs2.next()) {
+                                htmlContent.append(
+                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"
+                                        + "<tr><td valign='top' colspan='3'>Bacaan/Hasil Radiologi</td></tr>"
+                                        + "<tr align='center'>"
+                                        + "<td valign='top' width='4%' bgcolor='#FFFAF8'>No.</td>"
+                                        + "<td valign='top' width='15%' bgcolor='#FFFAF8'>Tanggal</td>"
+                                        + "<td valign='top' width='81%' bgcolor='#FFFAF8'>Hasil Pemeriksaan</td>"
+                                        + "</tr>");
+                                rs2.beforeFirst();
+                                w = 1;
+                                while (rs2.next()) {
+                                    htmlContent.append(
+                                            "<tr>"
+                                            + "<td valign='top' align='center'>" + w + "</td>"
+                                            + "<td valign='top'>" + rs2.getString("tgl_periksa") + " " + rs2.getString("jam") + "</td>"
+                                            + "<td valign='top'>" + rs2.getString("hasil").replaceAll("(\r\n|\r|\n|\n\r)", "<br>") + "</td>"
+                                            + "</tr>");
+                                    w++;
+                                }
+                                htmlContent.append(
+                                        "</table>");
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Notifikasi : " + e);
+                        } finally {
+                            if (rs2 != null) {
+                                rs2.close();
+                            }
+                        }
+
+                        //gambar pemeriksaan radiologi
+                        try {
+                            rs2 = koneksi.prepareStatement(
+                                    "select tgl_periksa,jam, lokasi_gambar from gambar_radiologi where no_rawat='" + rs.getString("no_rawat") + "' order by tgl_periksa,jam").executeQuery();
+                            if (rs2.next()) {
+                                htmlContent.append(
+                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"
+                                        + "<tr><td valign='top' colspan='3'>Gambar Radiologi</td></tr>"
+                                        + "<tr align='center'>"
+                                        + "<td valign='top' width='4%' bgcolor='#FFFAF8'>No.</td>"
+                                        + "<td valign='top' width='15%' bgcolor='#FFFAF8'>Tanggal</td>"
+                                        + "<td valign='top' width='81%' bgcolor='#FFFAF8'>Gambar Radiologi</td>"
+                                        + "</tr>");
+                                rs2.beforeFirst();
+                                w = 1;
+                                while (rs2.next()) {
+                                    htmlContent.append(
+                                            "<tr>"
+                                            + "<td valign='top' align='center'>" + w + "</td>"
+                                            + "<td valign='top'>" + rs2.getString("tgl_periksa") + " " + rs2.getString("jam") + "</td>"
+                                            + "<td valign='top' align='center'><a href='http://" + koneksiDB.HOSTHYBRIDWEB() + ":" + koneksiDB.PORTWEB() + "/" + koneksiDB.HYBRIDWEB() + "/radiologi/" + rs2.getString("lokasi_gambar") + "'><img alt='Gambar Radiologi' src='http://" + koneksiDB.HOSTHYBRIDWEB() + ":" + koneksiDB.PORTWEB() + "/" + koneksiDB.HYBRIDWEB() + "/radiologi/" + rs2.getString("lokasi_gambar") + "' width='450' height='450'/></a></td>"
+                                            + "</tr>");
+                                    w++;
+                                }
+                                htmlContent.append(
+                                        "</table>");
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Notifikasi : " + e);
+                        } finally {
+                            if (rs2 != null) {
+                                rs2.close();
+                            }
+                        }
+                    }
+                    
                     //menampilkan pemeriksaan laborat
                     if (chkPemeriksaanLaborat.isSelected() == true) {
                         try {
@@ -5849,7 +5985,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             if (rs4.next()) {
                                 htmlContent.append(
                                         "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0' class='tbl_form'>"
-                                        + "<tr><td valign='top' colspan='5'>Pemeriksaan Laboratorium PK & MB</td><td valign='top' colspan='1' align='right'>:</td><td valign='top'></td></tr>"
+                                        + "<tr><td valign='top' colspan='5'><b>Pemeriksaan Laboratorium PK & MB</b></td><td valign='top' colspan='1' align='right'>:</td><td valign='top'></td></tr>"
                                         + "<tr align='center'>"
                                         + "<td valign='top' width='4%' bgcolor='#FFFAF8'>No.</td>"
                                         + "<td valign='top' width='15%' bgcolor='#FFFAF8'>Tanggal</td>"
@@ -6231,7 +6367,6 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             System.out.println("Notifikasi : " + e);
         }
     }
-    //TAMBAH RIWAYAT RADIOLOGI
 
     private void panggilLaporan(String teks) {
         try {

@@ -3076,7 +3076,7 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
         }
     }
     
-    //NAMBAH untuk edit resume
+    //Custom (Nambah untuk edit resume, kebutuhan BPJS)
     public void isCek(){
         BtnSimpan.setEnabled(akses.getdata_resume_pasien());
         BtnHapus.setEnabled(akses.getdata_resume_pasien());
