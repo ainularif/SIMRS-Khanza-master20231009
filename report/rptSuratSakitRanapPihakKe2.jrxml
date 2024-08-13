@@ -32,7 +32,7 @@ tanggalakhir,suratsakitpihak2.lamasakit,suratsakitpihak2.nama2,
  DATE_FORMAT(suratsakitpihak2.tgl_lahir,'%d-%m-%Y')as tgl_lahirpj,(suratsakitpihak2.umur)as umurpj,(suratsakitpihak2.jk)as jkpj,
  (suratsakitpihak2.alamat)as alamatpj,suratsakitpihak2.hubungan,(suratsakitpihak2.pekerjaan)as pekerjaanpj,suratsakitpihak2.instansi,perusahaan_pasien.nama_perusahaan,
  dp.nm_dokter,pasien.tgl_lahir,
-DATE_FORMAT(reg_periksa.tgl_registrasi,'%d-%m-%Y')as tgl_registrasi,pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,
+DATE_FORMAT(suratsakitpihak2.tgl_cetak,'%d-%m-%Y')as tanggalcetak,pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,
 pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat   
 from suratsakitpihak2 inner join perusahaan_pasien inner join reg_periksa inner join pasien inner join dokter d inner join dokter dp inner join kelurahan inner join kecamatan inner join kabupaten
 on pasien.perusahaan_pasien=perusahaan_pasien.kode_perusahaan and reg_periksa.no_rkm_medis=pasien.no_rkm_medis and 
@@ -115,9 +115,9 @@ and suratsakitpihak2.no_rawat=reg_periksa.no_rawat and pasien.kd_kec=kecamatan.k
 		<property name="com.jaspersoft.studio.field.tree.path" value="pasien"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="tgl_registrasi" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="tgl_registrasi"/>
-		<property name="com.jaspersoft.studio.field.label" value="tgl_registrasi"/>
+	<field name="tanggalcetak" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tanggalcetak"/>
+		<property name="com.jaspersoft.studio.field.label" value="tanggalcetak"/>
 	</field>
 	<field name="nm_pasien" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="nm_pasien"/>
@@ -535,7 +535,7 @@ and suratsakitpihak2.no_rawat=reg_periksa.no_rawat and pasien.kd_kec=kecamatan.k
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{kotars}+", "+$F{tgl_registrasi}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{kotars}+", "+$F{tanggalcetak}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="269" y="490" width="262" height="17" uuid="65c6cffd-ecc4-40ee-aaa1-fc65452ccbd5"/>

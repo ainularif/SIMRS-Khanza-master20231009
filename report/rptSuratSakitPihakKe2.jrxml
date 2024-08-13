@@ -27,7 +27,7 @@
 	<parameter name="penyakit" class="java.lang.String"/>
 	<parameter name="finger" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select DATE_FORMAT(CURDATE(),'%d-%m-%Y') AS tanggal, suratsakitpihak2.no_surat,DATE_FORMAT(suratsakitpihak2.tanggalawal,'%d-%m-%Y')as tanggalawal,DATE_FORMAT(suratsakitpihak2.tanggalakhir,'%d-%m-%Y')as 
+		<![CDATA[select DATE_FORMAT(suratsakitpihak2.tgl_cetak,'%d-%m-%Y') AS tanggalcetak, suratsakitpihak2.no_surat,DATE_FORMAT(suratsakitpihak2.tanggalawal,'%d-%m-%Y')as tanggalawal,DATE_FORMAT(suratsakitpihak2.tanggalakhir,'%d-%m-%Y')as 
 tanggalakhir,suratsakitpihak2.lamasakit,suratsakitpihak2.nama2,
  DATE_FORMAT(suratsakitpihak2.tgl_lahir,'%d-%m-%Y')as tgl_lahirpj,(suratsakitpihak2.umur)as umurpj,(suratsakitpihak2.jk)as jkpj,
  (suratsakitpihak2.alamat)as alamatpj,suratsakitpihak2.hubungan,(suratsakitpihak2.pekerjaan)as pekerjaanpj,suratsakitpihak2.instansi,perusahaan_pasien.nama_perusahaan,
@@ -115,9 +115,9 @@ and suratsakitpihak2.no_rawat=reg_periksa.no_rawat and pasien.kd_kec=kecamatan.k
 		<property name="com.jaspersoft.studio.field.tree.path" value="pasien"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="tanggal" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="tanggal"/>
-		<property name="com.jaspersoft.studio.field.label" value="tanggal"/>
+	<field name="tanggalcetak" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tanggalcetak"/>
+		<property name="com.jaspersoft.studio.field.label" value="tanggalcetak"/>
 	</field>
 	<field name="nm_pasien" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="nm_pasien"/>
@@ -356,7 +356,7 @@ and suratsakitpihak2.no_rawat=reg_periksa.no_rawat and pasien.kd_kec=kecamatan.k
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{kotars}+", "+$F{tanggal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{kotars}+", "+$F{tanggalcetak}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="193" y="92" width="167" height="14" uuid="18879ac8-270b-4c07-ae44-2b34d4233f4e">

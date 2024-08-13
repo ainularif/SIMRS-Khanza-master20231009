@@ -12,13 +12,19 @@
 	<parameter name="emailrs" class="java.lang.String"/>
 	<parameter name="logo" class="java.io.InputStream"/>
 	<queryString>
-		<![CDATA[select date_format(pasien_mati.tanggal,'%d-%m-%Y') as tanggal,pasien_mati.jam,pasien_mati.no_rkm_medis,pasien.nm_pasien,pasien_mati.no_surat,
+		<![CDATA[select date_format(pasien_mati.tgl_cetak,'%d-%m-%Y') as tanggalcetak,date_format(pasien_mati.tanggal,'%d-%m-%Y') as tanggal,pasien_mati.jam,pasien_mati.no_rkm_medis,pasien.nm_pasien,pasien_mati.no_surat,
                 pasien.jk,pasien.tmp_lahir,pasien.tgl_lahir,pasien.gol_darah,pasien.stts_nikah,pasien.umur,pasien.alamat,
                 pasien.agama,pasien_mati.keterangan,pasien_mati.temp_meninggal,pasien_mati.icd1,pasien_mati.icd2,
                 pasien_mati.icd3,pasien_mati.icd4,pasien_mati.kd_dokter,dokter.nm_dokter
                 FROM pasien_mati INNER JOIN pasien ON pasien_mati.no_rkm_medis=pasien.no_rkm_medis
                 INNER JOIN dokter ON pasien_mati.kd_dokter=dokter.kd_dokter]]>
 	</queryString>
+	<field name="tanggalcetak" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tanggalcetak"/>
+		<property name="com.jaspersoft.studio.field.label" value="tanggalcetak"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pasien_mati"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<field name="tanggal" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="tanggal"/>
 		<property name="com.jaspersoft.studio.field.label" value="tanggal"/>
@@ -394,7 +400,7 @@
 					<font fontName="Tahoma" size="11"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{kotars}+", "+$F{tanggal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{kotars}+", "+$F{tanggalcetak}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="3" y="376" width="531" height="19" uuid="0102f6c3-2d8e-4f90-955a-78b96b8d8255"/>
@@ -439,6 +445,13 @@
 					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[YAYASAN RUMAH SAKIT ISLAM LUMAJANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="49" width="411" height="13" uuid="717b85f9-927b-43a0-aaa2-f3274519b837"/>
+				<textElement>
+					<font fontName="Tahoma" size="9"/>
+				</textElement>
+				<text><![CDATA[Website : www.rsilumajang.co.id E-mail : rsi_lmj@yahoo.com]]></text>
 			</staticText>
 		</band>
 	</detail>
