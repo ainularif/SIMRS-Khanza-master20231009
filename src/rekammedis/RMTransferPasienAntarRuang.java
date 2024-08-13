@@ -1838,16 +1838,16 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
             Valid.textKosong(SuhuSebelumTransfer,"Suhu Sebelum Transfer");
         }else if(KeluhanUtamaSebelumTransfer.getText().trim().equals("")){
             Valid.textKosong(KeluhanUtamaSebelumTransfer,"Keluhan Utama Sebelum Transfer");
-        }else if(TDSetelahTransfer.getText().trim().equals("")){
-            Valid.textKosong(TDSetelahTransfer,"TD Setelah Transfer");
-        }else if(NadiSetelahTransfer.getText().trim().equals("")){
-            Valid.textKosong(NadiSetelahTransfer,"Nadi Setelah Transfer");
-        }else if(RRSetelahTransfer.getText().trim().equals("")){
-            Valid.textKosong(RRSetelahTransfer,"RR Setelah Transfer");
-        }else if(SuhuSetelahTransfer.getText().trim().equals("")){
-            Valid.textKosong(SuhuSetelahTransfer,"Suhu Setelah Transfer");
-        }else if(KeluhanUtamaSetelahTransfer.getText().trim().equals("")){
-            Valid.textKosong(KeluhanUtamaSetelahTransfer,"Keluhan Utama Setelah Transfer");
+//        }else if(TDSetelahTransfer.getText().trim().equals("")){
+//            Valid.textKosong(TDSetelahTransfer,"TD Setelah Transfer");
+//        }else if(NadiSetelahTransfer.getText().trim().equals("")){
+//            Valid.textKosong(NadiSetelahTransfer,"Nadi Setelah Transfer");
+//        }else if(RRSetelahTransfer.getText().trim().equals("")){
+//            Valid.textKosong(RRSetelahTransfer,"RR Setelah Transfer");
+//        }else if(SuhuSetelahTransfer.getText().trim().equals("")){
+//            Valid.textKosong(SuhuSetelahTransfer,"Suhu Setelah Transfer");
+//        }else if(KeluhanUtamaSetelahTransfer.getText().trim().equals("")){
+//            Valid.textKosong(KeluhanUtamaSetelahTransfer,"Keluhan Utama Setelah Transfer");
         }else if(KdDokter.getText().trim().equals("")){
             Valid.textKosong(KdDokter, "DPJP");
         }else{
