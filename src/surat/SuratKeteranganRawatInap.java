@@ -54,7 +54,7 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         setSize(628,674);
         
         tabMode=new DefaultTableModel(null,new Object[]{
-            "No.Surat","No.Rawat","No.R.M.","Nama Pasien","Dari Tanggal","Sampai Tanggal"
+            "No.Surat","No.Rawat","No.R.M.","Nama Pasien","Dari Tanggal","Sampai Tanggal", "Tanggal Cetak"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -77,6 +77,8 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
             }else if(i==4){
                 column.setPreferredWidth(90);
             }else if(i==5){
+                column.setPreferredWidth(90);
+           }else if(i==6){
                 column.setPreferredWidth(90);
            }
         }
@@ -149,7 +151,7 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         jLabel7 = new widget.Label();
         LCount = new widget.Label();
         PanelInput = new javax.swing.JPanel();
-        FormInput = new widget.PanelBiasa();
+        TgkCetak = new widget.PanelBiasa();
         jLabel3 = new widget.Label();
         NoSurat = new widget.TextBox();
         jLabel4 = new widget.Label();
@@ -160,6 +162,8 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         jLabel16 = new widget.Label();
         TanggalAwal = new widget.Tanggal();
         jLabel13 = new widget.Label();
+        TglCetak = new widget.Tanggal();
+        jLabel17 = new widget.Label();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -356,11 +360,16 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-04-2021" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-08-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
         DTPCari1.setPreferredSize(new java.awt.Dimension(90, 23));
+        DTPCari1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DTPCari1ActionPerformed(evt);
+            }
+        });
         panelGlass9.add(DTPCari1);
 
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -370,7 +379,7 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-04-2021" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-08-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -428,13 +437,13 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         PanelInput.setPreferredSize(new java.awt.Dimension(192, 96));
         PanelInput.setLayout(new java.awt.BorderLayout(1, 1));
 
-        FormInput.setName("FormInput"); // NOI18N
-        FormInput.setPreferredSize(new java.awt.Dimension(100, 165));
-        FormInput.setLayout(null);
+        TgkCetak.setName("TgkCetak"); // NOI18N
+        TgkCetak.setPreferredSize(new java.awt.Dimension(100, 165));
+        TgkCetak.setLayout(null);
 
         jLabel3.setText("No. Surat :");
         jLabel3.setName("jLabel3"); // NOI18N
-        FormInput.add(jLabel3);
+        TgkCetak.add(jLabel3);
         jLabel3.setBounds(0, 40, 70, 23);
 
         NoSurat.setHighlighter(null);
@@ -444,12 +453,12 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
                 NoSuratKeyPressed(evt);
             }
         });
-        FormInput.add(NoSurat);
+        TgkCetak.add(NoSurat);
         NoSurat.setBounds(74, 40, 141, 23);
 
         jLabel4.setText("No.Rawat :");
         jLabel4.setName("jLabel4"); // NOI18N
-        FormInput.add(jLabel4);
+        TgkCetak.add(jLabel4);
         jLabel4.setBounds(0, 10, 70, 23);
 
         TNoRw.setHighlighter(null);
@@ -459,17 +468,17 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
                 TNoRwKeyPressed(evt);
             }
         });
-        FormInput.add(TNoRw);
+        TgkCetak.add(TNoRw);
         TNoRw.setBounds(74, 10, 141, 23);
 
         TPasien.setEditable(false);
         TPasien.setHighlighter(null);
         TPasien.setName("TPasien"); // NOI18N
-        FormInput.add(TPasien);
+        TgkCetak.add(TPasien);
         TPasien.setBounds(330, 10, 390, 23);
 
         TanggalAkhir.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-04-2021" }));
+        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-08-2024" }));
         TanggalAkhir.setDisplayFormat("dd-MM-yyyy");
         TanggalAkhir.setName("TanggalAkhir"); // NOI18N
         TanggalAkhir.setOpaque(false);
@@ -483,22 +492,22 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
                 TanggalAkhirKeyPressed(evt);
             }
         });
-        FormInput.add(TanggalAkhir);
-        TanggalAkhir.setBounds(630, 40, 90, 23);
+        TgkCetak.add(TanggalAkhir);
+        TanggalAkhir.setBounds(480, 40, 90, 23);
 
         TNoRM.setEditable(false);
         TNoRM.setHighlighter(null);
         TNoRM.setName("TNoRM"); // NOI18N
-        FormInput.add(TNoRM);
+        TgkCetak.add(TNoRM);
         TNoRM.setBounds(217, 10, 111, 23);
 
         jLabel16.setText("Sampai Tanggal :");
         jLabel16.setName("jLabel16"); // NOI18N
-        FormInput.add(jLabel16);
-        jLabel16.setBounds(536, 40, 90, 23);
+        TgkCetak.add(jLabel16);
+        jLabel16.setBounds(380, 40, 90, 23);
 
         TanggalAwal.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-04-2021" }));
+        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-08-2024" }));
         TanggalAwal.setDisplayFormat("dd-MM-yyyy");
         TanggalAwal.setName("TanggalAwal"); // NOI18N
         TanggalAwal.setOpaque(false);
@@ -512,15 +521,40 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
                 TanggalAwalKeyPressed(evt);
             }
         });
-        FormInput.add(TanggalAwal);
-        TanggalAwal.setBounds(424, 40, 90, 23);
+        TgkCetak.add(TanggalAwal);
+        TanggalAwal.setBounds(290, 40, 90, 23);
 
         jLabel13.setText("Dari Tanggal :");
         jLabel13.setName("jLabel13"); // NOI18N
-        FormInput.add(jLabel13);
-        jLabel13.setBounds(340, 40, 80, 23);
+        TgkCetak.add(jLabel13);
+        jLabel13.setBounds(210, 40, 80, 23);
 
-        PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
+        TglCetak.setEditable(false);
+        TglCetak.setForeground(new java.awt.Color(50, 70, 50));
+        TglCetak.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-08-2024" }));
+        TglCetak.setDisplayFormat("dd-MM-yyyy");
+        TglCetak.setEnabled(false);
+        TglCetak.setName("TglCetak"); // NOI18N
+        TglCetak.setOpaque(false);
+        TglCetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TglCetakActionPerformed(evt);
+            }
+        });
+        TglCetak.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TglCetakKeyPressed(evt);
+            }
+        });
+        TgkCetak.add(TglCetak);
+        TglCetak.setBounds(660, 40, 90, 23);
+
+        jLabel17.setText("Tanggal Cetak :");
+        jLabel17.setName("jLabel17"); // NOI18N
+        TgkCetak.add(jLabel17);
+        jLabel17.setBounds(570, 40, 80, 23);
+
+        PanelInput.add(TgkCetak, java.awt.BorderLayout.CENTER);
 
         ChkInput.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/143.png"))); // NOI18N
         ChkInput.setMnemonic('I');
@@ -570,11 +604,11 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         }else if(TNoRw.getText().trim().equals("")||TPasien.getText().trim().equals("")){
             Valid.textKosong(TNoRw,"pasien");
         }else{
-            if(Sequel.menyimpantf("surat_keterangan_rawat_inap","?,?,?,?","No.Surat",4,new String[]{
-                    NoSurat.getText(),TNoRw.getText(),Valid.SetTgl(TanggalAwal.getSelectedItem()+""),Valid.SetTgl(TanggalAkhir.getSelectedItem()+"")
+            if(Sequel.menyimpantf("surat_keterangan_rawat_inap","?,?,?,?,?","No.Surat",5,new String[]{
+                    NoSurat.getText(),TNoRw.getText(),Valid.SetTgl(TanggalAwal.getSelectedItem()+""),Valid.SetTgl(TanggalAkhir.getSelectedItem()+""),Valid.SetTgl(TglCetak.getSelectedItem()+"")
                 })==true){
                 tabMode.addRow(new String[]{
-                    NoSurat.getText(),TNoRw.getText(),TNoRM.getText(),TPasien.getText(),Valid.SetTgl(TanggalAwal.getSelectedItem()+""),Valid.SetTgl(TanggalAkhir.getSelectedItem()+"")
+                    NoSurat.getText(),TNoRw.getText(),TNoRM.getText(),TPasien.getText(),Valid.SetTgl(TanggalAwal.getSelectedItem()+""),Valid.SetTgl(TanggalAkhir.getSelectedItem()+""),Valid.SetTgl(TglCetak.getSelectedItem()+"")
                 });
                 LCount.setText(""+tabMode.getRowCount());
                 emptTeks();
@@ -808,15 +842,27 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
                     "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw.getText()));
                 param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
                 Valid.MyReportqry("rptSuratKeteranganRawatInap.jasper","report","::[ Surat Keterangan Rawat Inap ]::",
-                              "select DATE_FORMAT(reg_periksa.tgl_registrasi,'%d-%m-%Y')as tgl_registrasi,perusahaan_pasien.nama_perusahaan,reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
-                              " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
-                              " from reg_periksa inner join pasien inner join dokter inner join kelurahan inner join perusahaan_pasien inner join kecamatan inner join kabupaten" +
+                              "select DATE_FORMAT(reg_periksa.tgl_registrasi,'%d-%m-%Y')as tgl_registrasi,perusahaan_pasien.nama_perusahaan,reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk,pasien.no_rkm_medis," +
+                              " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat,surat_keterangan_rawat_inap.tgl_cetak " +
+                              " from reg_periksa inner join pasien inner join dokter inner join kelurahan inner join perusahaan_pasien inner join kecamatan inner join kabupaten inner join surat_keterangan_rawat_inap" +
                               " on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter and pasien.kd_kel=kelurahan.kd_kel "+
-                              "and pasien.perusahaan_pasien=perusahaan_pasien.kode_perusahaan and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab "+
-                              "where reg_periksa.no_rawat='"+TNoRw.getText()+"' ",param);
+                              "and pasien.perusahaan_pasien=perusahaan_pasien.kode_perusahaan and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab and surat_keterangan_rawat_inap.no_rawat=reg_periksa.no_rawat "+
+                              "where reg_periksa.no_rawat='"+TNoRw.getText()+"' and surat_keterangan_rawat_inap.no_surat='"+NoSurat.getText()+"' ",param);
                 this.setCursor(Cursor.getDefaultCursor());  
        }
     }//GEN-LAST:event_MnCetakSuratRawatActionPerformed
+
+    private void TglCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TglCetakActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TglCetakActionPerformed
+
+    private void TglCetakKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TglCetakKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TglCetakKeyPressed
+
+    private void DTPCari1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DTPCari1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DTPCari1ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -846,7 +892,6 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
     private widget.CekBox ChkInput;
     private widget.Tanggal DTPCari1;
     private widget.Tanggal DTPCari2;
-    private widget.PanelBiasa FormInput;
     private widget.Label LCount;
     private javax.swing.JMenuItem MnCetakSuratRawat;
     private widget.TextBox NoSurat;
@@ -858,9 +903,12 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
     private widget.TextBox TPasien;
     private widget.Tanggal TanggalAkhir;
     private widget.Tanggal TanggalAwal;
+    private widget.PanelBiasa TgkCetak;
+    private widget.Tanggal TglCetak;
     private widget.InternalFrame internalFrame1;
     private widget.Label jLabel13;
     private widget.Label jLabel16;
+    private widget.Label jLabel17;
     private widget.Label jLabel19;
     private widget.Label jLabel21;
     private widget.Label jLabel3;
@@ -877,18 +925,18 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
     public void tampil() {
         Valid.tabelKosong(tabMode);
         try{
-            tgl=" surat_keterangan_rawat_inap.tanggalawal between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
+            tgl=" surat_keterangan_rawat_inap.tgl_cetak between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
             if(TCari.getText().trim().equals("")){
                 ps=koneksi.prepareStatement(
                      "select surat_keterangan_rawat_inap.no_surat,surat_keterangan_rawat_inap.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
-                     "surat_keterangan_rawat_inap.tanggalawal,surat_keterangan_rawat_inap.tanggalakhir "+                  
+                     "surat_keterangan_rawat_inap.tanggalawal,surat_keterangan_rawat_inap.tanggalakhir,surat_keterangan_rawat_inap.tgl_cetak "+                  
                      "from surat_keterangan_rawat_inap inner join reg_periksa on surat_keterangan_rawat_inap.no_rawat=reg_periksa.no_rawat "+
                      "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                      "where "+tgl+"order by surat_keterangan_rawat_inap.no_surat");
             }else{
                 ps=koneksi.prepareStatement(
                      "select surat_keterangan_rawat_inap.no_surat,surat_keterangan_rawat_inap.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
-                     "surat_keterangan_rawat_inap.tanggalawal,surat_keterangan_rawat_inap.tanggalakhir "+                  
+                     "surat_keterangan_rawat_inap.tanggalawal,surat_keterangan_rawat_inap.tanggalakhir,surat_keterangan_rawat_inap.tgl_cetak "+                  
                      "from surat_keterangan_rawat_inap inner join reg_periksa on surat_keterangan_rawat_inap.no_rawat=reg_periksa.no_rawat "+
                      "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                      "where "+tgl+"and no_surat like '%"+TCari.getText().trim()+"%' or "+
@@ -905,7 +953,8 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
                 while(rs.next()){
                     tabMode.addRow(new String[]{
                         rs.getString(1),rs.getString(2),rs.getString(3),
-                        rs.getString(4),rs.getString(5),rs.getString(6)
+                        rs.getString(4),rs.getString(5),rs.getString(6),
+                        rs.getString(7)
                         
                     });
                 }
@@ -932,8 +981,8 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         NoSurat.setText("");
         TanggalAwal.setDate(new Date());
         TanggalAkhir.setDate(new Date());
-        Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(surat_keterangan_rawat_inap.no_surat,3),signed)),0) from surat_keterangan_rawat_inap where surat_keterangan_rawat_inap.tanggalawal='"+Valid.SetTgl(TanggalAwal.getSelectedItem()+"")+"' ",
-                "SKR"+TanggalAwal.getSelectedItem().toString().substring(6,10)+TanggalAwal.getSelectedItem().toString().substring(3,5)+TanggalAwal.getSelectedItem().toString().substring(0,2),3,NoSurat); 
+        Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(surat_keterangan_rawat_inap.no_surat,3),signed)),0) from surat_keterangan_rawat_inap where surat_keterangan_rawat_inap.tgl_cetak='"+Valid.SetTgl(TglCetak.getSelectedItem()+"")+"' ",
+                "SKR"+TglCetak.getSelectedItem().toString().substring(6,10)+TglCetak.getSelectedItem().toString().substring(3,5)+TglCetak.getSelectedItem().toString().substring(0,2),3,NoSurat); 
         NoSurat.requestFocus();
     }
 
@@ -970,12 +1019,12 @@ public final class SuratKeteranganRawatInap extends javax.swing.JDialog {
         if(ChkInput.isSelected()==true){
             ChkInput.setVisible(false);
             PanelInput.setPreferredSize(new Dimension(WIDTH,96));
-            FormInput.setVisible(true);      
+            TgkCetak.setVisible(true);      
             ChkInput.setVisible(true);
         }else if(ChkInput.isSelected()==false){           
             ChkInput.setVisible(false);            
             PanelInput.setPreferredSize(new Dimension(WIDTH,20));
-            FormInput.setVisible(false);      
+            TgkCetak.setVisible(false);      
             ChkInput.setVisible(true);
         }
     }
