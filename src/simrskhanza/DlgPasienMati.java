@@ -630,7 +630,7 @@ public class DlgPasienMati extends javax.swing.JDialog {
 
         DTPTgl.setEditable(false);
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-08-2024" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-08-2024" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -840,7 +840,7 @@ public class DlgPasienMati extends javax.swing.JDialog {
 
         TglCetak.setEditable(false);
         TglCetak.setForeground(new java.awt.Color(50, 70, 50));
-        TglCetak.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-08-2024" }));
+        TglCetak.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "14-08-2024" }));
         TglCetak.setDisplayFormat("dd-MM-yyyy");
         TglCetak.setEnabled(false);
         TglCetak.setName("TglCetak"); // NOI18N
@@ -1339,7 +1339,7 @@ private void MnCetakSuratMatiActionPerformed(java.awt.event.ActionEvent evt) {//
         int b=tabMode.getRowCount();
         LCount.setText(""+b);
     }
-// tambah query surat sakit dan kolom surat sakit didatabase
+    // tambah query surat sakit dan kolom surat sakit didatabase
     public void emptTeks() {
         TNoRM.setText("");
         TPasien.setText("");
@@ -1357,33 +1357,9 @@ private void MnCetakSuratMatiActionPerformed(java.awt.event.ActionEvent evt) {//
         bln_angka = "";
         bln_romawi = "";
         bln_angka = DTPTgl.getSelectedItem().toString().substring(3,5);
-        if (bln_angka.equals("01")) {
-            bln_romawi = "I";
-        } else if (bln_angka.equals("02")) {
-            bln_romawi = "II";
-        } else if (bln_angka.equals("03")) {
-            bln_romawi = "III";
-        } else if (bln_angka.equals("04")) {
-            bln_romawi = "IV";
-        } else if (bln_angka.equals("05")) {
-            bln_romawi = "V";
-        } else if (bln_angka.equals("06")) {
-            bln_romawi = "VI";
-        } else if (bln_angka.equals("07")) {
-            bln_romawi = "VII";
-        } else if (bln_angka.equals("08")) {
-            bln_romawi = "VIII";
-        } else if (bln_angka.equals("09")) {
-            bln_romawi = "IX";
-        } else if (bln_angka.equals("10")) {
-            bln_romawi = "X";
-        } else if (bln_angka.equals("11")) {
-            bln_romawi = "XI";
-        } else if (bln_angka.equals("12")) {
-            bln_romawi = "XII";
-        }
-       Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(pasien_mati.no_surat,3),signed)),0) from pasien_mati where pasien_mati.tanggal='"+Valid.SetTgl(DTPTgl .getSelectedItem()+"")+"' ",
-                "SKS"+DTPTgl.getSelectedItem().toString().substring(6,10)+DTPTgl.getSelectedItem().toString().substring(3,5)+DTPTgl.getSelectedItem().toString().substring(0,2),3,TNoSurat); 
+        
+        Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(pasien_mati.no_surat,3),signed)),0) from pasien_mati where pasien_mati.tanggal='"+Valid.SetTgl(TglCetak.getSelectedItem()+"")+"' ",
+                "SKM"+TglCetak.getSelectedItem().toString().substring(6,10)+TglCetak.getSelectedItem().toString().substring(3,5)+TglCetak.getSelectedItem().toString().substring(0,2),3,TNoSurat); 
         TNoSurat.requestFocus();
         
     }
