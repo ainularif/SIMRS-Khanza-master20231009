@@ -19,9 +19,9 @@
 	<parameter name="dokter" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk,
- pasien.nm_pasien,pasien.jk,pasien.umur,pasien.pekerjaan,pasien.alamat,pasien.no_rkm_medis
- from reg_periksa inner join pasien inner join dokter
- on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter]]>
+ pasien.nm_pasien,pasien.jk,pasien.umur,pasien.pekerjaan,pasien.alamat,pasien.no_rkm_medis,surat_keterangan_rawat_inap.tgl_cetak
+ from reg_periksa inner join pasien inner join dokter INNER JOIN surat_keterangan_rawat_inap ON reg_periksa.no_rkm_medis=pasien.no_rkm_medis
+ on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter AND surat_keterangan_rawat_inap.no_rawat=reg_periksa.no_rawat]]>
 	</queryString>
 	<field name="no_rkm_medis" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -57,6 +57,7 @@
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="tgl_registrasi" class="java.lang.String"/>
+	<field name="tgl_cetak" class="java.lang.String"/>
 	<field name="nama_perusahaan" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
@@ -269,12 +270,12 @@
 				<text><![CDATA[Dokter Yang Merawat]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="322" y="360" width="156" height="20" uuid="bb2be2c8-0d11-49d4-ac51-bf4fb8c859cb"/>
+				<reportElement x="320" y="360" width="198" height="20" uuid="bb2be2c8-0d11-49d4-ac51-bf4fb8c859cb"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="12"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{kotars}+", "+$P{TanggalAwal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{kotars}+", "+$F{tgl_cetak}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
