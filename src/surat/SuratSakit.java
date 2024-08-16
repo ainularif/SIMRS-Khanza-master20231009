@@ -66,23 +66,23 @@ public final class SuratSakit extends javax.swing.JDialog {
 
         for (i = 0; i < 9; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
-            if(i==0){
+            if (i == 0) {
                 column.setPreferredWidth(105);
-            }else if(i==1){
+            } else if (i == 1) {
                 column.setPreferredWidth(105);
-            }else if(i==2){
+            } else if (i == 2) {
                 column.setPreferredWidth(70);
-            }else if(i==3){
+            } else if (i == 3) {
                 column.setPreferredWidth(170);
-            }else if(i==4){
+            } else if (i == 4) {
                 column.setPreferredWidth(90);
-            }else if(i==5){
+            } else if (i == 5) {
                 column.setPreferredWidth(90);
-            }else if(i==6){
+            } else if (i == 6) {
                 column.setPreferredWidth(90);
-            }else if(i==7){
+            } else if (i == 7) {
                 column.setPreferredWidth(90);
-            }else if(i==8){
+            } else if (i == 8) {
                 column.setPreferredWidth(90);
             }
         }
@@ -743,40 +743,40 @@ public final class SuratSakit extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnBatalKeyPressed
 
     private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusActionPerformed
-        if(Valid.hapusTabletf(tabMode,NoSurat,"suratsakit","no_surat")==true){
-            if(tbObat.getSelectedRow()!= -1){
+        if (Valid.hapusTabletf(tabMode, NoSurat, "suratsakit", "no_surat") == true) {
+            if (tbObat.getSelectedRow() != -1) {
                 tabMode.removeRow(tbObat.getSelectedRow());
                 emptTeks();
-                LCount.setText(""+tabMode.getRowCount());
+                LCount.setText("" + tabMode.getRowCount());
             }
         }
 }//GEN-LAST:event_BtnHapusActionPerformed
 
     private void BtnHapusKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnHapusKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_SPACE){
+        if (evt.getKeyCode() == KeyEvent.VK_SPACE) {
             BtnHapusActionPerformed(null);
-        }else{
+        } else {
             Valid.pindah(evt, BtnBatal, BtnEdit);
         }
 }//GEN-LAST:event_BtnHapusKeyPressed
 
     private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditActionPerformed
-        if(NoSurat.getText().trim().equals("")){
-            Valid.textKosong(NoSurat,"No.Surat Sakit");      
-        }else if(TNoRw.getText().trim().equals("")||TPasien.getText().trim().equals("")){
-            Valid.textKosong(TNoRw,"pasien");    
-        }else{    
-            if(tbObat.getSelectedRow()!= -1){
-                if(Sequel.mengedittf("suratsakit","no_surat=?","no_surat=?,no_rawat=?,tanggalawal=?,tanggalakhir=?,lamasakit=?",6,new String[]{
-                    NoSurat.getText(),TNoRw.getText(),Valid.SetTgl(TanggalAwal.getSelectedItem()+""),Valid.SetTgl(TanggalAkhir.getSelectedItem()+""),LamaSakit.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
-                })==true){
-                    tbObat.setValueAt(NoSurat.getText(),tbObat.getSelectedRow(),0);
-                    tbObat.setValueAt(TNoRw.getText(),tbObat.getSelectedRow(),1);
-                    tbObat.setValueAt(TNoRM.getText(),tbObat.getSelectedRow(),2);
-                    tbObat.setValueAt(TPasien.getText(),tbObat.getSelectedRow(),3);
-                    tbObat.setValueAt(Valid.SetTgl(TanggalAwal.getSelectedItem()+""),tbObat.getSelectedRow(),4);
-                    tbObat.setValueAt(Valid.SetTgl(TanggalAkhir.getSelectedItem()+""),tbObat.getSelectedRow(),5);
-                    tbObat.setValueAt(LamaSakit.getText(),tbObat.getSelectedRow(),6);
+        if (NoSurat.getText().trim().equals("")) {
+            Valid.textKosong(NoSurat, "No.Surat Sakit");
+        } else if (TNoRw.getText().trim().equals("") || TPasien.getText().trim().equals("")) {
+            Valid.textKosong(TNoRw, "pasien");
+        } else {
+            if (tbObat.getSelectedRow() != -1) {
+                if (Sequel.mengedittf("suratsakit", "no_surat=?", "no_surat=?,no_rawat=?,tanggalawal=?,tanggalakhir=?,lamasakit=?", 6, new String[]{
+                    NoSurat.getText(), TNoRw.getText(), Valid.SetTgl(TanggalAwal.getSelectedItem() + ""), Valid.SetTgl(TanggalAkhir.getSelectedItem() + ""), LamaSakit.getText(), tbObat.getValueAt(tbObat.getSelectedRow(), 0).toString()
+                }) == true) {
+                    tbObat.setValueAt(NoSurat.getText(), tbObat.getSelectedRow(), 0);
+                    tbObat.setValueAt(TNoRw.getText(), tbObat.getSelectedRow(), 1);
+                    tbObat.setValueAt(TNoRM.getText(), tbObat.getSelectedRow(), 2);
+                    tbObat.setValueAt(TPasien.getText(), tbObat.getSelectedRow(), 3);
+                    tbObat.setValueAt(Valid.SetTgl(TanggalAwal.getSelectedItem() + ""), tbObat.getSelectedRow(), 4);
+                    tbObat.setValueAt(Valid.SetTgl(TanggalAkhir.getSelectedItem() + ""), tbObat.getSelectedRow(), 5);
+                    tbObat.setValueAt(LamaSakit.getText(), tbObat.getSelectedRow(), 6);
                     emptTeks();
                 }
             }

@@ -464,6 +464,11 @@ public final class DlgStatusDataRM extends javax.swing.JDialog {
         nmpenjab.setEditable(false);
         nmpenjab.setName("nmpenjab"); // NOI18N
         nmpenjab.setPreferredSize(new java.awt.Dimension(190, 23));
+        nmpenjab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nmpenjabActionPerformed(evt);
+            }
+        });
         FormInput.add(nmpenjab);
 
         BtnSeek3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
@@ -822,6 +827,10 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         //Valid.pindah(evt,DTPCari2,TCari);
     }//GEN-LAST:event_BtnSeek3KeyPressed
 
+    private void nmpenjabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nmpenjabActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nmpenjabActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -875,13 +884,14 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); 
             Valid.tabelKosong(tabMode);   
             ps=koneksi.prepareStatement(
-                "select reg_periksa.no_rawat,reg_periksa.tgl_registrasi,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,poliklinik.nm_poli,reg_periksa.status_lanjut "+
-                "from reg_periksa inner join dokter on reg_periksa.kd_dokter=dokter.kd_dokter inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                "select reg_periksa.no_rawat,reg_periksa.tgl_registrasi,IF(reg_periksa.`status_lanjut`='Ranap',dpjp.nm_dokter,d.nm_dokter) AS dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,poliklinik.nm_poli,reg_periksa.status_lanjut "+
+                "from reg_periksa INNER JOIN dokter AS d on reg_periksa.kd_dokter=d.kd_dokter inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                "INNER JOIN dpjp_ranap AS dr ON  reg_periksa.no_rawat=dr.no_rawat INNER JOIN dokter AS dpjp ON dr.kd_dokter=dpjp.kd_dokter "+
                 "inner join poliklinik on reg_periksa.kd_poli=poliklinik.kd_poli inner join penjab on reg_periksa.kd_pj=penjab.kd_pj where  "+
                 "concat(reg_periksa.kd_poli,poliklinik.nm_poli) like ? and concat(reg_periksa.kd_pj,penjab.png_jawab) like ? "+
                 "and reg_periksa.tgl_registrasi between ? and ? and reg_periksa.status_lanjut like ? "+
-                (TCari.getText().equals("")?"":"and (reg_periksa.no_rawat like ? or dokter.nm_dokter like ? or reg_periksa.no_rkm_medis like ? or "+
-                "pasien.nm_pasien like ? or poliklinik.nm_poli like ? or penjab.png_jawab like ?) ")+"order by reg_periksa.tgl_registrasi");
+                (TCari.getText().equals("")?"":"and (reg_periksa.no_rawat like ? or dpjp.nm_dokter like ? or reg_periksa.no_rkm_medis like ? or "+
+                "pasien.nm_pasien like ? or poliklinik.nm_poli like ? or penjab.png_jawab like ? or d.nm_dokter like ?) ")+" group by reg_periksa.no_rawat order by reg_periksa.tgl_registrasi");
             try {
                 ps.setString(1,"%"+kdpoli.getText()+nmpoli.getText()+"%");
                 ps.setString(2,"%"+kdpenjab.getText()+nmpenjab.getText()+"%");
@@ -895,6 +905,7 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                     ps.setString(9,"%"+TCari.getText().trim()+"%");
                     ps.setString(10,"%"+TCari.getText().trim()+"%");
                     ps.setString(11,"%"+TCari.getText().trim()+"%");
+                    ps.setString(12,"%"+TCari.getText().trim()+"%");
                 }
                     
                 rs=ps.executeQuery();
@@ -950,7 +961,7 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                         tidakadaicd9++;
                     }
                     tabMode.addRow(new Object[]{
-                        rs.getString("no_rawat"),rs.getString("tgl_registrasi"),rs.getString("nm_dokter"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),rs.getString("nm_poli"),rs.getString("status_lanjut"),
+                        rs.getString("no_rawat"),rs.getString("tgl_registrasi"),rs.getString("dokter"),rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),rs.getString("nm_poli"),rs.getString("status_lanjut"),
                         soapiralan,soapiranap,resumeralan,resumeranap,triaseigd,askepigd,icd10,icd9
                     });                    
                 }
