@@ -225,6 +225,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
+        jPopupMenu1.setPreferredSize(new java.awt.Dimension(295, 60));
 
         MnCetakSuratSakit2.setBackground(new java.awt.Color(250, 250, 250));
         MnCetakSuratSakit2.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -433,7 +434,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-08-2024" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-08-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -447,7 +448,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-08-2024" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-08-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -551,7 +552,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         TPasien.setBounds(355, 10, 365, 23);
 
         TanggalAkhir.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-08-2024" }));
+        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-08-2024" }));
         TanggalAkhir.setDisplayFormat("dd-MM-yyyy");
         TanggalAkhir.setName("TanggalAkhir"); // NOI18N
         TanggalAkhir.setOpaque(false);
@@ -597,7 +598,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         jLabel18.setBounds(500, 40, 70, 23);
 
         TglLahir.setForeground(new java.awt.Color(50, 70, 50));
-        TglLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-08-2024" }));
+        TglLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-08-2024" }));
         TglLahir.setDisplayFormat("dd-MM-yyyy");
         TglLahir.setName("TglLahir"); // NOI18N
         TglLahir.setOpaque(false);
@@ -702,7 +703,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         Instansi.setBounds(460, 130, 260, 23);
 
         TanggalAwal.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-08-2024" }));
+        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-08-2024" }));
         TanggalAwal.setDisplayFormat("dd-MM-yyyy");
         TanggalAwal.setName("TanggalAwal"); // NOI18N
         TanggalAwal.setOpaque(false);
@@ -779,7 +780,7 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
 
         TglCetak.setEditable(false);
         TglCetak.setForeground(new java.awt.Color(50, 70, 50));
-        TglCetak.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-08-2024" }));
+        TglCetak.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-08-2024" }));
         TglCetak.setDisplayFormat("dd-MM-yyyy");
         TglCetak.setEnabled(false);
         TglCetak.setName("TglCetak"); // NOI18N
@@ -808,7 +809,6 @@ public final class SuratSakitPihak2 extends javax.swing.JDialog {
         jLabel17.setBounds(200, 40, 80, 23);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Tanggal Cetak :");
         jLabel1.setName("jLabel1"); // NOI18N
         FormInput.add(jLabel1);

@@ -9,14 +9,14 @@
 	<parameter name="tanggal_pindah" class="java.lang.String"/>
 	<parameter name="logo" class="java.io.InputStream"/>
 	<queryString>
-		<![CDATA[SELECT petugas_menerima.nama as menerima, petugas_menyerahkan.nama as menyerahkan, petugas_menyetujui.nama as menyetujui, pasien.no_rkm_medis, pasien.nm_pasien, pasien.tgl_lahir ,reg_periksa.no_rawat, transfer_pasien_antar_ruang.asal_ruang, transfer_pasien_antar_ruang.diagnosa_utama, transfer_pasien_antar_ruang.indikasi_pindah_ruang,
+		<![CDATA[SELECT petugas_menerima.nama as menerima, petugas_menyerahkan.nama as menyerahkan, petugas_menyetujui.nm_dokter as menyetujui, pasien.no_rkm_medis, pasien.nm_pasien, pasien.tgl_lahir ,reg_periksa.no_rawat, transfer_pasien_antar_ruang.asal_ruang, transfer_pasien_antar_ruang.diagnosa_utama, transfer_pasien_antar_ruang.indikasi_pindah_ruang,
 transfer_pasien_antar_ruang.keadaan_umum_sebelum_transfer AS ku_sbtf, transfer_pasien_antar_ruang.keadaan_umum_sesudah_transfer as ku_sttf, transfer_pasien_antar_ruang.keluhan_utama_sebelum_transfer as ku_sb_tf,transfer_pasien_antar_ruang.keluhan_utama_sesudah_transfer as ku_st_tf, transfer_pasien_antar_ruang.metode_pemindahan_pasien,transfer_pasien_antar_ruang.nadi_sebelum_transfer as nadi_sb_tf,transfer_pasien_antar_ruang.nadi_sesudah_transfer as nadi_st_tf,
 transfer_pasien_antar_ruang.obat_yang_telah_diberikan,transfer_pasien_antar_ruang.pemeriksaan_penunjang_yang_dilakukan,transfer_pasien_antar_ruang.`prosedur_yang_sudah_dilakukan`, transfer_pasien_antar_ruang.rr_sebelum_transfer,transfer_pasien_antar_ruang.rr_sesudah_transfer, transfer_pasien_antar_ruang.ruang_selanjutnya, transfer_pasien_antar_ruang.suhu_sebelum_transfer as suhu_sbtf,transfer_pasien_antar_ruang.suhu_sesudah_transfer as suhu_sttf,
 transfer_pasien_antar_ruang.tanggal_masuk, transfer_pasien_antar_ruang.tanggal_pindah, transfer_pasien_antar_ruang.td_sebelum_transfer as td_sb_tf, transfer_pasien_antar_ruang.td_sesudah_transfer as td_st_tf,transfer_pasien_antar_ruang.ruang_selanjutnya, transfer_pasien_antar_ruang.peralatan_yang_menyertai as alat, transfer_pasien_antar_ruang.perawatan_isolasi as iso, transfer_pasien_antar_ruang.kewaspadaan_transmisi as transmisi,
-transfer_pasien_antar_ruang.keadaan_saat_transfer as saat_tf, transfer_pasien_antar_ruang.rr_sebelum_transfer as rr_sb_tf, transfer_pasien_antar_ruang.rr_sesudah_transfer as rr_st_tf,dpj.nama as nm_dpjp,
+transfer_pasien_antar_ruang.keadaan_saat_transfer as saat_tf, transfer_pasien_antar_ruang.rr_sebelum_transfer as rr_sb_tf, transfer_pasien_antar_ruang.rr_sesudah_transfer as rr_st_tf,dpj.nm_dokter as nm_dpjp,
 transfer_pasien_antar_ruang.suhu_sebelum_transfer as suhu_sb_tf,transfer_pasien_antar_ruang.suhu_sesudah_transfer as suhu_st_tf,transfer_pasien_antar_ruang.resiko_jatuh, transfer_pasien_antar_ruang.riwayat_alergi,
 transfer_pasien_antar_ruang.catatan_khusus, transfer_pasien_antar_ruang.nip_menerima,transfer_pasien_antar_ruang.nip_menyerahkan FROM transfer_pasien_antar_ruang INNER JOIN reg_periksa ON reg_periksa.no_rawat = transfer_pasien_antar_ruang.no_rawat INNER JOIN pasien ON pasien.no_rkm_medis = reg_periksa.no_rkm_medis inner join petugas as petugas_menerima on petugas_menerima.nip = transfer_pasien_antar_ruang.nip_menerima inner join petugas as petugas_menyerahkan on petugas_menyerahkan.nip=transfer_pasien_antar_ruang.nip_menyerahkan 
-inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join petugas as petugas_menyetujui on petugas_menyetujui.nip=transfer_pasien_antar_ruang.nip_menyetujui]]>
+inner join dokter as dpj on dpj.kd_dokter=transfer_pasien_antar_ruang.dpjp inner join dokter as petugas_menyetujui on petugas_menyetujui.kd_dokter=transfer_pasien_antar_ruang.nip_menyetujui]]>
 	</queryString>
 	<field name="no_rawat" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -127,6 +127,9 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="transmisi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="perawatan_isolasi" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="menerima" class="java.lang.String">
@@ -772,11 +775,11 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[Memerlukan Perawatan Isolasi :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="176" y="636" width="90" height="14" uuid="affa995d-4821-4e53-8975-b149b547a9d6"/>
+				<reportElement x="176" y="636" width="89" height="14" uuid="affa995d-4821-4e53-8975-b149b547a9d6"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{transmisi}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{perawatan_isolasi}]]></textFieldExpression>
 			</textField>
 			<rectangle>
 				<reportElement mode="Transparent" x="269" y="438" width="263" height="29" uuid="69e9fbe2-de23-49d7-b4c1-923587180a31"/>
