@@ -2884,6 +2884,9 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             Valid.textKosong(kdpjanak,"dr Pj Anak");
         }else if(kddrumum.getText().trim().equals("")||nmdrumum.getText().trim().equals("")){
             Valid.textKosong(kddrumum,"dr Umum");
+        //Custom tambah validasi
+        }else if(tgl.getSelectedItem().equals(tgl2.getSelectedItem())){
+                JOptionPane.showMessageDialog(null,"Hayolohh... Tanggal/Jam tidak boleh sama dengan atau kurang dari Tanggal/Jam selesai operasi!!!");
         }else if(tabMode.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, pilihan operasi kosong...!!!!");
             TCari.requestFocus();

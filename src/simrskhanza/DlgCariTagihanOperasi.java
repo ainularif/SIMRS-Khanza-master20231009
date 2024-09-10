@@ -1689,7 +1689,7 @@ public class DlgCariTagihanOperasi extends javax.swing.JDialog {
             }
         });
         panelGlass7.add(NoImplan);
-        NoImplan.setBounds(280, 300, 100, 23);
+        NoImplan.setBounds(150, 300, 100, 23);
 
         DikirimPA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ya", "Tidak" }));
         DikirimPA.setName("DikirimPA"); // NOI18N
@@ -1819,7 +1819,7 @@ public class DlgCariTagihanOperasi extends javax.swing.JDialog {
             }
         });
         panelGlass7.add(JmlPendarahan);
-        JmlPendarahan.setBounds(150, 300, 100, 23);
+        JmlPendarahan.setBounds(270, 300, 100, 24);
 
         internalFrame6.add(panelGlass7, java.awt.BorderLayout.WEST);
 

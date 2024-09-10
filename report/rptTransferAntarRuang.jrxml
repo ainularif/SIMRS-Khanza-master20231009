@@ -618,7 +618,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 			<textField>
 				<reportElement x="7" y="233" width="259" height="216" uuid="bb17be53-4699-43ac-97d4-a78e939c2923"/>
 				<textElement>
-					<font fontName="Tahoma" size="9"/>
+					<font fontName="Tahoma" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{obat_yang_telah_diberikan}]]></textFieldExpression>
 			</textField>
