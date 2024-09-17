@@ -4064,8 +4064,8 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         
                         kamar=Sequel.cariIsi("select ifnull(kamar_inap.kd_kamar,'') from kamar_inap where kamar_inap.no_rawat='"+rs.getString("no_rawat")+"' order by kamar_inap.tgl_masuk desc limit 1");
                         if(!kamar.equals("")){
-                            namakamar=kamar+", "+Sequel.cariIsi("select bangsal.nm_bangsal from bangsal inner join kamar on bangsal.kd_bangsal=kamar.kd_bangsal "+
-                                    " where kamar.kd_kamar='"+kamar+"' ");            
+                            namakamar=kamar+", "+Sequel.cariIsi("select bangsal.nm_bangsal from bangsal inner join kamar on bangsal.kd_bangsal=kamar.kd_bangsal inner join kamar_inap on kamar_inap.kd_kamar=kamar.kd_kamar "+
+                                    " where kamar.kd_kamar='"+kamar+"'and kamar_inap.stts_pulang='-'");            
                             kamar="Kamar";
                         }else if(kamar.equals("")){
                             kamar="Poli";
