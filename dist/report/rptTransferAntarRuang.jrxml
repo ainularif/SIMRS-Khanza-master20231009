@@ -12,7 +12,7 @@
 	<queryString>
 		<![CDATA[SELECT petugas_menerima.nama as menerima, petugas_menyerahkan.nama as menyerahkan, petugas_menyetujui.nama as menyetujui, pasien.no_rkm_medis, pasien.nm_pasien, pasien.tgl_lahir ,reg_periksa.no_rawat, transfer_pasien_antar_ruang.asal_ruang, transfer_pasien_antar_ruang.diagnosa_utama, transfer_pasien_antar_ruang.indikasi_pindah_ruang,
 transfer_pasien_antar_ruang.keadaan_umum_sebelum_transfer AS ku_sbtf, transfer_pasien_antar_ruang.keadaan_umum_sesudah_transfer as ku_sttf, transfer_pasien_antar_ruang.keluhan_utama_sebelum_transfer as ku_sb_tf,transfer_pasien_antar_ruang.keluhan_utama_sesudah_transfer as ku_st_tf, transfer_pasien_antar_ruang.metode_pemindahan_pasien,transfer_pasien_antar_ruang.nadi_sebelum_transfer as nadi_sb_tf,transfer_pasien_antar_ruang.nadi_sesudah_transfer as nadi_st_tf,
-transfer_pasien_antar_ruang.obat_yang_telah_diberikan,transfer_pasien_antar_ruang.pemeriksaan_penunjang_yang_dilakukan,transfer_pasien_antar_ruang.prosedur_yang_sudah_dilakukan, transfer_pasien_antar_ruang.rr_sebelum_transfer,transfer_pasien_antar_ruang.rr_sesudah_transfer, transfer_pasien_antar_ruang.ruang_selanjutnya, transfer_pasien_antar_ruang.suhu_sebelum_transfer as suhu_sbtf,transfer_pasien_antar_ruang.suhu_sesudah_transfer as suhu_sttf,
+transfer_pasien_antar_ruang.obat_yang_telah_diberikan,transfer_pasien_antar_ruang.pemeriksaan_penunjang_yang_dilakukan,transfer_pasien_antar_ruang.prosedur_yang_sudah_dilakukan, transfer_pasien_antar_ruang.rr_sebelum_transfer,transfer_pasien_antar_ruang.rr_sesudah_transfer, transfer_pasien_antar_ruang.ruang_selanjutnya, transfer_pasien_antar_ruang.suhu_sebelum_transfer as suhu_sbtf,transfer_pasien_antar_ruang.suhu_sesudah_transfer as suhu_sttf,transfer_pasien_antar_ruang.berat_badan_sbt,transfer_pasien_antar_ruang.tinggi_badan_sbt,transfer_pasien_antar_ruang.berat_badan_stt,transfer_pasien_antar_ruang.tinggi_badan_stt,
 transfer_pasien_antar_ruang.tanggal_masuk, transfer_pasien_antar_ruang.tanggal_pindah, transfer_pasien_antar_ruang.td_sebelum_transfer as td_sb_tf, transfer_pasien_antar_ruang.td_sesudah_transfer as td_st_tf,transfer_pasien_antar_ruang.ruang_selanjutnya, transfer_pasien_antar_ruang.peralatan_yang_menyertai as alat, transfer_pasien_antar_ruang.perawatan_isolasi as iso, transfer_pasien_antar_ruang.kewaspadaan_transmisi as transmisi,
 transfer_pasien_antar_ruang.keadaan_saat_transfer as saat_tf, transfer_pasien_antar_ruang.rr_sebelum_transfer as rr_sb_tf, transfer_pasien_antar_ruang.rr_sesudah_transfer as rr_st_tf,dpj.nama as nm_dpjp,transfer_pasien_antar_ruang.gda_sebelum_transfer as gda_SbT, transfer_pasien_antar_ruang.spo_sebelum_transfer as spo_SbT,transfer_pasien_antar_ruang.skala_nyeri_sebelum_transfer as sn_SbT,transfer_pasien_antar_ruang.gda_sesudah_transfer as gda_Stt,transfer_pasien_antar_ruang.spo_sesudah_transfer as spo_Stt,transfer_pasien_antar_ruang.skala_nyeri_sesudah_transfer as sn_Stt,
 transfer_pasien_antar_ruang.suhu_sebelum_transfer as suhu_sb_tf,transfer_pasien_antar_ruang.suhu_sesudah_transfer as suhu_st_tf,transfer_pasien_antar_ruang.resiko_jatuh, transfer_pasien_antar_ruang.riwayat_alergi,resiko_jatuh, transfer_pasien_antar_ruang.keterangan_peralatan_yang_menyertai as keterangan_alat,
@@ -161,6 +161,18 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="keterangan_alat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="berat_badan_sbt" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tinggi_badan_sbt" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="berat_badan_stt" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tinggi_badan_stt" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<background>
@@ -467,7 +479,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<reportElement x="269" y="450" width="263" height="16" uuid="ee68d88d-5a0b-4d74-97af-1dd9b7b86381"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="272" y="452" width="27" height="12" uuid="04173bc4-93e9-4c28-b8d5-b39d1f84bd07">
+				<reportElement x="272" y="452" width="34" height="12" uuid="04173bc4-93e9-4c28-b8d5-b39d1f84bd07">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -684,7 +696,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<textFieldExpression><![CDATA[$F{riwayat_alergi}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="299" y="452" width="65" height="12" uuid="936ee110-6cb0-4594-a5fc-ad089f9c8aa4">
+				<reportElement x="306" y="452" width="34" height="12" uuid="936ee110-6cb0-4594-a5fc-ad089f9c8aa4">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -693,7 +705,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<textFieldExpression><![CDATA[$F{nadi_st_tf}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="300" y="286" width="70" height="14" uuid="4ca8942c-2feb-414e-9f66-2ca8e1cf3604"/>
+				<reportElement x="300" y="286" width="39" height="14" uuid="4ca8942c-2feb-414e-9f66-2ca8e1cf3604"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 				</textElement>
@@ -782,35 +794,35 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="440" y="286" width="30" height="14" uuid="c5ba9603-d492-4562-94fa-15c05e3617f9"/>
+				<reportElement x="409" y="286" width="30" height="14" uuid="c5ba9603-d492-4562-94fa-15c05e3617f9"/>
 				<textElement>
 					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Suhu :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="471" y="286" width="60" height="14" uuid="ffc042ea-295f-459e-abe8-db3608c85b3e"/>
+				<reportElement x="439" y="286" width="32" height="14" uuid="ffc042ea-295f-459e-abe8-db3608c85b3e"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{suhu_sbtf}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="370" y="286" width="24" height="14" uuid="181a716b-eb68-4986-9120-778e32de71e5"/>
+				<reportElement x="339" y="286" width="24" height="14" uuid="181a716b-eb68-4986-9120-778e32de71e5"/>
 				<textElement>
 					<font size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[RR :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="394" y="286" width="46" height="14" uuid="145660dc-0ea2-48ff-8b1c-297bb5c9084c"/>
+				<reportElement x="363" y="286" width="46" height="14" uuid="145660dc-0ea2-48ff-8b1c-297bb5c9084c"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{rr_sb_tf}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="363" y="452" width="23" height="12" uuid="974ae428-6d55-4cea-b678-e819827e7332">
+				<reportElement x="339" y="452" width="23" height="12" uuid="974ae428-6d55-4cea-b678-e819827e7332">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -819,7 +831,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[RR :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="471" y="452" width="62" height="12" uuid="2e561e8c-5f70-4054-a5f1-88fe9a50782b">
+				<reportElement x="424" y="452" width="42" height="12" uuid="2e561e8c-5f70-4054-a5f1-88fe9a50782b">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -828,7 +840,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<textFieldExpression><![CDATA[$F{suhu_sttf}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="442" y="452" width="29" height="12" uuid="4e15a5f8-0829-4f20-a489-f0a8592b0e1a">
+				<reportElement x="395" y="452" width="29" height="12" uuid="4e15a5f8-0829-4f20-a489-f0a8592b0e1a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -837,7 +849,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[Suhu :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="386" y="452" width="56" height="12" uuid="24c2221f-ab0b-45a8-ab8c-bb5a54ab5455">
+				<reportElement x="362" y="452" width="33" height="12" uuid="24c2221f-ab0b-45a8-ab8c-bb5a54ab5455">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -879,7 +891,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[GDA :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="300" y="302" width="61" height="12" uuid="12241523-77dd-4ef6-82d5-f7d8900935b4">
+				<reportElement x="300" y="302" width="30" height="12" uuid="12241523-77dd-4ef6-82d5-f7d8900935b4">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -888,7 +900,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<textFieldExpression><![CDATA[$F{gda_SbT}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="361" y="302" width="38" height="12" uuid="491276ff-bf05-4f56-a94d-b2f809d46f47">
+				<reportElement x="330" y="302" width="34" height="12" uuid="491276ff-bf05-4f56-a94d-b2f809d46f47">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -897,7 +909,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[SpO2 :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="441" y="302" width="59" height="12" uuid="31302e56-3cab-4026-88cd-b113ab2d97b1">
+				<reportElement x="394" y="302" width="59" height="12" uuid="31302e56-3cab-4026-88cd-b113ab2d97b1">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -906,7 +918,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[Skala Nyeri:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="399" y="302" width="42" height="12" uuid="30c464e0-42b6-4fec-a235-5d97a5f81939">
+				<reportElement x="364" y="302" width="30" height="12" uuid="30c464e0-42b6-4fec-a235-5d97a5f81939">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -918,7 +930,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<reportElement x="269" y="466" width="263" height="13" uuid="7a9b0071-1b8a-49a6-8083-aa3b517b3ac3"/>
 			</rectangle>
 			<textField>
-				<reportElement x="300" y="467" width="51" height="12" uuid="4053f37a-63f7-484f-a817-1911759990f3">
+				<reportElement x="300" y="467" width="30" height="12" uuid="4053f37a-63f7-484f-a817-1911759990f3">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -936,7 +948,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[GDA :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="351" y="467" width="34" height="12" uuid="49f461ef-f2b0-4244-9d4d-f63ab92df20b">
+				<reportElement x="330" y="467" width="34" height="12" uuid="49f461ef-f2b0-4244-9d4d-f63ab92df20b">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -945,7 +957,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[SpO2 :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="385" y="467" width="36" height="12" uuid="ec524803-9b67-489d-81c9-1f3e7d3ba6e7">
+				<reportElement x="364" y="467" width="30" height="12" uuid="ec524803-9b67-489d-81c9-1f3e7d3ba6e7">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -954,7 +966,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<textFieldExpression><![CDATA[$F{spo_Stt}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="421" y="467" width="59" height="12" uuid="d63a0264-6b9a-475c-b1b3-13f50d0378b0">
+				<reportElement x="394" y="467" width="59" height="12" uuid="d63a0264-6b9a-475c-b1b3-13f50d0378b0">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -963,7 +975,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[Skala Nyeri:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="480" y="467" width="51" height="12" uuid="141b7f69-4e3a-497d-a4fe-3bff25ad18b9">
+				<reportElement x="453" y="467" width="31" height="12" uuid="141b7f69-4e3a-497d-a4fe-3bff25ad18b9">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -972,7 +984,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<textFieldExpression><![CDATA[$F{sn_Stt}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="500" y="302" width="31" height="12" uuid="07a9e85e-628c-4a57-9c5c-5822666da6f4">
+				<reportElement x="453" y="302" width="31" height="12" uuid="07a9e85e-628c-4a57-9c5c-5822666da6f4">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -989,6 +1001,72 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				</textElement>
 				<text><![CDATA[Keadaan Pasien Saat Pindah Sesudah Transfer :]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="467" y="452" width="29" height="12" uuid="88682618-5f31-48cb-a06e-0e9d3ef6223e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Tahoma" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BB :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="496" y="452" width="36" height="12" uuid="901078c9-e6bb-4361-b14b-97c8ae271c88">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Tahoma" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{berat_badan_stt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="484" y="467" width="25" height="12" uuid="46082f8f-17f1-487b-9187-97b54e23465a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Tahoma" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TB :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="509" y="467" width="22" height="12" uuid="ba98a0a4-f1e0-488e-845f-b138eacbbfea">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Tahoma" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tinggi_badan_stt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="471" y="286" width="30" height="14" uuid="e4abbee0-c06a-4ea5-9ab6-de6b215f0729"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BB :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="501" y="286" width="31" height="14" uuid="652abd7c-0561-43eb-9c29-9f58afa6f4ee"/>
+				<textElement>
+					<font fontName="Tahoma" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{berat_badan_sbt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="484" y="301" width="24" height="14" uuid="144e9e4f-b8a4-4a65-afb7-0b6f5bdbdbcc"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TB :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="508" y="302" width="24" height="12" uuid="9627154d-659f-4942-839b-4b75775199c9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Tahoma" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tinggi_badan_sbt}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<summary>

@@ -497,7 +497,6 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         KdPetugasMenyetujui = new widget.TextBox();
         label17 = new widget.Label();
         NmPetugasMenyetujui = new widget.TextBox();
-        BtnMenyetujuiDokter = new widget.Button();
         NmDokter = new widget.TextBox();
         KdDokter = new widget.TextBox();
         BtnDpjp = new widget.Button();
@@ -808,7 +807,7 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         jLabel11.setBounds(740, 10, 30, 23);
 
         TanggalMasuk.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalMasuk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-09-2024 07:16:38" }));
+        TanggalMasuk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-09-2024 13:26:49" }));
         TanggalMasuk.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TanggalMasuk.setName("TanggalMasuk"); // NOI18N
         TanggalMasuk.setOpaque(false);
@@ -832,7 +831,7 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         label12.setBounds(201, 40, 55, 23);
 
         TanggalPindah.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalPindah.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-09-2024 07:16:38" }));
+        TanggalPindah.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-09-2024 13:26:49" }));
         TanggalPindah.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TanggalPindah.setName("TanggalPindah"); // NOI18N
         TanggalPindah.setOpaque(false);
@@ -1283,12 +1282,12 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         scrollPane6.setViewportView(KeluhanUtamaSetelahTransfer);
 
         FormInput.add(scrollPane6);
-        scrollPane6.setBounds(570, 570, 290, 70);
+        scrollPane6.setBounds(580, 570, 290, 70);
 
         jLabel47.setText("Nadi (/menit) :");
         jLabel47.setName("jLabel47"); // NOI18N
         FormInput.add(jLabel47);
-        jLabel47.setBounds(150, 600, 70, 23);
+        jLabel47.setBounds(158, 600, 70, 23);
 
         NadiSetelahTransfer.setFocusTraversalPolicyProvider(true);
         NadiSetelahTransfer.setName("NadiSetelahTransfer"); // NOI18N
@@ -1298,12 +1297,12 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
             }
         });
         FormInput.add(NadiSetelahTransfer);
-        NadiSetelahTransfer.setBounds(220, 600, 60, 23);
+        NadiSetelahTransfer.setBounds(230, 600, 50, 23);
 
         jLabel49.setText("RR (/menit) :");
         jLabel49.setName("jLabel49"); // NOI18N
         FormInput.add(jLabel49);
-        jLabel49.setBounds(280, 600, 70, 23);
+        jLabel49.setBounds(275, 600, 70, 23);
 
         RRSetelahTransfer.setFocusTraversalPolicyProvider(true);
         RRSetelahTransfer.setName("RRSetelahTransfer"); // NOI18N
@@ -1380,7 +1379,7 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
             }
         });
         FormInput.add(BtnDokter);
-        BtnDokter.setBounds(380, 720, 28, 23);
+        BtnDokter.setBounds(390, 720, 28, 23);
 
         KdPetugasMenerima.setEditable(false);
         KdPetugasMenerima.setName("KdPetugasMenerima"); // NOI18N
@@ -1540,24 +1539,6 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         FormInput.add(NmPetugasMenyetujui);
         NmPetugasMenyetujui.setBounds(220, 750, 160, 23);
 
-        BtnMenyetujuiDokter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
-        BtnMenyetujuiDokter.setMnemonic('2');
-        BtnMenyetujuiDokter.setToolTipText("Alt+2");
-        BtnMenyetujuiDokter.setName("BtnMenyetujuiDokter"); // NOI18N
-        BtnMenyetujuiDokter.setPreferredSize(new java.awt.Dimension(28, 23));
-        BtnMenyetujuiDokter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnMenyetujuiDokterActionPerformed(evt);
-            }
-        });
-        BtnMenyetujuiDokter.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                BtnMenyetujuiDokterKeyPressed(evt);
-            }
-        });
-        FormInput.add(BtnMenyetujuiDokter);
-        BtnMenyetujuiDokter.setBounds(380, 750, 28, 23);
-
         NmDokter.setEditable(false);
         NmDokter.setHighlighter(null);
         NmDokter.setName("NmDokter"); // NOI18N
@@ -1629,7 +1610,7 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
             }
         });
         FormInput.add(BtnMenyetujuiPetugas);
-        BtnMenyetujuiPetugas.setBounds(400, 750, 28, 23);
+        BtnMenyetujuiPetugas.setBounds(390, 750, 28, 23);
 
         jLabel60.setText("Suhu(°C) :");
         jLabel60.setName("jLabel60"); // NOI18N
@@ -1699,7 +1680,7 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         jLabel64.setText("SpO2 (%) :");
         jLabel64.setName("jLabel64"); // NOI18N
         FormInput.add(jLabel64);
-        jLabel64.setBounds(260, 630, 60, 23);
+        jLabel64.setBounds(280, 630, 60, 23);
 
         SPOSetelahTransfer.setFocusTraversalPolicyProvider(true);
         SPOSetelahTransfer.setName("SPOSetelahTransfer"); // NOI18N
@@ -1709,7 +1690,7 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
             }
         });
         FormInput.add(SPOSetelahTransfer);
-        SPOSetelahTransfer.setBounds(320, 630, 60, 23);
+        SPOSetelahTransfer.setBounds(350, 630, 60, 23);
 
         jLabel65.setText("Skala Nyeri : ");
         jLabel65.setName("jLabel65"); // NOI18N
@@ -1775,12 +1756,12 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
             }
         });
         FormInput.add(BeratStT);
-        BeratStT.setBounds(470, 600, 60, 23);
+        BeratStT.setBounds(500, 600, 50, 23);
 
         jLabel45.setText("Berat (Kg) :");
         jLabel45.setName("jLabel45"); // NOI18N
         FormInput.add(jLabel45);
-        jLabel45.setBounds(410, 600, 60, 23);
+        jLabel45.setBounds(430, 600, 60, 23);
 
         BeratSbT.setFocusTraversalPolicyProvider(true);
         BeratSbT.setName("BeratSbT"); // NOI18N
@@ -1805,7 +1786,7 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         jLabel50.setText("T.Badan (cm) :");
         jLabel50.setName("jLabel50"); // NOI18N
         FormInput.add(jLabel50);
-        jLabel50.setBounds(380, 630, 80, 23);
+        jLabel50.setBounds(410, 630, 80, 23);
 
         TinggiStT.setFocusTraversalPolicyProvider(true);
         TinggiStT.setName("TinggiStT"); // NOI18N
@@ -1820,7 +1801,7 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
             }
         });
         FormInput.add(TinggiStT);
-        TinggiStT.setBounds(460, 630, 60, 23);
+        TinggiStT.setBounds(500, 630, 50, 23);
 
         scrollInput.setViewportView(FormInput);
 
@@ -1877,7 +1858,7 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-09-2024" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-09-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1891,7 +1872,7 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-09-2024" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-09-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -2035,8 +2016,6 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
             Valid.textKosong(BtnDokter,"Petugas Yang Menyerahkan");
         }else if(NmPetugasMenerima.getText().trim().equals("")){
             Valid.textKosong(BtnMenerima,"Petugas Yang Menerima");
-        }else if(NmPetugasMenyetujui.getText().trim().equals("")){
-            Valid.textKosong(BtnMenyetujuiDokter, "Petugas Yang Menyetujui");
         }else if(AsalRuang.getText().trim().equals("")){
             Valid.textKosong(AsalRuang,"Asal Ruang");
         }else if(RuangSelanjutnya.getText().trim().equals("")){
@@ -2146,8 +2125,6 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
                 Valid.textKosong(BtnDokter, "Petugas Yang Menyerahkan");
             } else if (NmPetugasMenerima.getText().trim().equals("")) {
                 Valid.textKosong(BtnDokter, "Petugas Yang Menerima");
-            } else if (NmPetugasMenyetujui.getText().trim().equals("")) {
-                Valid.textKosong(BtnMenyetujuiDokter, "Petugas Yang Menyetujui");
             } else if (AsalRuang.getText().trim().equals("")) {
                 Valid.textKosong(BtnMenerima, "Petugas Yang Menerima");
             } else if (AsalRuang.getText().trim().equals("")) {
@@ -2206,8 +2183,6 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
                 Valid.textKosong(BtnDokter, "Petugas Yang Menyerahkan");
             } else if (NmPetugasMenerima.getText().trim().equals("")) {
                 Valid.textKosong(BtnDokter, "Petugas Yang Menerima");
-            } else if (NmPetugasMenyetujui.getText().trim().equals("")) {
-                Valid.textKosong(BtnMenyetujuiDokter, "Petugas Yang Menyetujui");
             } else if (AsalRuang.getText().trim().equals("")) {
                 Valid.textKosong(BtnMenerima, "Petugas Yang Menerima");
             } else if (AsalRuang.getText().trim().equals("")) {
@@ -2780,19 +2755,6 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_NmDokterKeyPressed
 
-    private void BtnMenyetujuiDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnMenyetujuiDokterKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnMenyetujuiDokterKeyPressed
-
-    private void BtnMenyetujuiDokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenyetujuiDokterActionPerformed
-        pilihan=2;
-        dokter.isCek();
-        dokter.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-        dokter.setLocationRelativeTo(internalFrame1);
-        dokter.setAlwaysOnTop(false);
-        dokter.setVisible(true);
-    }//GEN-LAST:event_BtnMenyetujuiDokterActionPerformed
-
     private void KdPetugasMenyetujuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KdPetugasMenyetujuiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_KdPetugasMenyetujuiActionPerformed
@@ -2995,19 +2957,6 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         //        Valid.pindah(evt,KeteranganPeralatan,NamaMenyetujui);
     }//GEN-LAST:event_MenyetujuiPemindahanKeyPressed
 
-    private void BtnMenyetujuiPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenyetujuiPetugasActionPerformed
-        pilihan=1;
-//        pegawai.isCek();
-        pegawai.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-        pegawai.setLocationRelativeTo(internalFrame1);
-        pegawai.setAlwaysOnTop(false);
-        pegawai.setVisible(true);
-    }//GEN-LAST:event_BtnMenyetujuiPetugasActionPerformed
-
-    private void BtnMenyetujuiPetugasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnMenyetujuiPetugasKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnMenyetujuiPetugasKeyPressed
-
     private void GDASebelumTransferKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GDASebelumTransferKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_GDASebelumTransferKeyPressed
@@ -3072,6 +3021,19 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_BeratSbTActionPerformed
 
+    private void BtnMenyetujuiPetugasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnMenyetujuiPetugasKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnMenyetujuiPetugasKeyPressed
+
+    private void BtnMenyetujuiPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenyetujuiPetugasActionPerformed
+        pilihan=1;
+        //        pegawai.isCek();
+        pegawai.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+        pegawai.setLocationRelativeTo(internalFrame1);
+        pegawai.setAlwaysOnTop(false);
+        pegawai.setVisible(true);
+    }//GEN-LAST:event_BtnMenyetujuiPetugasActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -3101,7 +3063,6 @@ public final class RMTransferPasienAntarRuang extends javax.swing.JDialog {
     private widget.Button BtnHapus;
     private widget.Button BtnKeluar;
     private widget.Button BtnMenerima;
-    private widget.Button BtnMenyetujuiDokter;
     private widget.Button BtnMenyetujuiPetugas;
     private widget.Button BtnPrint;
     private widget.Button BtnRefreshPhoto1;
