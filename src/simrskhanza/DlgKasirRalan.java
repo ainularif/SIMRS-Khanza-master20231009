@@ -994,10 +994,10 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel20 = new widget.Label();
         cmbStatusBayar = new widget.ComboBox();
         TabRawat = new javax.swing.JTabbedPane();
-        Scroll1 = new widget.ScrollPane();
-        tbKasirRalan = new widget.Table();
         Scroll2 = new widget.ScrollPane();
         tbKasirRalan2 = new widget.Table();
+        Scroll1 = new widget.ScrollPane();
+        tbKasirRalan = new widget.Table();
         panelGlass9 = new widget.panelisi();
         jLabel4 = new widget.Label();
         TNoRwCari = new widget.TextBox();
@@ -1007,6 +1007,8 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         TNoRMCari = new widget.TextBox();
         jLabel8 = new widget.Label();
         TPasienCari = new widget.TextBox();
+        jLabel9 = new widget.Label();
+        TNikCari = new widget.TextBox();
 
         jPopupMenu1.setForeground(new java.awt.Color(50, 50, 50));
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -6150,7 +6152,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         panelBiasa2.setLayout(null);
 
         TglSakit1.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2023" }));
+        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-09-2024" }));
         TglSakit1.setDisplayFormat("dd-MM-yyyy");
         TglSakit1.setName("TglSakit1"); // NOI18N
         TglSakit1.setOpaque(false);
@@ -6197,7 +6199,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel32.setBounds(176, 10, 20, 23);
 
         TglSakit2.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2023" }));
+        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-09-2024" }));
         TglSakit2.setDisplayFormat("dd-MM-yyyy");
         TglSakit2.setName("TglSakit2"); // NOI18N
         TglSakit2.setOpaque(false);
@@ -6469,7 +6471,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(70, 23));
         panelGlass8.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-09-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -6482,7 +6484,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(23, 23));
         panelGlass8.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-09-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -6524,6 +6526,29 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
             }
         });
 
+        Scroll2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Scroll2.setToolTipText("Klik data di table, kemudian klik kanan untuk memilih menu yang diinginkan");
+        Scroll2.setComponentPopupMenu(jPopupMenu2);
+        Scroll2.setName("Scroll2"); // NOI18N
+        Scroll2.setOpaque(true);
+
+        tbKasirRalan2.setToolTipText("Klik 2X Kd.Dokter= Jendela Tindakan, Dokter Dituju=Jendela Obat, Nomer RM=Jendela Billing, Pasien=Jendela Total Obat, Poliklinik=Set Sudah Periksa, Penanggung Jawab=Masukan tindakan otomatis");
+        tbKasirRalan2.setComponentPopupMenu(jPopupMenu2);
+        tbKasirRalan2.setName("tbKasirRalan2"); // NOI18N
+        tbKasirRalan2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbKasirRalan2MouseClicked(evt);
+            }
+        });
+        tbKasirRalan2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tbKasirRalan2KeyPressed(evt);
+            }
+        });
+        Scroll2.setViewportView(tbKasirRalan2);
+
+        TabRawat.addTab("Rujukan Internal Poli", Scroll2);
+
         Scroll1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         Scroll1.setToolTipText("Klik data di table, kemudian klik kanan untuk memilih menu yang diinginkan");
         Scroll1.setComponentPopupMenu(jPopupMenu1);
@@ -6551,29 +6576,6 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         Scroll1.setViewportView(tbKasirRalan);
 
         TabRawat.addTab("Registrasi Awal", Scroll1);
-
-        Scroll2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        Scroll2.setToolTipText("Klik data di table, kemudian klik kanan untuk memilih menu yang diinginkan");
-        Scroll2.setComponentPopupMenu(jPopupMenu2);
-        Scroll2.setName("Scroll2"); // NOI18N
-        Scroll2.setOpaque(true);
-
-        tbKasirRalan2.setToolTipText("Klik 2X Kd.Dokter= Jendela Tindakan, Dokter Dituju=Jendela Obat, Nomer RM=Jendela Billing, Pasien=Jendela Total Obat, Poliklinik=Set Sudah Periksa, Penanggung Jawab=Masukan tindakan otomatis");
-        tbKasirRalan2.setComponentPopupMenu(jPopupMenu2);
-        tbKasirRalan2.setName("tbKasirRalan2"); // NOI18N
-        tbKasirRalan2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbKasirRalan2MouseClicked(evt);
-            }
-        });
-        tbKasirRalan2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                tbKasirRalan2KeyPressed(evt);
-            }
-        });
-        Scroll2.setViewportView(tbKasirRalan2);
-
-        TabRawat.addTab("Rujukan Internal Poli", Scroll2);
 
         internalFrame1.add(TabRawat, java.awt.BorderLayout.CENTER);
 
@@ -6606,6 +6608,11 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         TNoReg.setHighlighter(null);
         TNoReg.setName("TNoReg"); // NOI18N
         TNoReg.setPreferredSize(new java.awt.Dimension(50, 23));
+        TNoReg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TNoRegActionPerformed(evt);
+            }
+        });
         TNoReg.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 TNoRegKeyPressed(evt);
@@ -6622,6 +6629,11 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         TNoRMCari.setHighlighter(null);
         TNoRMCari.setName("TNoRMCari"); // NOI18N
         TNoRMCari.setPreferredSize(new java.awt.Dimension(90, 23));
+        TNoRMCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TNoRMCariActionPerformed(evt);
+            }
+        });
         panelGlass9.add(TNoRMCari);
 
         jLabel8.setText("Nama Pasien :");
@@ -6634,6 +6646,17 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         TPasienCari.setName("TPasienCari"); // NOI18N
         TPasienCari.setPreferredSize(new java.awt.Dimension(250, 23));
         panelGlass9.add(TPasienCari);
+
+        jLabel9.setText("NIK :");
+        jLabel9.setName("jLabel9"); // NOI18N
+        jLabel9.setPreferredSize(new java.awt.Dimension(85, 23));
+        panelGlass9.add(jLabel9);
+
+        TNikCari.setEditable(false);
+        TNikCari.setHighlighter(null);
+        TNikCari.setName("TNikCari"); // NOI18N
+        TNikCari.setPreferredSize(new java.awt.Dimension(250, 23));
+        panelGlass9.add(TNikCari);
 
         internalFrame1.add(panelGlass9, java.awt.BorderLayout.PAGE_START);
 
@@ -13618,6 +13641,14 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
         // TODO add your handling code here:
     }//GEN-LAST:event_Scroll1KeyPressed
 
+    private void TNoRMCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TNoRMCariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TNoRMCariActionPerformed
+
+    private void TNoRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TNoRegActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TNoRegActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -13949,6 +13980,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private widget.TextBox TCari;
     private widget.TextBox TDokter;
     private widget.TextBox TKdPny;
+    private widget.TextBox TNikCari;
     private widget.TextBox TNoRMCari;
     private widget.TextBox TNoReg;
     private widget.TextBox TNoRw;
@@ -13998,6 +14030,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private widget.Label jLabel6;
     private widget.Label jLabel7;
     private widget.Label jLabel8;
+    private widget.Label jLabel9;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JPanel jPanel2;
@@ -14188,6 +14221,8 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
             TNoReg.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),14).toString());
             TNoRMCari.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),2).toString());
             TPasienCari.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),3).toString());
+            //tambah get NIK
+            Sequel.cariIsi("select pasien.no_ktp from pasien where pasien.no_rkm_medis=?", TNikCari,tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),2).toString());
         }
     }
 
