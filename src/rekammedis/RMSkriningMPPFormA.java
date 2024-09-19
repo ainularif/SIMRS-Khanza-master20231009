@@ -193,7 +193,7 @@ public final class RMSkriningMPPFormA extends javax.swing.JDialog {
         TNoRw.setDocument(new batasInput((byte)17).getKata(TNoRw));
         TDiagnosis.setDocument(new batasInput((int)150).getKata(TDiagnosis));
         TKelompok.setDocument(new batasInput((int)150).getKata(TKelompok));
-        Assemen.setDocument(new batasInput((int)250).getKata(Assemen));
+        Assemen.setDocument(new batasInput((int)800).getKata(Assemen));
         Identifikasi.setDocument(new batasInput((int)250).getKata(Identifikasi));
         Perencanaan.setDocument(new batasInput((int)2000).getKata(Perencanaan));
         TCari.setDocument(new batasInput((int)100).getKata(TCari));

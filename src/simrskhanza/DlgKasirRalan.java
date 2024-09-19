@@ -994,10 +994,10 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel20 = new widget.Label();
         cmbStatusBayar = new widget.ComboBox();
         TabRawat = new javax.swing.JTabbedPane();
-        Scroll1 = new widget.ScrollPane();
-        tbKasirRalan = new widget.Table();
         Scroll2 = new widget.ScrollPane();
         tbKasirRalan2 = new widget.Table();
+        Scroll1 = new widget.ScrollPane();
+        tbKasirRalan = new widget.Table();
         panelGlass9 = new widget.panelisi();
         jLabel4 = new widget.Label();
         TNoRwCari = new widget.TextBox();
@@ -6526,6 +6526,29 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
             }
         });
 
+        Scroll2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Scroll2.setToolTipText("Klik data di table, kemudian klik kanan untuk memilih menu yang diinginkan");
+        Scroll2.setComponentPopupMenu(jPopupMenu2);
+        Scroll2.setName("Scroll2"); // NOI18N
+        Scroll2.setOpaque(true);
+
+        tbKasirRalan2.setToolTipText("Klik 2X Kd.Dokter= Jendela Tindakan, Dokter Dituju=Jendela Obat, Nomer RM=Jendela Billing, Pasien=Jendela Total Obat, Poliklinik=Set Sudah Periksa, Penanggung Jawab=Masukan tindakan otomatis");
+        tbKasirRalan2.setComponentPopupMenu(jPopupMenu2);
+        tbKasirRalan2.setName("tbKasirRalan2"); // NOI18N
+        tbKasirRalan2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbKasirRalan2MouseClicked(evt);
+            }
+        });
+        tbKasirRalan2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tbKasirRalan2KeyPressed(evt);
+            }
+        });
+        Scroll2.setViewportView(tbKasirRalan2);
+
+        TabRawat.addTab("Rujukan Internal Poli", Scroll2);
+
         Scroll1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         Scroll1.setToolTipText("Klik data di table, kemudian klik kanan untuk memilih menu yang diinginkan");
         Scroll1.setComponentPopupMenu(jPopupMenu1);
@@ -6553,29 +6576,6 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         Scroll1.setViewportView(tbKasirRalan);
 
         TabRawat.addTab("Registrasi Awal", Scroll1);
-
-        Scroll2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        Scroll2.setToolTipText("Klik data di table, kemudian klik kanan untuk memilih menu yang diinginkan");
-        Scroll2.setComponentPopupMenu(jPopupMenu2);
-        Scroll2.setName("Scroll2"); // NOI18N
-        Scroll2.setOpaque(true);
-
-        tbKasirRalan2.setToolTipText("Klik 2X Kd.Dokter= Jendela Tindakan, Dokter Dituju=Jendela Obat, Nomer RM=Jendela Billing, Pasien=Jendela Total Obat, Poliklinik=Set Sudah Periksa, Penanggung Jawab=Masukan tindakan otomatis");
-        tbKasirRalan2.setComponentPopupMenu(jPopupMenu2);
-        tbKasirRalan2.setName("tbKasirRalan2"); // NOI18N
-        tbKasirRalan2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbKasirRalan2MouseClicked(evt);
-            }
-        });
-        tbKasirRalan2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                tbKasirRalan2KeyPressed(evt);
-            }
-        });
-        Scroll2.setViewportView(tbKasirRalan2);
-
-        TabRawat.addTab("Rujukan Internal Poli", Scroll2);
 
         internalFrame1.add(TabRawat, java.awt.BorderLayout.CENTER);
 
