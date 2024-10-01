@@ -19,6 +19,15 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/Khanza/SIMRS-Khanza-master20231009-Custom-RS-Islam/src/inventory/DlgPeresepanDokter.java</file>
+            <file>file:/D:/Khanza/SIMRS-Khanza-master20231009-Custom-RS-Islam/src/inventory/DlgCopyResep.java</file>
+            <file>file:/D:/Khanza/SIMRS-Khanza-master20231009-Custom-RS-Islam/src/inventory/DlgResepObat.java</file>
+            <file>file:/D:/Khanza/SIMRS-Khanza-master20231009-Custom-RS-Islam/src/rekammedis/RMTransferPasienAntarRuang.java</file>
+            <file>file:/D:/Khanza/SIMRS-Khanza-master20231009-Custom-RS-Islam/src/rekammedis/RMSkriningMPPFormA.java</file>
+            <file>file:/D:/Khanza/SIMRS-Khanza-master20231009-Custom-RS-Islam/src/simrskhanza/frmUtama.java</file>
+            <file>file:/D:/Khanza/SIMRS-Khanza-master20231009-Custom-RS-Islam/src/simrskhanza/DlgKasirRalan.java</file>
+            <file>file:/D:/Khanza/SIMRS-Khanza-master20231009-Custom-RS-Islam/src/fungsi/koneksiDB.java</file>
+        </group>
     </open-files>
 </project-private>

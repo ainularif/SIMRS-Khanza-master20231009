@@ -343,30 +343,30 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[Prosedur Yang Sudah Dilakukan :]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="4" y="215" width="265" height="234" uuid="053ca98c-48c6-459b-8eab-e2809dbab7c9"/>
+				<reportElement x="4" y="215" width="265" height="275" uuid="053ca98c-48c6-459b-8eab-e2809dbab7c9"/>
 			</rectangle>
 			<staticText>
 				<reportElement x="7" y="216" width="149" height="17" uuid="41153d30-6fec-490d-9473-474bf11ad2fb"/>
 				<textElement>
 					<font fontName="Tahoma" size="9" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Terapi Yang Telah Diberikan :]]></text>
+				<text><![CDATA[Terapi Yang Diberikan :]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="4" y="449" width="265" height="142" uuid="6ba34c1e-b118-4dcf-8504-3c9e5325131d"/>
+				<reportElement x="4" y="490" width="265" height="89" uuid="6ba34c1e-b118-4dcf-8504-3c9e5325131d"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="7" y="452" width="258" height="18" uuid="d8656163-258c-4148-8113-e122fb39813d"/>
+				<reportElement x="4" y="490" width="258" height="18" uuid="d8656163-258c-4148-8113-e122fb39813d"/>
 				<textElement>
 					<font fontName="Tahoma" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Pemeriksaan Penunjang Yang Telah Dilakukan :]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="4" y="637" width="265" height="35" uuid="b90abe0e-0a9d-48cc-96a2-304e7f0189b7"/>
+				<reportElement x="362" y="619" width="170" height="59" uuid="b90abe0e-0a9d-48cc-96a2-304e7f0189b7"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="6" y="638" width="130" height="14" uuid="0f696da3-e153-4885-8c05-1962eb06f95b"/>
+				<reportElement x="363" y="620" width="130" height="14" uuid="0f696da3-e153-4885-8c05-1962eb06f95b"/>
 				<textElement>
 					<font fontName="Tahoma" size="9" isBold="true"/>
 				</textElement>
@@ -500,10 +500,10 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[Keluhan Utama :]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="4" y="591" width="265" height="46" uuid="0f35a76c-b974-4156-a625-7b6de837464c"/>
+				<reportElement x="4" y="579" width="265" height="39" uuid="0f35a76c-b974-4156-a625-7b6de837464c"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="8" y="593" width="75" height="12" uuid="643aff33-168b-4814-bff4-7c6f7fb3b5e3">
+				<reportElement x="8" y="582" width="75" height="12" uuid="643aff33-168b-4814-bff4-7c6f7fb3b5e3">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -524,10 +524,10 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[Resiko Jatuh :]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="269" y="619" width="263" height="53" uuid="6fdbbcc7-c459-417b-be1e-90a2397f63f5"/>
+				<reportElement x="4" y="618" width="358" height="60" uuid="6fdbbcc7-c459-417b-be1e-90a2397f63f5"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="272" y="619" width="105" height="15" uuid="fc8ab0ce-5d5a-4625-ab5f-2258e19d522f"/>
+				<reportElement x="8" y="618" width="101" height="15" uuid="fc8ab0ce-5d5a-4625-ab5f-2258e19d522f"/>
 				<textElement>
 					<font fontName="Tahoma" isBold="true"/>
 				</textElement>
@@ -544,21 +544,21 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<text><![CDATA[Tanggal Pindah :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="35" y="682" width="108" height="15" uuid="228b6e0d-75f3-4186-a417-3dd208de7946"/>
+				<reportElement x="34" y="698" width="108" height="15" uuid="228b6e0d-75f3-4186-a417-3dd208de7946"/>
 				<textElement>
 					<font fontName="Tahoma" size="9"/>
 				</textElement>
 				<text><![CDATA[Petugas Yang Mengirim]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="215" y="682" width="126" height="15" uuid="4c3e0f11-3603-41a2-ae09-fd8937843934"/>
+				<reportElement x="214" y="698" width="126" height="15" uuid="4c3e0f11-3603-41a2-ae09-fd8937843934"/>
 				<textElement>
 					<font fontName="Tahoma" size="9"/>
 				</textElement>
 				<text><![CDATA[Petugas Yang Menyetujui]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="402" y="681" width="126" height="15" uuid="9ebe941b-6641-419d-9737-011e5c0b4052"/>
+				<reportElement x="401" y="697" width="126" height="15" uuid="9ebe941b-6641-419d-9737-011e5c0b4052"/>
 				<textElement>
 					<font fontName="Tahoma" size="9"/>
 				</textElement>
@@ -628,14 +628,14 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<textFieldExpression><![CDATA[$F{prosedur_yang_sudah_dilakukan}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="7" y="233" width="259" height="216" uuid="bb17be53-4699-43ac-97d4-a78e939c2923"/>
+				<reportElement x="7" y="233" width="259" height="256" uuid="bb17be53-4699-43ac-97d4-a78e939c2923"/>
 				<textElement>
 					<font fontName="Tahoma" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{obat_yang_telah_diberikan}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="7" y="471" width="259" height="113" uuid="5548c712-41b9-42ce-b43f-2b8e3114ac3d"/>
+				<reportElement x="7" y="510" width="259" height="68" uuid="5548c712-41b9-42ce-b43f-2b8e3114ac3d"/>
 				<textElement>
 					<font fontName="Tahoma" size="8"/>
 				</textElement>
@@ -689,7 +689,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<textFieldExpression><![CDATA[$F{td_sb_tf}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="8" y="605" width="258" height="31" uuid="c7041d51-9f9c-4bb3-8d55-7694ef63516d"/>
+				<reportElement x="8" y="594" width="258" height="24" uuid="c7041d51-9f9c-4bb3-8d55-7694ef63516d"/>
 				<textElement>
 					<font fontName="Tahoma" size="8"/>
 				</textElement>
@@ -719,14 +719,14 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<textFieldExpression><![CDATA[$F{saat_tf}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="177" y="738" width="186" height="21" uuid="00c546e7-12cf-4f03-84de-651971686583"/>
+				<reportElement x="176" y="754" width="186" height="21" uuid="00c546e7-12cf-4f03-84de-651971686583"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{menyetujui}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="271" y="634" width="261" height="36" uuid="b5436c25-5f8a-4a76-ba09-ca10ab7c7ddc"/>
+				<reportElement x="7" y="633" width="346" height="46" uuid="b5436c25-5f8a-4a76-ba09-ca10ab7c7ddc"/>
 				<textElement>
 					<font fontName="Tahoma" size="8"/>
 				</textElement>
@@ -756,7 +756,7 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<textFieldExpression><![CDATA[$F{resiko_jatuh}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="6" y="652" width="264" height="19" uuid="7e0b4b70-02c2-430c-b5ec-7de7c08878cb"/>
+				<reportElement x="364" y="634" width="164" height="36" uuid="7e0b4b70-02c2-430c-b5ec-7de7c08878cb"/>
 				<textElement>
 					<font fontName="Tahoma" size="9"/>
 				</textElement>
@@ -772,14 +772,14 @@ inner join petugas as dpj on dpj.nip=transfer_pasien_antar_ruang.dpjp inner join
 				<textFieldExpression><![CDATA[$F{transmisi}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="738" width="169" height="21" uuid="0cccead3-fa37-421c-b156-33bd64aa7bda"/>
+				<reportElement x="-1" y="754" width="169" height="21" uuid="0cccead3-fa37-421c-b156-33bd64aa7bda"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{menyerahkan}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="370" y="737" width="165" height="21" uuid="f8986ff2-e0f9-4ca1-a310-113e1b6822cf"/>
+				<reportElement x="369" y="753" width="165" height="21" uuid="f8986ff2-e0f9-4ca1-a310-113e1b6822cf"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="9"/>
 				</textElement>

@@ -1423,6 +1423,10 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
             if(tbObat.getSelectedRow()>-1){
                 if(akses.getkode().equals("Admin Utama")){
                     ganti();
+                //Custom (Tambah yang edit juga bisa untuk Petugas BPJS)
+                }else if(Sequel.cariInteger("SELECT COUNT(petugas.nip) FROM petugas WHERE petugas.kd_jbtn='J025' AND petugas.nip=?",akses.getkode())>0){
+                    JOptionPane.showMessageDialog(null,"Sudah ganti loh yaww..!!");
+                    ganti();
                 }else{
                     if(KodeDokter.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),4).toString())){
                         ganti();
@@ -2369,13 +2373,27 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         BtnEdit.setEnabled(akses.getdata_resume_pasien());
         BtnPrint.setEnabled(akses.getdata_resume_pasien()); 
         MnInputDiagnosa.setEnabled(akses.getdiagnosa_pasien());   
-        ppBerkasDigital.setEnabled(akses.getberkas_digital_perawatan());    
-        if(akses.getjml2()>=1){
+        ppBerkasDigital.setEnabled(akses.getberkas_digital_perawatan());
+//        if(akses.getjml2()>=1){
+//            KodeDokter.setEditable(false);
+//            //Kode Asli
+//            BtnDokter.setEnabled(false);
+//            //Kode Custom
+//            //BtnDokter.setEnabled(true);
+//            KodeDokter.setText(akses.getkode());
+//            NamaDokter.setText(dokter.tampil3(KodeDokter.getText()));
+//            if(NamaDokter.getText().equals("")){
+//                KodeDokter.setText("");
+//                JOptionPane.showMessageDialog(null,"User login bukan dokter hayoo...!!");
+//            }
+//        }
+        //Custom (Tambah agar resume hanya bisa di akses oleh temen2 BPJS)
+        if(Sequel.cariInteger("SELECT COUNT(petugas.nip) FROM petugas WHERE petugas.kd_jbtn='J025' AND petugas.nip=?",akses.getkode())>0){
             KodeDokter.setEditable(false);
-            //Kode Asli
+            BtnDokter.setEnabled(true);
+        }else if(akses.getjml2()>=1){
+            KodeDokter.setEditable(false);
             BtnDokter.setEnabled(false);
-            //Kode Custom
-            //BtnDokter.setEnabled(true);
             KodeDokter.setText(akses.getkode());
             NamaDokter.setText(dokter.tampil3(KodeDokter.getText()));
             if(NamaDokter.getText().equals("")){

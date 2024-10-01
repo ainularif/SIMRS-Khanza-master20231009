@@ -2019,9 +2019,9 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             //Custom (Menambahkan nama Kamar pada Label Daftar Obat)
             //param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat=?",TNoRw.getText()));
             //Revisi
-            //param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat='"+TNoRw.getText()+"' ORDER BY ki.tgl_keluar ASC LIMIT 1"));   
+            param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat='"+TNoRw.getText()+"' ORDER BY ki.tgl_keluar ASC LIMIT 1"));   
             //Revisi 1
-            param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat='"+TNoRw.getText()+"' AND ki.stts_pulang<>'Pindah Kamar'"));   
+            //param.put("bangsal",Sequel.cariIsi("SELECT b.nm_bangsal FROM kamar_inap ki INNER JOIN kamar k ON ki.kd_kamar = k.kd_kamar INNER JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal WHERE ki.no_rawat='"+TNoRw.getText()+"' AND ki.stts_pulang<>'Pindah Kamar'"));   
             
             param.put("jam",cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem());
             param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
