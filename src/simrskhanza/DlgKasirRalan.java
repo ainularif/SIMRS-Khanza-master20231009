@@ -6649,7 +6649,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
 
         jLabel9.setText("NIK :");
         jLabel9.setName("jLabel9"); // NOI18N
-        jLabel9.setPreferredSize(new java.awt.Dimension(85, 23));
+        jLabel9.setPreferredSize(new java.awt.Dimension(40, 23));
         panelGlass9.add(jLabel9);
 
         TNikCari.setEditable(false);
@@ -14221,7 +14221,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
             TNoReg.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),14).toString());
             TNoRMCari.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),2).toString());
             TPasienCari.setText(tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),3).toString());
-            //tambah get NIK
+            //Custom (tambah get NIK)
             Sequel.cariIsi("select pasien.no_ktp from pasien where pasien.no_rkm_medis=?", TNikCari,tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),2).toString());
         }
     }

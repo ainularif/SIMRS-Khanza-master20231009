@@ -18,6 +18,8 @@ import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -48,6 +50,12 @@ public final class BPJSAntreanPerTanggal extends javax.swing.JDialog {
     private JsonNode root;
     private JsonNode nameNode;
     private JsonNode response;
+    
+    private  String requestJson,datajam="",datataskid="";
+    private  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    //private  SimpleDateFormat tanggalFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private  Date parsedDate;
+    //private  Date date = new Date();
 
     /** Creates new form DlgJnsPerawatanRalan
      * @param parent
@@ -127,6 +135,31 @@ public final class BPJSAntreanPerTanggal extends javax.swing.JDialog {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
         MnCekKodeBooking = new javax.swing.JMenuItem();
+        MnKirimManualAntrol = new javax.swing.JMenuItem();
+        WindowGantiDokterParamedis = new javax.swing.JDialog();
+        internalFrame5 = new widget.InternalFrame();
+        FormInput = new widget.panelisi();
+        BtnSimpan4 = new widget.Button();
+        BtnCloseIn4 = new widget.Button();
+        jLabel17 = new widget.Label();
+        jLabel18 = new widget.Label();
+        jLabel20 = new widget.Label();
+        jLabel22 = new widget.Label();
+        jLabel23 = new widget.Label();
+        jLabel24 = new widget.Label();
+        jLabel25 = new widget.Label();
+        jLabel26 = new widget.Label();
+        NoRawatKirim = new widget.TextBox();
+        Taskid1 = new widget.Tanggal();
+        Taskid2 = new widget.Tanggal();
+        Taskid3 = new widget.Tanggal();
+        Taskid4 = new widget.Tanggal();
+        Taskid5 = new widget.Tanggal();
+        Taskid6 = new widget.Tanggal();
+        Taskid7 = new widget.Tanggal();
+        Taskid1field = new widget.TextBox();
+        Taskid4field = new widget.TextBox();
+        Taskid5field2 = new widget.TextBox();
         internalFrame1 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbJnsPerawatan = new widget.Table();
@@ -179,6 +212,267 @@ public final class BPJSAntreanPerTanggal extends javax.swing.JDialog {
             }
         });
         jPopupMenu1.add(MnCekKodeBooking);
+
+        MnKirimManualAntrol.setBackground(new java.awt.Color(255, 255, 254));
+        MnKirimManualAntrol.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnKirimManualAntrol.setForeground(new java.awt.Color(50, 50, 50));
+        MnKirimManualAntrol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnKirimManualAntrol.setText("Kirim Manual Antrol");
+        MnKirimManualAntrol.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnKirimManualAntrol.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnKirimManualAntrol.setName("MnKirimManualAntrol"); // NOI18N
+        MnKirimManualAntrol.setPreferredSize(new java.awt.Dimension(160, 26));
+        MnKirimManualAntrol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnKirimManualAntrolActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(MnKirimManualAntrol);
+
+        WindowGantiDokterParamedis.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        WindowGantiDokterParamedis.setName("WindowGantiDokterParamedis"); // NOI18N
+        WindowGantiDokterParamedis.setUndecorated(true);
+        WindowGantiDokterParamedis.setResizable(false);
+
+        internalFrame5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(239, 244, 234)), "::[ Ubah P.J.Rad, Perujuk & Petugas ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame5.setName("internalFrame5"); // NOI18N
+        internalFrame5.setLayout(new java.awt.BorderLayout(1, 1));
+
+        FormInput.setName("FormInput"); // NOI18N
+        FormInput.setPreferredSize(new java.awt.Dimension(89, 434));
+        FormInput.setLayout(null);
+
+        BtnSimpan4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/save-16x16.png"))); // NOI18N
+        BtnSimpan4.setMnemonic('S');
+        BtnSimpan4.setText("Kirim");
+        BtnSimpan4.setToolTipText("Alt+S");
+        BtnSimpan4.setName("BtnSimpan4"); // NOI18N
+        BtnSimpan4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSimpan4ActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnSimpan4);
+        BtnSimpan4.setBounds(310, 40, 100, 30);
+
+        BtnCloseIn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/cross.png"))); // NOI18N
+        BtnCloseIn4.setMnemonic('U');
+        BtnCloseIn4.setText("Tutup");
+        BtnCloseIn4.setToolTipText("Alt+U");
+        BtnCloseIn4.setName("BtnCloseIn4"); // NOI18N
+        BtnCloseIn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCloseIn4ActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnCloseIn4);
+        BtnCloseIn4.setBounds(310, 80, 100, 30);
+
+        jLabel17.setText("No. Rawat/ Booking :");
+        jLabel17.setName("jLabel17"); // NOI18N
+        FormInput.add(jLabel17);
+        jLabel17.setBounds(0, 12, 110, 23);
+
+        jLabel18.setText("Task ID 1 :");
+        jLabel18.setName("jLabel18"); // NOI18N
+        FormInput.add(jLabel18);
+        jLabel18.setBounds(10, 40, 92, 23);
+
+        jLabel20.setText("Task ID 7 :");
+        jLabel20.setName("jLabel20"); // NOI18N
+        FormInput.add(jLabel20);
+        jLabel20.setBounds(10, 220, 92, 23);
+
+        jLabel22.setText("Task ID 2 :");
+        jLabel22.setName("jLabel22"); // NOI18N
+        FormInput.add(jLabel22);
+        jLabel22.setBounds(10, 70, 92, 23);
+
+        jLabel23.setText("Task ID 3 :");
+        jLabel23.setName("jLabel23"); // NOI18N
+        FormInput.add(jLabel23);
+        jLabel23.setBounds(10, 100, 92, 23);
+
+        jLabel24.setText("Task ID 4 :");
+        jLabel24.setName("jLabel24"); // NOI18N
+        FormInput.add(jLabel24);
+        jLabel24.setBounds(10, 130, 92, 23);
+
+        jLabel25.setText("Task ID 5 :");
+        jLabel25.setName("jLabel25"); // NOI18N
+        FormInput.add(jLabel25);
+        jLabel25.setBounds(10, 160, 92, 23);
+
+        jLabel26.setText("Task ID 6 :");
+        jLabel26.setName("jLabel26"); // NOI18N
+        FormInput.add(jLabel26);
+        jLabel26.setBounds(10, 190, 92, 23);
+
+        NoRawatKirim.setName("NoRawatKirim"); // NOI18N
+        NoRawatKirim.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                NoRawatKirimKeyPressed(evt);
+            }
+        });
+        FormInput.add(NoRawatKirim);
+        NoRawatKirim.setBounds(120, 10, 150, 23);
+
+        Taskid1.setForeground(new java.awt.Color(50, 70, 50));
+        Taskid1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2024-09-30 15:02:20" }));
+        Taskid1.setDisplayFormat("yyyy-MM-dd HH:mm:ss");
+        Taskid1.setName("Taskid1"); // NOI18N
+        Taskid1.setOpaque(false);
+        Taskid1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Taskid1ActionPerformed(evt);
+            }
+        });
+        Taskid1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Taskid1KeyPressed(evt);
+            }
+        });
+        FormInput.add(Taskid1);
+        Taskid1.setBounds(110, 40, 130, 23);
+
+        Taskid2.setForeground(new java.awt.Color(50, 70, 50));
+        Taskid2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2024 15:02:42" }));
+        Taskid2.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
+        Taskid2.setName("Taskid2"); // NOI18N
+        Taskid2.setOpaque(false);
+        Taskid2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Taskid2ActionPerformed(evt);
+            }
+        });
+        Taskid2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Taskid2KeyPressed(evt);
+            }
+        });
+        FormInput.add(Taskid2);
+        Taskid2.setBounds(110, 70, 130, 23);
+
+        Taskid3.setForeground(new java.awt.Color(50, 70, 50));
+        Taskid3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2024 15:02:59" }));
+        Taskid3.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
+        Taskid3.setName("Taskid3"); // NOI18N
+        Taskid3.setOpaque(false);
+        Taskid3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Taskid3ActionPerformed(evt);
+            }
+        });
+        Taskid3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Taskid3KeyPressed(evt);
+            }
+        });
+        FormInput.add(Taskid3);
+        Taskid3.setBounds(110, 100, 130, 23);
+
+        Taskid4.setForeground(new java.awt.Color(50, 70, 50));
+        Taskid4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2024 15:03:01" }));
+        Taskid4.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
+        Taskid4.setName("Taskid4"); // NOI18N
+        Taskid4.setOpaque(false);
+        Taskid4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Taskid4ActionPerformed(evt);
+            }
+        });
+        Taskid4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Taskid4KeyPressed(evt);
+            }
+        });
+        FormInput.add(Taskid4);
+        Taskid4.setBounds(110, 130, 130, 23);
+
+        Taskid5.setForeground(new java.awt.Color(50, 70, 50));
+        Taskid5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2024 15:03:02" }));
+        Taskid5.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
+        Taskid5.setName("Taskid5"); // NOI18N
+        Taskid5.setOpaque(false);
+        Taskid5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Taskid5ActionPerformed(evt);
+            }
+        });
+        Taskid5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Taskid5KeyPressed(evt);
+            }
+        });
+        FormInput.add(Taskid5);
+        Taskid5.setBounds(110, 160, 130, 23);
+
+        Taskid6.setForeground(new java.awt.Color(50, 70, 50));
+        Taskid6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2024 15:03:02" }));
+        Taskid6.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
+        Taskid6.setName("Taskid6"); // NOI18N
+        Taskid6.setOpaque(false);
+        Taskid6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Taskid6ActionPerformed(evt);
+            }
+        });
+        Taskid6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Taskid6KeyPressed(evt);
+            }
+        });
+        FormInput.add(Taskid6);
+        Taskid6.setBounds(110, 190, 130, 23);
+
+        Taskid7.setForeground(new java.awt.Color(50, 70, 50));
+        Taskid7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2024 15:03:03" }));
+        Taskid7.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
+        Taskid7.setName("Taskid7"); // NOI18N
+        Taskid7.setOpaque(false);
+        Taskid7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Taskid7ActionPerformed(evt);
+            }
+        });
+        Taskid7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Taskid7KeyPressed(evt);
+            }
+        });
+        FormInput.add(Taskid7);
+        Taskid7.setBounds(110, 220, 130, 23);
+
+        Taskid1field.setName("Taskid1field"); // NOI18N
+        Taskid1field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Taskid1fieldKeyPressed(evt);
+            }
+        });
+        FormInput.add(Taskid1field);
+        Taskid1field.setBounds(260, 120, 150, 23);
+
+        Taskid4field.setName("Taskid4field"); // NOI18N
+        Taskid4field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Taskid4fieldKeyPressed(evt);
+            }
+        });
+        FormInput.add(Taskid4field);
+        Taskid4field.setBounds(260, 150, 150, 23);
+
+        Taskid5field2.setName("Taskid5field2"); // NOI18N
+        Taskid5field2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Taskid5field2KeyPressed(evt);
+            }
+        });
+        FormInput.add(Taskid5field2);
+        Taskid5field2.setBounds(260, 180, 150, 23);
+
+        internalFrame5.add(FormInput, java.awt.BorderLayout.CENTER);
+
+        WindowGantiDokterParamedis.getContentPane().add(internalFrame5, java.awt.BorderLayout.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -246,7 +540,7 @@ public final class BPJSAntreanPerTanggal extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-09-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -260,7 +554,7 @@ public final class BPJSAntreanPerTanggal extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-09-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -462,6 +756,201 @@ public final class BPJSAntreanPerTanggal extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_MnCekKodeBookingActionPerformed
 
+    private void MnKirimManualAntrolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnKirimManualAntrolActionPerformed
+        // TODO add your handling code here:
+       NoRawatKirim.setText(tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),0).toString());
+       /*NmPerujuk.setText(dokter.tampil3(rs5.getString("dokter_perujuk")));
+       KodePj.setText(rs5.getString("kd_dokter"));
+       NmDokterPj.setText(rs5.getString("nm_dokter"));
+       KdPtgUbah.setText(rs5.getString("nip"));
+       NmPtgUbah.setText(rs5.getString("nama"));*/
+       WindowGantiDokterParamedis.setSize(600,300);
+       WindowGantiDokterParamedis.setLocationRelativeTo(internalFrame1);
+       WindowGantiDokterParamedis.setVisible(true);
+    }//GEN-LAST:event_MnKirimManualAntrolActionPerformed
+
+    private void BtnSimpan4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSimpan4ActionPerformed
+//        datajam = NoRawatKirim.getText();
+//        datataskid = Sequel.cariIsi("select * from referensi_mobilejkn_bpjs_taskid where taskid='3' and no_rawat=?", NoRawatKirim.getText());
+//        if (!datajam.equals("")) {
+//            if (datataskid.equals("")) {
+                //if (Sequel.menyimpantf2("referensi_mobilejkn_bpjs_taskid", "?,?,?", "task id", 3, new String[]{NoRawatKirim.getText(), "3", datajam}) == true) {
+                    //datajam = Sequel.cariIsi("select DATE_ADD(concat('" + NoRawatKirim.getText() + "',' ','" + NoRawatKirim.getText() + "'),INTERVAL " + (Integer.parseInt(NoRawatKirim.getText()) * 10) + " MINUTE) ");
+                    //parsedDate = Taskid1.getSelectedItem();
+                    //Task id 3
+                    try {
+
+                        //TeksArea.append("Menjalankan WS taskid selesai pelayanan poli Mobile JKN Pasien Non BPJS/BPS Onsite\n");
+                        headers = new HttpHeaders();
+                        headers.setContentType(MediaType.APPLICATION_JSON);
+                        headers.add("x-cons-id", koneksiDB.CONSIDAPIMOBILEJKN());
+                        utc = String.valueOf(api.GetUTCdatetimeAsString());
+                        headers.add("x-timestamp", utc);
+                        headers.add("x-signature", api.getHmac(utc));
+                        headers.add("user_key", koneksiDB.USERKEYAPIMOBILEJKN());
+                        requestJson = "{"
+                                + "\"kodebooking\": \""+NoRawatKirim.getText()+"\","
+                                + "\"taskid\": \"3\","
+                                + "\"waktu\": \""+Taskid1field.getText()+"\""
+                                + "}";
+                        //TeksArea.append("JSON : "+requestJson+"\n");
+                        requestEntity = new HttpEntity(requestJson, headers);
+                        URL = link + "/antrean/updatewaktu";
+                        System.out.println("Task ID 3 Non MJKN - URL : " + URL);
+                        //System.out.println(api.getRest().exchange(URL, HttpMethod.POST, requestEntity, String.class).getBody());
+                        root = mapper.readTree(api.getRest().exchange(URL, HttpMethod.POST, requestEntity, String.class).getBody());
+                        nameNode = root.path("metadata");
+//                        if (!nameNode.path("code").asText().equals("200")) {
+//                            Sequel.queryu2("delete from referensi_mobilejkn_bpjs_taskid where taskid='3' and no_rawat='" + rs.getString("no_rawat") + "'");
+//                        }
+                        //TeksArea.append("respon WS BPJS : "+nameNode.path("code").asText()+" "+nameNode.path("message").asText()+"\n");
+                    } catch (Exception ex) {
+                        System.out.println("Notifikasi Bridging : " + ex);
+                    }
+                    //Task Id 4
+                    try {
+
+                        //TeksArea.append("Menjalankan WS taskid selesai pelayanan poli Mobile JKN Pasien Non BPJS/BPS Onsite\n");
+                        headers = new HttpHeaders();
+                        headers.setContentType(MediaType.APPLICATION_JSON);
+                        headers.add("x-cons-id", koneksiDB.CONSIDAPIMOBILEJKN());
+                        utc = String.valueOf(api.GetUTCdatetimeAsString());
+                        headers.add("x-timestamp", utc);
+                        headers.add("x-signature", api.getHmac(utc));
+                        headers.add("user_key", koneksiDB.USERKEYAPIMOBILEJKN());
+                        requestJson = "{"
+                                + "\"kodebooking\": \""+NoRawatKirim.getText()+"\","
+                                + "\"taskid\": \"4\","
+                                + "\"waktu\": \""+Taskid4field.getText()+"\""
+                                + "}";
+                        //TeksArea.append("JSON : "+requestJson+"\n");
+                        requestEntity = new HttpEntity(requestJson, headers);
+                        URL = link + "/antrean/updatewaktu";
+                        System.out.println("Task ID 4 Non MJKN - URL : " + URL);
+                        //System.out.println(api.getRest().exchange(URL, HttpMethod.POST, requestEntity, String.class).getBody());
+                        root = mapper.readTree(api.getRest().exchange(URL, HttpMethod.POST, requestEntity, String.class).getBody());
+                        nameNode = root.path("metadata");
+//                        if (!nameNode.path("code").asText().equals("200")) {
+//                            Sequel.queryu2("delete from referensi_mobilejkn_bpjs_taskid where taskid='3' and no_rawat='" + rs.getString("no_rawat") + "'");
+//                        }
+                        //TeksArea.append("respon WS BPJS : "+nameNode.path("code").asText()+" "+nameNode.path("message").asText()+"\n");
+                    } catch (Exception ex) {
+                        System.out.println("Notifikasi Bridging : " + ex);
+                    }
+                    //Task id 5
+                    try {
+
+                        //TeksArea.append("Menjalankan WS taskid selesai pelayanan poli Mobile JKN Pasien Non BPJS/BPS Onsite\n");
+                        headers = new HttpHeaders();
+                        headers.setContentType(MediaType.APPLICATION_JSON);
+                        headers.add("x-cons-id", koneksiDB.CONSIDAPIMOBILEJKN());
+                        utc = String.valueOf(api.GetUTCdatetimeAsString());
+                        headers.add("x-timestamp", utc);
+                        headers.add("x-signature", api.getHmac(utc));
+                        headers.add("user_key", koneksiDB.USERKEYAPIMOBILEJKN());
+                        requestJson = "{"
+                                + "\"kodebooking\": \""+NoRawatKirim.getText()+"\","
+                                + "\"taskid\": \"5\","
+                                + "\"waktu\": \""+Taskid5field2.getText()+"\""
+                                + "}";
+                        //TeksArea.append("JSON : "+requestJson+"\n");
+                        requestEntity = new HttpEntity(requestJson, headers);
+                        URL = link + "/antrean/updatewaktu";
+                        System.out.println("Task ID 5 Non MJKN - URL : " + URL);
+                        //System.out.println(api.getRest().exchange(URL, HttpMethod.POST, requestEntity, String.class).getBody());
+                        root = mapper.readTree(api.getRest().exchange(URL, HttpMethod.POST, requestEntity, String.class).getBody());
+                        nameNode = root.path("metadata");
+//                        if (!nameNode.path("code").asText().equals("200")) {
+//                            Sequel.queryu2("delete from referensi_mobilejkn_bpjs_taskid where taskid='3' and no_rawat='" + rs.getString("no_rawat") + "'");
+//                        }
+                        //TeksArea.append("respon WS BPJS : "+nameNode.path("code").asText()+" "+nameNode.path("message").asText()+"\n");
+                    } catch (Exception ex) {
+                        System.out.println("Notifikasi Bridging : " + ex);
+                    }
+        emptTeks();
+        tampil();
+        WindowGantiDokterParamedis.dispose();
+                //}
+//            }
+//        }
+    }//GEN-LAST:event_BtnSimpan4ActionPerformed
+
+    private void BtnCloseIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCloseIn4ActionPerformed
+       WindowGantiDokterParamedis.dispose();        
+    }//GEN-LAST:event_BtnCloseIn4ActionPerformed
+
+    private void NoRawatKirimKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NoRawatKirimKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NoRawatKirimKeyPressed
+
+    private void Taskid1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Taskid1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid1ActionPerformed
+
+    private void Taskid1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taskid1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid1KeyPressed
+
+    private void Taskid2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Taskid2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid2ActionPerformed
+
+    private void Taskid2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taskid2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid2KeyPressed
+
+    private void Taskid3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Taskid3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid3ActionPerformed
+
+    private void Taskid3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taskid3KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid3KeyPressed
+
+    private void Taskid4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Taskid4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid4ActionPerformed
+
+    private void Taskid4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taskid4KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid4KeyPressed
+
+    private void Taskid5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Taskid5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid5ActionPerformed
+
+    private void Taskid5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taskid5KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid5KeyPressed
+
+    private void Taskid6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Taskid6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid6ActionPerformed
+
+    private void Taskid6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taskid6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid6KeyPressed
+
+    private void Taskid7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Taskid7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid7ActionPerformed
+
+    private void Taskid7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taskid7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid7KeyPressed
+
+    private void Taskid1fieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taskid1fieldKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid1fieldKeyPressed
+
+    private void Taskid4fieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taskid4fieldKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid4fieldKeyPressed
+
+    private void Taskid5field2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taskid5field2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Taskid5field2KeyPressed
+
     /**
     * @param args the command line arguments
     */
@@ -506,9 +995,12 @@ public final class BPJSAntreanPerTanggal extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private widget.Button BtnCari;
+    private widget.Button BtnCloseIn4;
     private widget.Button BtnKeluar1;
+    private widget.Button BtnSimpan4;
     private widget.Tanggal DTPCari1;
     private widget.Tanggal DTPCari2;
+    private widget.panelisi FormInput;
     private widget.Label JknBelum;
     private widget.Label JknCapaian;
     private widget.Label JknSelesai;
@@ -517,13 +1009,27 @@ public final class BPJSAntreanPerTanggal extends javax.swing.JDialog {
     private widget.Label MJknCapaian;
     private widget.Label MJknSelesai;
     private javax.swing.JMenuItem MnCekKodeBooking;
+    private javax.swing.JMenuItem MnKirimManualAntrol;
+    private widget.TextBox NoRawatKirim;
     private widget.Label NonJKNBelum;
     private widget.Label NonJKNSelesai;
     private widget.Label SEPTerbit;
     private widget.ScrollPane Scroll;
+    private widget.Tanggal Taskid1;
+    private widget.TextBox Taskid1field;
+    private widget.Tanggal Taskid2;
+    private widget.Tanggal Taskid3;
+    private widget.Tanggal Taskid4;
+    private widget.TextBox Taskid4field;
+    private widget.Tanggal Taskid5;
+    private widget.TextBox Taskid5field2;
+    private widget.Tanggal Taskid6;
+    private widget.Tanggal Taskid7;
     private widget.Label TotBelum;
     private widget.Label TotSelesai;
+    private javax.swing.JDialog WindowGantiDokterParamedis;
     private widget.InternalFrame internalFrame1;
+    private widget.InternalFrame internalFrame5;
     private widget.Label jLabel10;
     private widget.Label jLabel11;
     private widget.Label jLabel12;
@@ -531,8 +1037,16 @@ public final class BPJSAntreanPerTanggal extends javax.swing.JDialog {
     private widget.Label jLabel14;
     private widget.Label jLabel15;
     private widget.Label jLabel16;
+    private widget.Label jLabel17;
+    private widget.Label jLabel18;
     private widget.Label jLabel19;
+    private widget.Label jLabel20;
     private widget.Label jLabel21;
+    private widget.Label jLabel22;
+    private widget.Label jLabel23;
+    private widget.Label jLabel24;
+    private widget.Label jLabel25;
+    private widget.Label jLabel26;
     private widget.Label jLabel7;
     private widget.Label jLabel8;
     private widget.Label jLabel9;

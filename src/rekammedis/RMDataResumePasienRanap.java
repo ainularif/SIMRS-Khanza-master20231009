@@ -874,7 +874,7 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-02-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "29-07-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -888,7 +888,7 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-02-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "29-07-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -1741,7 +1741,7 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
         KetDilanjutkan.setBounds(236, 1081, 270, 23);
 
         Kontrol.setForeground(new java.awt.Color(50, 70, 50));
-        Kontrol.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-02-2022 17:14:51" }));
+        Kontrol.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "29-07-2024 08:01:17" }));
         Kontrol.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         Kontrol.setName("Kontrol"); // NOI18N
         Kontrol.setOpaque(false);
@@ -2015,6 +2015,10 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
         }else{
             if(tbObat.getSelectedRow()>-1){
                 if(akses.getkode().equals("Admin Utama")){
+                    ganti();
+                //Custom (Else If Tambah Edit yang bisa untuk Petugas BPJS - J025(BPJS))
+                }else if(Sequel.cariInteger("SELECT COUNT(petugas.nip) FROM petugas WHERE petugas.kd_jbtn='J025' AND petugas.nip=?",akses.getkode())>0){
+                    JOptionPane.showMessageDialog(null,"Sudah ganti loh yaww..!!");
                     ganti();
                 }else{
                     if(KodeDokter.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),3).toString())){
@@ -3084,19 +3088,32 @@ public final class RMDataResumePasienRanap extends javax.swing.JDialog {
         BtnPrint.setEnabled(akses.getdata_resume_pasien()); 
         MnInputDiagnosa.setEnabled(akses.getdiagnosa_pasien());   
         ppBerkasDigital.setEnabled(akses.getberkas_digital_perawatan());    
-        if(akses.getjml2()>=1){
+//        if(akses.getjml2()>=1){
+//            KodeDokter.setEditable(false);
+//            //Kode Asli
+//            BtnDokter.setEnabled(false);
+//            //Kode Custom
+//            //BtnDokter.setEnabled(true);
+//            KodeDokter.setText(akses.getkode());
+//            NamaDokter.setText(dokter.tampil3(KodeDokter.getText()));
+//            if(NamaDokter.getText().equals("")){
+//                KodeDokter.setText("");
+//                JOptionPane.showMessageDialog(null,"User login bukan dokter...!!");
+//            }
+//        }        
+        if(Sequel.cariInteger("SELECT COUNT(petugas.nip) FROM petugas WHERE petugas.kd_jbtn='J025' AND petugas.nip=?",akses.getkode())>0){
             KodeDokter.setEditable(false);
-            //Kode Asli
+            BtnDokter.setEnabled(true);
+        }else if(akses.getjml2()>=1){
+            KodeDokter.setEditable(false);
             BtnDokter.setEnabled(false);
-            //Kode Custom
-            //BtnDokter.setEnabled(true);
             KodeDokter.setText(akses.getkode());
             NamaDokter.setText(dokter.tampil3(KodeDokter.getText()));
             if(NamaDokter.getText().equals("")){
                 KodeDokter.setText("");
                 JOptionPane.showMessageDialog(null,"User login bukan dokter...!!");
             }
-        }            
+        }
     }
 
     private void ganti() {

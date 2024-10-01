@@ -34,7 +34,9 @@ public class DlgCopyResep extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         
-        Object[] row={"No.Resep","Tgl.Resep","Jam Resep","No.Rawat","No.RM","Pasien","Dokter Peresep","Kode Dokter"};
+        Object[] row={"No.Resep","Tgl.Resep","Jam Resep","No.Rawat","No.RM","Pasien","Dokter Peresep","Kode Dokter",
+            //Custom (Menambahkan kolom Status untuk Validasi)
+            "Status"};
         tabMode=new DefaultTableModel(null,row){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -63,6 +65,10 @@ public class DlgCopyResep extends javax.swing.JDialog {
                 //column.setMinWidth(0);
                 //column.setMaxWidth(0);
             }else if(i==7){
+                column.setPreferredWidth(170);
+                //column.setMinWidth(0);
+                //column.setMaxWidth(0);
+            }else if(i==8){
                 column.setPreferredWidth(170);
                 //column.setMinWidth(0);
                 //column.setMaxWidth(0);
@@ -382,8 +388,11 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                 }else{
                     if(Sequel.cariRegistrasi(tbPemisahan.getValueAt(tbPemisahan.getSelectedRow(),3).toString())>0){
                         JOptionPane.showMessageDialog(rootPane,"Data billing sudah terverifikasi ..!!");
+                        //Custom (Menambahkan if else untuk Validasi Obat)
+                    }else if(tbPemisahan.getValueAt(tbPemisahan.getSelectedRow(),8).toString().equals("Sudah Terlayani")){
+                         JOptionPane.showMessageDialog(rootPane,"Resep Obat sudah di VALIDASI, silakan untuk menginput resep baru...!!");
                     }else{ 
-                        panggilform2();                             
+                        panggilform2();                          
                     }
                 }                
             }
@@ -492,7 +501,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                 while(rs.next()){
                     tabMode.addRow(new String[]{
                         rs.getString("no_resep"),rs.getString("tgl_peresepan"),rs.getString("jam_peresepan"),rs.getString("no_rawat"),
-                        rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),rs.getString("nm_dokter"),rs.getString("kd_dokter")
+                        rs.getString("no_rkm_medis"),rs.getString("nm_pasien"),rs.getString("nm_dokter"),rs.getString("kd_dokter"),
+                        //Custom (Menambahkan kolom Status Validasi Obat)
+                        rs.getString("status")
                     });  
                     tabMode.addRow(new String[]{"","Jumlah","Satuan","Aturan Pakai","Kode/No","Nama Obat/Racikan","",""});                
                     ps2=koneksi.prepareStatement("select databarang.kode_brng,databarang.nama_brng,resep_dokter.jml,"+
