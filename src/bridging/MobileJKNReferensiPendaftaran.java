@@ -10,6 +10,8 @@
  */
 
 package bridging;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import fungsi.WarnaTable;
 import fungsi.batasInput;
 import fungsi.koneksiDB;
@@ -22,6 +24,10 @@ import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -29,6 +35,10 @@ import javax.swing.JTable;
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 
 /**
  *
@@ -42,6 +52,16 @@ public final class MobileJKNReferensiPendaftaran extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;    
     private int i=0;
+    private HttpHeaders headers;
+    private String URL="",link="",utc="";
+    private  String requestJson,datajam="";
+    private HttpEntity requestEntity;
+    private ApiMobileJKN api=new ApiMobileJKN();
+    private JsonNode root;
+    private JsonNode nameNode;
+    private JsonNode response;
+    private ObjectMapper mapper = new ObjectMapper();
+     
 
     /** Creates new form DlgJnsPerawatanRalan
      * @param parent
@@ -123,7 +143,11 @@ public final class MobileJKNReferensiPendaftaran extends javax.swing.JDialog {
                 }
             });
         }  
-        
+        try {
+            link=koneksiDB.URLAPIMOBILEJKN();
+        } catch (Exception e) {
+            System.out.println("E : "+e);
+        }
         
     }
 
@@ -136,6 +160,21 @@ public final class MobileJKNReferensiPendaftaran extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        MnKirimManualAntrol = new javax.swing.JMenuItem();
+        WindowGantiDokterParamedis = new javax.swing.JDialog();
+        internalFrame5 = new widget.InternalFrame();
+        FormInput = new widget.panelisi();
+        BtnSimpan4 = new widget.Button();
+        BtnCloseIn4 = new widget.Button();
+        jLabel17 = new widget.Label();
+        NoRawatKirim = new widget.TextBox();
+        jLabel27 = new widget.Label();
+        KeteranganBatal = new widget.TextBox();
+        jLabel18 = new widget.Label();
+        NoHp = new widget.TextBox();
+        jLabel20 = new widget.Label();
+        NamaPasien = new widget.TextBox();
         internalFrame1 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbJnsPerawatan = new widget.Table();
@@ -158,6 +197,143 @@ public final class MobileJKNReferensiPendaftaran extends javax.swing.JDialog {
         BtnCari = new widget.Button();
         BtnAll = new widget.Button();
 
+        jPopupMenu1.setName("jPopupMenu1"); // NOI18N
+
+        MnKirimManualAntrol.setBackground(new java.awt.Color(255, 255, 254));
+        MnKirimManualAntrol.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnKirimManualAntrol.setForeground(new java.awt.Color(50, 50, 50));
+        MnKirimManualAntrol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnKirimManualAntrol.setText("Kirim Pasien Batal");
+        MnKirimManualAntrol.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnKirimManualAntrol.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnKirimManualAntrol.setName("MnKirimManualAntrol"); // NOI18N
+        MnKirimManualAntrol.setPreferredSize(new java.awt.Dimension(160, 26));
+        MnKirimManualAntrol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnKirimManualAntrolActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(MnKirimManualAntrol);
+
+        WindowGantiDokterParamedis.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        WindowGantiDokterParamedis.setName("WindowGantiDokterParamedis"); // NOI18N
+        WindowGantiDokterParamedis.setUndecorated(true);
+        WindowGantiDokterParamedis.setResizable(false);
+
+        internalFrame5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(239, 244, 234)), "::[ Kirim Pasien Batal Mobile JKN ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame5.setName("internalFrame5"); // NOI18N
+        internalFrame5.setPreferredSize(new java.awt.Dimension(300, 455));
+        internalFrame5.setLayout(new java.awt.BorderLayout(1, 1));
+
+        FormInput.setName("FormInput"); // NOI18N
+        FormInput.setPreferredSize(new java.awt.Dimension(200, 434));
+        FormInput.setLayout(null);
+
+        BtnSimpan4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/save-16x16.png"))); // NOI18N
+        BtnSimpan4.setMnemonic('S');
+        BtnSimpan4.setText("Kirim");
+        BtnSimpan4.setToolTipText("Alt+S");
+        BtnSimpan4.setName("BtnSimpan4"); // NOI18N
+        BtnSimpan4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSimpan4ActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnSimpan4);
+        BtnSimpan4.setBounds(280, 20, 100, 30);
+
+        BtnCloseIn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/cross.png"))); // NOI18N
+        BtnCloseIn4.setMnemonic('U');
+        BtnCloseIn4.setText("Tutup");
+        BtnCloseIn4.setToolTipText("Alt+U");
+        BtnCloseIn4.setName("BtnCloseIn4"); // NOI18N
+        BtnCloseIn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCloseIn4ActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnCloseIn4);
+        BtnCloseIn4.setBounds(280, 50, 100, 30);
+
+        jLabel17.setText("No.Hp :");
+        jLabel17.setName("jLabel17"); // NOI18N
+        FormInput.add(jLabel17);
+        jLabel17.setBounds(40, 50, 70, 23);
+
+        NoRawatKirim.setEditable(false);
+        NoRawatKirim.setName("NoRawatKirim"); // NOI18N
+        NoRawatKirim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NoRawatKirimActionPerformed(evt);
+            }
+        });
+        NoRawatKirim.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                NoRawatKirimKeyPressed(evt);
+            }
+        });
+        FormInput.add(NoRawatKirim);
+        NoRawatKirim.setBounds(120, 80, 150, 23);
+
+        jLabel27.setText("No. Rawat/ Booking :");
+        jLabel27.setName("jLabel27"); // NOI18N
+        FormInput.add(jLabel27);
+        jLabel27.setBounds(0, 80, 110, 23);
+
+        KeteranganBatal.setName("KeteranganBatal"); // NOI18N
+        KeteranganBatal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                KeteranganBatalKeyPressed(evt);
+            }
+        });
+        FormInput.add(KeteranganBatal);
+        KeteranganBatal.setBounds(120, 110, 150, 23);
+
+        jLabel18.setText("Keterangan :");
+        jLabel18.setName("jLabel18"); // NOI18N
+        FormInput.add(jLabel18);
+        jLabel18.setBounds(20, 110, 90, 23);
+
+        NoHp.setEditable(false);
+        NoHp.setName("NoHp"); // NOI18N
+        NoHp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NoHpActionPerformed(evt);
+            }
+        });
+        NoHp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                NoHpKeyPressed(evt);
+            }
+        });
+        FormInput.add(NoHp);
+        NoHp.setBounds(120, 50, 150, 23);
+
+        jLabel20.setText("Nama Pasien :");
+        jLabel20.setName("jLabel20"); // NOI18N
+        FormInput.add(jLabel20);
+        jLabel20.setBounds(40, 20, 70, 23);
+
+        NamaPasien.setEditable(false);
+        NamaPasien.setName("NamaPasien"); // NOI18N
+        NamaPasien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NamaPasienActionPerformed(evt);
+            }
+        });
+        NamaPasien.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                NamaPasienKeyPressed(evt);
+            }
+        });
+        FormInput.add(NamaPasien);
+        NamaPasien.setBounds(120, 20, 150, 23);
+
+        internalFrame5.add(FormInput, java.awt.BorderLayout.CENTER);
+
+        WindowGantiDokterParamedis.getContentPane().add(internalFrame5, java.awt.BorderLayout.CENTER);
+        internalFrame5.getAccessibleContext().setAccessibleName("::[ Kirim Pasien Batal Mobile JKN ]::");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
@@ -170,6 +346,7 @@ public final class MobileJKNReferensiPendaftaran extends javax.swing.JDialog {
         Scroll.setOpaque(true);
 
         tbJnsPerawatan.setToolTipText("Silahkan klik untuk memilih data yang mau diedit ataupun dihapus");
+        tbJnsPerawatan.setComponentPopupMenu(jPopupMenu1);
         tbJnsPerawatan.setName("tbJnsPerawatan"); // NOI18N
         Scroll.setViewportView(tbJnsPerawatan);
 
@@ -297,7 +474,7 @@ public final class MobileJKNReferensiPendaftaran extends javax.swing.JDialog {
         panelGlass10.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-02-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-10-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -311,7 +488,7 @@ public final class MobileJKNReferensiPendaftaran extends javax.swing.JDialog {
         panelGlass10.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-02-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-10-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -525,6 +702,129 @@ public final class MobileJKNReferensiPendaftaran extends javax.swing.JDialog {
         }else{Valid.pindah(evt, BtnCheckin, BtnBatal);}
     }//GEN-LAST:event_BtnBelumKeyPressed
 
+    private void MnKirimManualAntrolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnKirimManualAntrolActionPerformed
+        // TODO add your handling code here:
+        NoRawatKirim.setText(tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),14).toString());
+        NamaPasien.setText(tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),2).toString());
+        NoHp.setText(tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),3).toString());
+        WindowGantiDokterParamedis.setSize(400,180);
+        WindowGantiDokterParamedis.setLocationRelativeTo(internalFrame1);
+        WindowGantiDokterParamedis.setVisible(true);
+    }//GEN-LAST:event_MnKirimManualAntrolActionPerformed
+
+    private void NoRawatKirimKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NoRawatKirimKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NoRawatKirimKeyPressed
+
+    private void BtnCloseIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCloseIn4ActionPerformed
+        WindowGantiDokterParamedis.dispose();
+    }//GEN-LAST:event_BtnCloseIn4ActionPerformed
+
+    private void BtnSimpan4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSimpan4ActionPerformed
+        try {
+            headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.add("x-cons-id", koneksiDB.CONSIDAPIMOBILEJKN());
+            utc = String.valueOf(api.GetUTCdatetimeAsString());
+            headers.add("x-timestamp", utc);
+            headers.add("x-signature", api.getHmac(utc));
+            headers.add("user_key", koneksiDB.USERKEYAPIMOBILEJKN());
+            requestJson = "{"
+                    + "\"kodebooking\": \""+NoRawatKirim.getText()+"\","
+                    + "\"keterangan\": \""+KeteranganBatal.getText()+"\""
+                    + "}";
+//            TeksArea.append("JSON : " + requestJson + "\n");
+            requestEntity = new HttpEntity(requestJson, headers);
+            URL = link + "/antrean/batal";
+            System.out.println("URL : " + URL);
+            //System.out.println(api.getRest().exchange(URL, HttpMethod.POST, requestEntity, String.class).getBody());
+            root = mapper.readTree(api.getRest().exchange(URL, HttpMethod.POST, requestEntity, String.class).getBody());
+            nameNode = root.path("metadata");
+            System.out.println(" code : " + nameNode.path("code").asText());
+            System.out.println(" pesan : " + nameNode.path("message").asText());
+            JOptionPane.showMessageDialog(null,nameNode.path("message").asText());
+            if (nameNode.path("code").asText().equals("200")) {
+                Sequel.queryu2("update referensi_mobilejkn_bpjs_batal set statuskirim='Sudah' where nomorreferensi='" + tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),11).toString() + "'");
+                datajam = tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),13).toString();
+                if (!datajam.equals("")) {
+                    if (Sequel.menyimpantf2("referensi_mobilejkn_bpjs_taskid", "?,?,?", "task id", 3, new String[]{tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),0).toString(), "99", datajam}) == true) {
+//                        parsedDate = dateFormat.parse(datajam);
+                    String dateTimeString = datajam;
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S");
+                    LocalDateTime localDateTime = LocalDateTime.parse(dateTimeString, formatter);
+                    Instant instant = localDateTime.atZone(ZoneId.systemDefault()).toInstant();
+                    long timestamp99 = instant.toEpochMilli();
+                        try {
+//                            TeksArea.append("Menjalankan WS taskid batal pelayanan poli Mobile JKN Pasien BPJS\n");
+                            headers = new HttpHeaders();
+                            headers.setContentType(MediaType.APPLICATION_JSON);
+                            headers.add("x-cons-id", koneksiDB.CONSIDAPIMOBILEJKN());
+                            utc = String.valueOf(api.GetUTCdatetimeAsString());
+                            headers.add("x-timestamp", utc);
+                            headers.add("x-signature", api.getHmac(utc));
+                            headers.add("user_key", koneksiDB.USERKEYAPIMOBILEJKN());
+                            requestJson = "{"
+                                    + "\"kodebooking\": \"" + NoRawatKirim.getText() + "\","
+                                    + "\"taskid\": \"99\","
+                                    + "\"waktu\": \""+timestamp99+"\""
+                                    + "}";
+//                            TeksArea.append("JSON : " + requestJson + "\n");
+                            requestEntity = new HttpEntity(requestJson, headers);
+                            URL = link + "/antrean/updatewaktu";
+                            System.out.println("URL : " + URL);
+                            //System.out.println(api.getRest().exchange(URL, HttpMethod.POST, requestEntity, String.class).getBody());
+                            System.out.println("JSON : "+requestJson);
+                            requestEntity = new HttpEntity(requestJson,headers);
+                            root = mapper.readTree(api.getRest().exchange(URL, HttpMethod.POST, requestEntity, String.class).getBody());
+                            nameNode = root.path("metaData");
+                            System.out.println(" code : " + nameNode.path("code").asText());
+                            System.out.println(" pesan : " + nameNode.path("message").asText());
+                            if (!nameNode.path("code").asText().equals("200")) {
+                                Sequel.queryu2("delete from referensi_mobilejkn_bpjs_taskid where taskid='99' and no_rawat='" + tbJnsPerawatan.getValueAt(tbJnsPerawatan.getSelectedRow(),0).toString() + "'");
+                            }else {
+                                JOptionPane.showMessageDialog(null,"Berhasil dibatalkan...!!");
+                            }
+//                            TeksArea.append("respon WS BPJS : " + nameNode.path("code").asText() + " " + nameNode.path("message").asText() + "\n");
+                        } catch (Exception ex) {
+                            System.out.println("Notifikasi Bridging : " + ex);
+                        }
+                    }
+                }
+            }
+//            TeksArea.append("respon WS BPJS : " + nameNode.path("code").asText() + " " + nameNode.path("message").asText() + "\n");
+        } catch (Exception ex) {
+            System.out.println("Notifikasi Bridging : " + ex);
+        }
+      
+       WindowGantiDokterParamedis.dispose();
+         emptTeks();
+         tampil();
+    }//GEN-LAST:event_BtnSimpan4ActionPerformed
+
+    private void KeteranganBatalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeteranganBatalKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KeteranganBatalKeyPressed
+
+    private void NoRawatKirimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoRawatKirimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NoRawatKirimActionPerformed
+
+    private void NoHpKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NoHpKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NoHpKeyPressed
+
+    private void NoHpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoHpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NoHpActionPerformed
+
+    private void NamaPasienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaPasienActionPerformed
+        
+    }//GEN-LAST:event_NamaPasienActionPerformed
+
+    private void NamaPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NamaPasienKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NamaPasienKeyPressed
+
     /**
     * @param args the command line arguments
     */
@@ -540,26 +840,46 @@ public final class MobileJKNReferensiPendaftaran extends javax.swing.JDialog {
             dialog.setVisible(true);
         });
     }
-
+    private void emptTeks() {
+        NoRawatKirim.setText("");
+        KeteranganBatal.setText("");
+        NamaPasien.setText("");
+        NoHp.setText("");
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private widget.Button BtnAll;
     private widget.Button BtnBatal;
     private widget.Button BtnBelum;
     private widget.Button BtnCari;
     private widget.Button BtnCheckin;
+    private widget.Button BtnCloseIn4;
     private widget.Button BtnKeluar;
     private widget.Button BtnPrint;
+    private widget.Button BtnSimpan4;
     private widget.Tanggal DTPCari1;
     private widget.Tanggal DTPCari2;
+    private widget.panelisi FormInput;
+    private widget.TextBox KeteranganBatal;
     private widget.Label LCount;
+    private javax.swing.JMenuItem MnKirimManualAntrol;
+    private widget.TextBox NamaPasien;
+    private widget.TextBox NoHp;
+    private widget.TextBox NoRawatKirim;
     private widget.ScrollPane Scroll;
     private widget.TextBox TCari;
+    private javax.swing.JDialog WindowGantiDokterParamedis;
     private widget.InternalFrame internalFrame1;
+    private widget.InternalFrame internalFrame5;
+    private widget.Label jLabel17;
+    private widget.Label jLabel18;
     private widget.Label jLabel19;
+    private widget.Label jLabel20;
     private widget.Label jLabel21;
+    private widget.Label jLabel27;
     private widget.Label jLabel6;
     private widget.Label jLabel7;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private widget.panelisi panelGlass10;
     private widget.panelisi panelGlass8;
     private widget.Table tbJnsPerawatan;
